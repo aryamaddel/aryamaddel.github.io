@@ -1,92 +1,119 @@
-.links .links-list li,
-header a {
-  display: inline;
-  padding-left: 1rem;
-}
-body {
-  margin: 0;
-  font-size: 14pt;
-  font-family: Montserrat, sans-serif;
+$color_1: #000;
+$color_2: #7c7c7c;
+$color_3: #701d1d;
+$color_4: #fff;
+$font-family_1: Montserrat,sans-serif;
+$background-color_1: #7c7c7c;
+$background-color_2: #000;
+
+.projects {
+	a {
+		text-decoration: none;
+		font-weight: 700;
+		position: relative;
+		color: $color_3;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+			height: 2px;
+			width: 0;
+			background-color: $background-color_1;
+			transition: width .2s ease-in-out;
+		}
+		&:hover {
+			color: $color_2;
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+	padding: 1rem;
+	text-align: center;
 }
 header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-  background: #7d7d7d;
-  background: linear-gradient(180deg, #7d7d7d 0, #fff 100%);
-  a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.5rem;
-    font-weight: 700;
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      height: 2px;
-      width: 0;
-      background-color: #7c7c7c;
-      transition: width 0.2s ease-in-out;
-    }
-    &:hover {
-      color: #7c7c7c;
-      &:after {
-        width: 100%;
-      }
-    }
-  }
-}
-.about-me,
-.links,
-.projects,
-.skills {
-  padding: 1rem;
-  text-align: center;
-}
-.about-me {
-  #mePhoto {
-    width: 18rem;
-    height: auto;
-  }
-}
-.projects {
-  a {
-    color: #3f2c2c;
-  }
-}
-.skills {
-  .skills-list {
-    padding-right: 2.5rem;
-    text-align: center;
-    list-style-type: none;
-    li {
-      padding: 1rem;
-      border-bottom: 1px solid #000;
-    }
-  }
+	a {
+		text-decoration: none;
+		font-weight: 700;
+		position: relative;
+		display: inline;
+		padding-left: 1rem;
+		color: $color_1;
+		font-size: 1.5rem;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+			height: 2px;
+			width: 0;
+			background-color: $background-color_1;
+			transition: width .2s ease-in-out;
+		}
+		&:hover {
+			color: $color_2;
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1rem;
+	background: #7d7d7d;
+	background: linear-gradient(180deg,#7d7d7d 0,#fff 100%);
 }
 .links {
-  .links-list {
-    list-style-type: none;
-    padding: 0;
-    li {
-      padding-right: 1rem;
-      a {
-        color: #000;
-        font-size: 2.5rem;
-      }
-    }
-  }
+	.links-list {
+		li {
+			display: inline;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			a {
+				color: $color_1;
+				font-size: 2.5rem;
+			}
+		}
+		list-style-type: none;
+		padding: 0;
+	}
+	padding: 1rem;
+	text-align: center;
+}
+body {
+	margin: 0;
+	font-size: 14pt;
+	font-family: $font-family_1;
+}
+.about-me {
+	padding: 1rem;
+	text-align: center;
+	#mePhoto {
+		width: 18rem;
+		height: auto;
+	}
+}
+.skills {
+	padding: 1rem;
+	text-align: center;
+	.skills-list {
+		padding-right: 2.5rem;
+		text-align: center;
+		list-style-type: none;
+		li {
+			padding: 1rem;
+			border-bottom: 1px solid #000;
+		}
+	}
 }
 .footer {
-  background-color: #000;
-  color: #fff;
-  padding: 0.5rem;
-  p {
-    margin: 0;
-    text-align: center;
-  }
+	background-color: $background-color_2;
+	color: $color_4;
+	padding: .5rem;
+	p {
+		margin: 0;
+		text-align: center;
+	}
 }

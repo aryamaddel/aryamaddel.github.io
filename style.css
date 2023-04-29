@@ -1,13 +1,28 @@
-.links .links-list li,
-header a {
-  display: inline;
-  padding-left: 1rem;
+.projects {
+  padding: 1rem;
+  text-align: center;
 }
-
-body {
-  margin: 0;
-  font-size: 14pt;
-  font-family: Montserrat, sans-serif;
+.projects a {
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  color: #701d1d;
+}
+.projects a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: #7c7c7c;
+  transition: width 0.2s ease-in-out;
+}
+.projects a:hover {
+  color: #7c7c7c;
+}
+.projects a:hover:after {
+  width: 100%;
 }
 
 header {
@@ -20,10 +35,12 @@ header {
 }
 header a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.5rem;
   font-weight: 700;
   position: relative;
+  display: inline;
+  padding-left: 1rem;
+  color: #000;
+  font-size: 1.5rem;
 }
 header a:after {
   content: "";
@@ -42,23 +59,43 @@ header a:hover:after {
   width: 100%;
 }
 
-.about-me,
-.links,
-.projects,
-.skills {
+.links {
   padding: 1rem;
   text-align: center;
 }
+.links .links-list {
+  list-style-type: none;
+  padding: 0;
+}
+.links .links-list li {
+  display: inline;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.links .links-list li a {
+  color: #000;
+  font-size: 2.5rem;
+}
 
+body {
+  margin: 0;
+  font-size: 14pt;
+  font-family: Montserrat, sans-serif;
+}
+
+.about-me {
+  padding: 1rem;
+  text-align: center;
+}
 .about-me #mePhoto {
   width: 18rem;
   height: auto;
 }
 
-.projects a {
-  color: #3f2c2c;
+.skills {
+  padding: 1rem;
+  text-align: center;
 }
-
 .skills .skills-list {
   padding-right: 2.5rem;
   text-align: center;
@@ -67,18 +104,6 @@ header a:hover:after {
 .skills .skills-list li {
   padding: 1rem;
   border-bottom: 1px solid #000;
-}
-
-.links .links-list {
-  list-style-type: none;
-  padding: 0;
-}
-.links .links-list li {
-  padding-right: 1rem;
-}
-.links .links-list li a {
-  color: #000;
-  font-size: 2.5rem;
 }
 
 .footer {
