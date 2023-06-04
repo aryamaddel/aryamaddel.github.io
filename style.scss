@@ -1,117 +1,122 @@
-$color_1: #000;
-$color_2: #7c7c7c;
-$color_3: #701d1d;
-$color_4: #fff;
-$font-family_1: Montserrat,sans-serif;
-$background-color_1: #7c7c7c;
-$background-color_2: #000;
+// Colors
+$primary-color: #000;
+$secondary-color: #7c7c7c;
+$accent-color: #701d1d;
+$background-color: #fff;
+$header-background: linear-gradient(180deg, #7d7d7d 0, #fff 100%);
+
+// Font families
+$primary-font: Montserrat, sans-serif;
+
+@mixin link-style {
+	text-decoration: none;
+	font-weight: 700;
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		height: 2px;
+		width: 0;
+		background-color: $background-color;
+		transition: width .2s ease-in-out;
+	}
+
+	&:hover {
+		color: $secondary-color;
+
+		&:after {
+			width: 100%;
+		}
+	}
+}
 
 .projects {
 	a {
-		text-decoration: none;
-		font-weight: 700;
-		position: relative;
-		color: $color_3;
-		&:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: -2px;
-			height: 2px;
-			width: 0;
-			background-color: $background-color_1;
-			transition: width .2s ease-in-out;
-		}
-		&:hover {
-			color: $color_2;
-			&:after {
-				width: 100%;
-			}
-		}
+		@include link-style;
+		color: $accent-color;
 	}
+
 	padding: 1rem;
 	text-align: center;
 }
+
 header {
 	a {
-		text-decoration: none;
-		font-weight: 700;
-		position: relative;
+		@include link-style;
 		display: inline;
 		padding-left: 1rem;
-		color: $color_1;
+		color: $primary-color;
 		font-size: 1.5rem;
-		&:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: -2px;
-			height: 2px;
-			width: 0;
-			background-color: $background-color_1;
-			transition: width .2s ease-in-out;
-		}
-		&:hover {
-			color: $color_2;
-			&:after {
-				width: 100%;
-			}
-		}
 	}
+
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	padding: 1rem;
-	background: #7d7d7d;
-	background: linear-gradient(180deg,#7d7d7d 0,#fff 100%);
+	background: $header-background;
 }
+
 .links {
 	.links-list {
 		li {
-			display: inline;
+			display: inline-block;
 			padding-left: 1rem;
 			padding-right: 1rem;
+
 			a {
-				color: $color_1;
+				color: $primary-color;
 				font-size: 2.5rem;
 			}
 		}
-		list-style-type: none;
-		padding: 0;
+
+		list-style-type:none;
+		padding-left:0;
 	}
-	padding: 1rem;
-	text-align: center;
+
+	padding-top:1rem;
+	text-align:center;
 }
+
 body {
 	margin: 0;
 	font-size: 14pt;
-	font-family: $font-family_1;
+	font-family: $primary-font;
 }
+
 .about-me {
-	padding: 1rem;
+	padding-top: 1rem;
 	text-align: center;
+
 	#mePhoto {
 		width: 18rem;
 		height: auto;
 	}
 }
+
 .skills {
-	padding: 1rem;
+	padding-top: 1rem;
 	text-align: center;
+
 	.skills-list {
 		padding-right: 2.5rem;
 		text-align: center;
 		list-style-type: none;
+
 		li {
-			padding: 1rem;
+			padding-top: 1rem;
 			border-bottom: 1px solid #000;
 		}
 	}
 }
+
 .footer {
-	background-color: $background-color_2;
+	background-color: $background-color;
 	color: $color_4;
 	padding: .5rem;
+
 	p {
 		margin: 0;
 		text-align: center;
