@@ -8,55 +8,14 @@ $header-background: linear-gradient(180deg, #7d7d7d 0, #fff 100%);
 // Font families
 $primary-font: Montserrat, sans-serif;
 
-@mixin link-style {
-	text-decoration: none;
-	font-weight: 700;
-	position: relative;
 
-	&:after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -2px;
-		height: 2px;
-		width: 0;
-		background-color: $background-color;
-		transition: width .2s ease-in-out;
-	}
-
-	&:hover {
-		color: $secondary-color;
-
-		&:after {
-			width: 100%;
-		}
-	}
-}
 
 .projects {
 	a {
-		@include link-style;
 		color: $accent-color;
 	}
-
 	padding: 1rem;
 	text-align: center;
-}
-
-header {
-	a {
-		@include link-style;
-		display: inline;
-		padding-left: 1rem;
-		color: $primary-color;
-		font-size: 1.5rem;
-	}
-
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 1rem;
-	background: $header-background;
 }
 
 .links {
@@ -87,7 +46,6 @@ body {
 }
 
 .about-me {
-	padding-top: 1rem;
 	text-align: center;
 
 	#mePhoto {
@@ -97,7 +55,6 @@ body {
 }
 
 .skills {
-	padding-top: 1rem;
 	text-align: center;
 
 	.skills-list {
@@ -107,6 +64,7 @@ body {
 
 		li {
 			padding-top: 1rem;
+			padding-bottom: 1rem;
 			border-bottom: 1px solid #000;
 		}
 	}
@@ -114,11 +72,16 @@ body {
 
 .footer {
 	background-color: $background-color;
-	color: $color_4;
 	padding: .5rem;
 
-	p {
-		margin: 0;
-		text-align: center;
+	.footer-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+
+		p {
+			margin: 0;
+		}
 	}
 }
