@@ -1,87 +1,239 @@
-// Colors
+// Variables
 $primary-color: #000;
 $secondary-color: #7c7c7c;
-$accent-color: #701d1d;
+$accent-color: #942e2e;
 $background-color: #fff;
+$dark-background-color: #2c2c2c;
+$dark-primary-color: #fff;
+$dark-card-background: #444;
 $header-background: linear-gradient(180deg, #7d7d7d 0, #fff 100%);
 
 // Font families
-$primary-font: Montserrat, sans-serif;
+$primary-font: 'Montserrat', sans-serif;
 
+// Mixins
+@mixin dark-mode {
+	background-color: $dark-background-color;
+	color: $dark-primary-color;
 
-
-.projects {
 	a {
-		color: $accent-color;
-	}
-	padding: 1rem;
-	text-align: center;
-}
-
-.links {
-	.links-list {
-		li {
-			display: inline-block;
-			padding-left: 1rem;
-			padding-right: 1rem;
-
-			a {
-				color: $primary-color;
-				font-size: 2.5rem;
-			}
-		}
-
-		list-style-type:none;
-		padding-left:0;
+		color: lighten($accent-color, 20%);
 	}
 
-	padding-top:1rem;
-	text-align:center;
+	section {
+		background-color: $dark-card-background;
+	}
 }
 
+// Base styles
 body {
 	margin: 0;
 	font-size: 14pt;
 	font-family: $primary-font;
+	background-color: $background-color;
+	color: $primary-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+
+	&.dark-mode {
+		@include dark-mode;
+	}
+}
+
+.theme-toggle {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	input[type="checkbox"] {
+		appearance: none;
+		width: 40px;
+		height: 20px;
+		background-color: $secondary-color;
+		border-radius: 10px;
+		position: relative;
+		outline: none;
+		cursor: pointer;
+
+		&:checked {
+			background-color: $accent-color;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: $background-color;
+			top: 1px;
+			left: 1px;
+			transition: transform 0.3s;
+		}
+
+		&:checked:before {
+			transform: translateX(20px);
+		}
+	}
+
+	label {
+		font-size: 0.9rem;
+	}
+}
+
+.container {
+	max-width: 1000px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section {
+	max-width: 800px;
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 1.5rem;
+	background-color: $background-color;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+	&.dark-mode {
+		background-color: $dark-card-background;
+	}
 }
 
 .about-me {
 	text-align: center;
 
+	.about-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media (min-width: 600px) {
+			flex-direction: row;
+			justify-content: center;
+			gap: 2rem;
+		}
+	}
+
 	#mePhoto {
-		width: 18rem;
+		width: 12rem;
 		height: auto;
+		margin-bottom: 1rem;
+		border-radius: 8px;
+
+		@media (min-width: 600px) {
+			margin-bottom: 0;
+		}
+	}
+
+	.about-info {
+		margin-top: 1rem;
+
+		@media (min-width: 600px) {
+			margin-top: 0;
+			text-align: center;
+		}
 	}
 }
 
-.skills {
+.projects,
+.skills,
+.links {
 	text-align: center;
 
-	.skills-list {
-		padding-right: 2.5rem;
-		text-align: center;
-		list-style-type: none;
+	h2,
+	h3 {
+		margin-bottom: 1rem;
+	}
 
-		li {
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-			border-bottom: 1px solid #000;
-		}
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	a {
+		color: $accent-color;
+	}
+
+	.skills-list,
+	.links-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+.projects,
+.links {
+	@media (min-width: 600px) {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
 	}
 }
 
 .footer {
 	background-color: $background-color;
-	padding: .5rem;
+	padding: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
 
 	.footer-content {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 		gap: 10px;
 
 		p {
 			margin: 0;
 		}
+
+
+	}
+
+	.dark-mode & {
+		background-color: $dark-background-color;
+	}
+}
+
+.skill-item {
+	margin-bottom: 1rem;
+
+	span {
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.skill-bar {
+		height: 20px;
+		background-color: $secondary-color;
+		border-radius: 5px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.skill-bar::after {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 0;
+		background-color: $accent-color;
+		transition: width 2s ease;
+		border-radius: 5px;
+	}
+
+	&:hover .skill-bar::after {
+		width: 100%;
 	}
 }
