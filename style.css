@@ -118,32 +118,37 @@ section.dark-mode {
   }
 }
 
-.projects,
+.projects {
+  text-align: left;
+}
+.projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+.projects ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
 .skills,
 .links {
   text-align: center;
 }
-.projects h2,
-.projects h3,
 .skills h2,
 .skills h3,
 .links h2,
 .links h3 {
   margin-bottom: 1rem;
 }
-.projects ul,
 .skills ul,
 .links ul {
   list-style-type: none;
   padding: 0;
 }
-.projects a,
 .skills a,
 .links a {
   color: #942e2e;
 }
-.projects .skills-list,
-.projects .links-list,
 .skills .skills-list,
 .skills .links-list,
 .links .skills-list,
@@ -155,7 +160,6 @@ section.dark-mode {
 }
 
 @media (min-width: 600px) {
-  .projects,
   .links {
     display: flex;
     justify-content: space-evenly;
@@ -209,4 +213,41 @@ section.dark-mode {
 }
 .skill-item:hover .skill-bar::after {
   width: 100%;
+}
+
+.projects {
+  text-align: center;
+}
+.projects h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.projects .project-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.projects .project-list li {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.projects .project-list li a {
+  color: inherit;
+}
+.projects .github-link {
+  font-size: 1rem;
+}
+.projects .github-link a {
+  color: #942e2e;
+  text-decoration: none;
+}
+.projects .github-link a:hover {
+  text-decoration: underline;
+}
+.dark-mode .projects .project-list li {
+  color: #fff;
+}
+.dark-mode .projects .github-link a {
+  color: #c64848;
 }/*# sourceMappingURL=style.css.map */
