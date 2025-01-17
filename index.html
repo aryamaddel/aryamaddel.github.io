@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#f8fafc" />
     <meta name="background-color" content="#f8fafc" />
     <meta name="display" content="standalone" />
-    <title>Arya Maddel</title>
+    <title>Arya Maddel | CS Student & Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://kit.fontawesome.com/9569ff2ee1.js"
@@ -20,184 +20,303 @@
     ></script>
   </head>
   <body class="bg-slate-50 text-slate-700">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50"
+    >
+      <div class="max-w-3xl mx-auto px-6 py-4">
+        <ul class="flex gap-6 justify-end">
+          <li>
+            <a
+              href="#about"
+              class="hover:text-slate-900 transition-colors duration-200"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="hover:text-slate-900 transition-colors duration-200"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="hover:text-slate-900 transition-colors duration-200"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="hover:text-slate-900 transition-colors duration-200"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="max-w-3xl mx-auto px-6 py-12">
       <!-- About Me Section -->
-      <section class="mb-16">
-        <h1 class="text-3xl font-bold mb-8">Arya Maddel</h1>
+      <section id="about" class="mb-24 scroll-mt-16">
+        <h1 class="text-4xl font-bold mb-8">Arya Maddel</h1>
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img
-            src="Me.jpg"
-            alt="portfolio photo"
-            class="w-40 h-40 rounded-lg object-cover"
-          />
+          <div>
+            <img
+              src="Me.jpg"
+              alt="portfolio photo"
+              class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
+            />
+          </div>
           <div class="text-center md:text-left">
-            <p class="text-xl mb-2">CS Student</p>
-            <p class="text-slate-600">
+            <p class="text-xl mb-4 font-semibold">CS Student & Developer</p>
+            <p class="text-slate-600 leading-relaxed">
               Passionate about machine learning, automation, and exploring CS's
-              intersection with fields like physics and hardware.
+              intersection with fields like physics and hardware. Currently
+              focused on building innovative solutions and learning new
+              technologies.
             </p>
           </div>
         </div>
       </section>
 
       <!-- Projects Section -->
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Projects</h2>
-        <ul class="space-y-6">
-          <li class="group">
-            <a
-              href="https://github.com/aryamaddel/sujalam-chemicals"
-              class="flex items-center gap-2 text-slate-700 hover:text-slate-900"
-            >
-              <i class="fa-solid fa-box-archive w-5"></i>
-              <span class="font-medium">Inventory Management System</span>
+      <section id="projects" class="mb-24 scroll-mt-16">
+        <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <a href="https://github.com/aryamaddel/sujalam-chemicals">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-box-archive text-slate-700"></i>
+                <h3 class="font-semibold group-hover:text-slate-900">
+                  Inventory Management System
+                </h3>
+              </div>
+              <p class="text-slate-600">
+                A comprehensive solution for managing inventory at Sujalam
+                Chemicals. Features real-time tracking and automated alerts.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >React Native</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Express.js</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
+              </div>
             </a>
-            <p class="text-slate-600 mt-1 ml-7">
-              Managing inventory for Sujalam Chemicals.
-            </p>
-          </li>
-          <li class="group">
-            <a
-              href="https://github.com/aryamaddel/Tatsumaki-Bot"
-              class="flex items-center gap-2 text-slate-700 hover:text-slate-900"
-            >
-              <i class="fa-solid fa-robot w-5"></i>
-              <span class="font-medium">Tatsumaki Bot</span>
+          </div>
+
+          <div
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <a href="https://github.com/aryamaddel/Tatsumaki-Bot">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-robot text-slate-700"></i>
+                <h3 class="font-semibold group-hover:text-slate-900">
+                  Tatsumaki Bot
+                </h3>
+              </div>
+              <p class="text-slate-600">
+                A feature-rich Discord bot for server management with
+                customizable commands and moderation tools.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Discord.js</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Keep Alive Mechanism</span
+                >
+              </div>
             </a>
-            <p class="text-slate-600 mt-1 ml-7">
-              A Discord bot for server management and fun.
-            </p>
-          </li>
-          <li class="group">
-            <a
-              href="https://github.com/aryamaddel/alexa-pc-control"
-              class="flex items-center gap-2 text-slate-700 hover:text-slate-900"
-            >
-              <i class="fa-solid fa-microchip w-5"></i>
-              <span class="font-medium">IoT PC Control</span>
+          </div>
+
+          <div
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <a href="https://github.com/aryamaddel/alexa-pc-control">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-microchip text-slate-700"></i>
+                <h3 class="font-semibold group-hover:text-slate-900">
+                  IoT PC Control
+                </h3>
+              </div>
+              <p class="text-slate-600">
+                Smart home integration using ESP32 for remote PC control.
+                Features voice commands and automation.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >ESP32</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
+              </div>
             </a>
-            <p class="text-slate-600 mt-1 ml-7">
-              Using an ESP32 to control a PC remotely.
-            </p>
-          </li>
-          <li class="group">
-            <a
-              href="https://github.com/aryamaddel/planet-simulation"
-              class="flex items-center gap-2 text-slate-700 hover:text-slate-900"
-            >
-              <i class="fa-solid fa-globe w-5"></i>
-              <span class="font-medium">Planet Simulation</span>
-            </a>
-            <p class="text-slate-600 mt-1 ml-7">
-              A Pygame project simulating planetary motion.
-            </p>
-          </li>
-          <li class="group">
+          </div>
+
+          <div
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          >
             <a
               href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-              class="flex items-center gap-2 text-slate-700 hover:text-slate-900"
             >
-              <i class="fa-solid fa-plane w-5"></i>
-              <span class="font-medium">Autonomous Drone</span>
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-plane text-slate-700"></i>
+                <h3 class="font-semibold group-hover:text-slate-900">
+                  Autonomous Drone
+                </h3>
+              </div>
+              <p class="text-slate-600">
+                Award-winning drone project using Pixhawk controller for
+                autonomous deliveries and navigation.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Pixhawk</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Robotics</span
+                >
+              </div>
             </a>
-            <p class="text-slate-600 mt-1 ml-7">
-              Using a Pixhawk flight controller for deliveries.
-            </p>
-          </li>
-        </ul>
-        <p class="mt-6 text-slate-600">
-          See more on
+          </div>
+        </div>
+
+        <p class="mt-8 text-slate-600">
+          Explore more projects on
           <a
             href="https://github.com/aryamaddel/"
-            class="text-slate-700 hover:text-slate-900 font-medium"
-            >GitHub</a
+            class="text-slate-700 hover:text-slate-900 font-medium inline-flex items-center gap-1 transition-colors duration-200"
           >
+            GitHub
+            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+          </a>
         </p>
       </section>
 
       <!-- Skills Section -->
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Skills</h2>
-        <ul class="space-y-3">
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-code w-5"></i>
-            <span>Proficiency in Python and JavaScript</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-brands fa-discord w-5"></i>
-            <span>Experience in Discord.js</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-robot w-5"></i>
-            <span>Automation</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-flask w-5"></i>
-            <span>Flask framework</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-globe w-5"></i>
-            <span>Web development</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-spider w-5"></i>
-            <span>Familiarity with web scraping techniques</span>
-          </li>
-          <li class="flex items-center gap-3 text-slate-700">
-            <i class="fa-solid fa-puzzle-piece w-5"></i>
-            <span
-              >Problem-solving skills and the ability to troubleshoot
-              issues</span
-            >
-          </li>
-        </ul>
+      <section id="skills" class="mb-24 scroll-mt-16">
+        <h2 class="text-2xl font-bold mb-8">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <i class="fa-solid fa-code text-slate-700"></i>
+              <h3 class="font-semibold">Programming</h3>
+            </div>
+            <p class="text-slate-600">Python, JavaScript, C++</p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <i class="fa-solid fa-robot text-slate-700"></i>
+              <h3 class="font-semibold">Automation</h3>
+            </div>
+            <p class="text-slate-600">Scripts, Bots, Process Optimization</p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <i class="fa-solid fa-globe text-slate-700"></i>
+              <h3 class="font-semibold">Web Development</h3>
+            </div>
+            <p class="text-slate-600">Flask, HTML/CSS, Frontend Design</p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <i class="fa-solid fa-microchip text-slate-700"></i>
+              <h3 class="font-semibold">Hardware</h3>
+            </div>
+            <p class="text-slate-600">ESP32, Pixhawk, IoT Integration</p>
+          </div>
+        </div>
       </section>
 
-      <!-- Social Links -->
-      <section>
-        <h2 class="text-2xl font-bold mb-6">Links</h2>
-        <ul class="flex gap-6">
-          <li>
-            <a
-              href="https://github.com/aryamaddel"
-              class="text-slate-600 hover:text-slate-900"
-            >
-              <i class="fa-brands fa-github text-xl"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/aryamaddel/"
-              class="text-slate-600 hover:text-slate-900"
-            >
-              <i class="fa-brands fa-linkedin text-xl"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/arya_maddel/"
-              class="text-slate-600 hover:text-slate-900"
-            >
-              <i class="fa-brands fa-instagram text-xl"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:maddelarya@gmail.com"
-              class="text-slate-600 hover:text-slate-900"
-            >
-              <i class="fa-solid fa-envelope text-xl"></i>
-            </a>
-          </li>
-        </ul>
+      <!-- Contact Section -->
+      <section id="contact" class="scroll-mt-16">
+        <h2 class="text-2xl font-bold mb-8">Let's Connect</h2>
+        <div class="bg-white p-8 rounded-lg border border-slate-200">
+          <p class="text-slate-600 mb-6">
+            I'm always interested in new opportunities and collaborations. Feel
+            free to reach out!
+          </p>
+          <ul class="flex gap-6">
+            <li>
+              <a
+                href="https://github.com/aryamaddel"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                title="GitHub"
+              >
+                <i class="fa-brands fa-github text-2xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/aryamaddel/"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                title="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/arya_maddel/"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                title="Instagram"
+              >
+                <i class="fa-brands fa-instagram text-2xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:maddelarya@gmail.com"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                title="Email"
+              >
+                <i class="fa-solid fa-envelope text-2xl"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
 
-      <footer class="mt-16 text-slate-600 text-sm">
-        <p>
+      <footer class="mt-24 text-slate-600 text-sm">
+        <p class="flex items-center gap-2 justify-center">
           Made by Arya Maddel
-          <img src="F1.svg" alt="F1 car icon" class="inline-block" />
+          <img src="F1.svg" alt="F1 car icon" />
         </p>
       </footer>
     </div>
+
+    <!-- Smooth scroll behavior -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
   </body>
 </html>
