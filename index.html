@@ -18,9 +18,27 @@
       src="https://kit.fontawesome.com/9569ff2ee1.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .project-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      }
+      .social-link {
+        transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+      }
+      .social-link:hover {
+        transform: scale(1.1);
+        color: rgb(15 23 42);
+      }
+    </style>
   </head>
   <body class="bg-slate-50 text-slate-700">
-    <!-- Navigation -->
     <nav
       class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50"
     >
@@ -58,16 +76,16 @@
       </div>
     </nav>
 
-    <div class="max-w-3xl mx-auto px-6 py-12">
-      <!-- About Me Section -->
+    <main class="max-w-3xl mx-auto px-6 py-12">
       <section id="about" class="mb-24 scroll-mt-16">
         <h1 class="text-4xl font-bold mb-8">Arya Maddel</h1>
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div>
             <img
               src="Me.jpg"
-              alt="portfolio photo"
+              alt="Arya Maddel"
               class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
+              loading="lazy"
             />
           </div>
           <div class="text-center md:text-left">
@@ -82,114 +100,95 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects" class="mb-24 scroll-mt-16">
         <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          <a
+            href="https://github.com/aryamaddel/sujalam-chemicals"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
-            <a href="https://github.com/aryamaddel/sujalam-chemicals">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-box-archive text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
-                  Inventory Management System
-                </h3>
-              </div>
-              <p class="text-slate-600">
-                A comprehensive solution for managing inventory at Sujalam
-                Chemicals. Features real-time tracking and automated alerts.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >React Native</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Express.js</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
-              </div>
-            </a>
-          </div>
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fa-solid fa-box-archive text-slate-700"></i>
+              <h3 class="font-semibold">Inventory Management System</h3>
+            </div>
+            <p class="text-slate-600">
+              A comprehensive solution for managing inventory at Sujalam
+              Chemicals. Features real-time tracking and automated alerts.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >React Native</span
+              >
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >Express.js</span
+              >
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          <a
+            href="https://github.com/aryamaddel/Tatsumaki-Bot"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
-            <a href="https://github.com/aryamaddel/Tatsumaki-Bot">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-robot text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
-                  Tatsumaki Bot
-                </h3>
-              </div>
-              <p class="text-slate-600">
-                A feature-rich Discord bot for server management with
-                customizable commands and moderation tools.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Discord.js</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Keep Alive Mechanism</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fa-solid fa-robot text-slate-700"></i>
+              <h3 class="font-semibold">Tatsumaki Bot</h3>
+            </div>
+            <p class="text-slate-600">
+              A feature-rich Discord bot for server management with customizable
+              commands and moderation tools.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >Discord.js</span
+              >
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >Keep Alive Mechanism</span
+              >
+            </div>
+          </a>
 
-          <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          <a
+            href="https://github.com/aryamaddel/alexa-pc-control"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
-            <a href="https://github.com/aryamaddel/alexa-pc-control">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-microchip text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
-                  IoT PC Control
-                </h3>
-              </div>
-              <p class="text-slate-600">
-                Smart home integration using ESP32 for remote PC control.
-                Features voice commands and automation.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >ESP32</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
-              </div>
-            </a>
-          </div>
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fa-solid fa-microchip text-slate-700"></i>
+              <h3 class="font-semibold">IoT PC Control</h3>
+            </div>
+            <p class="text-slate-600">
+              Smart home integration using ESP32 for remote PC control. Features
+              voice commands and automation.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded">ESP32</span>
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+          <a
+            href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
-            <a
-              href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-            >
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-plane text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
-                  Autonomous Drone
-                </h3>
-              </div>
-              <p class="text-slate-600">
-                Award-winning drone project using Pixhawk controller for
-                autonomous deliveries and navigation.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Python</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Pixhawk</span
-                >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                  >Robotics</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fa-solid fa-plane text-slate-700"></i>
+              <h3 class="font-semibold">Autonomous Drone</h3>
+            </div>
+            <p class="text-slate-600">
+              Award-winning drone project using Pixhawk controller for
+              autonomous deliveries and navigation.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded">Python</span>
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >Pixhawk</span
+              >
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                >Robotics</span
+              >
+            </div>
+          </a>
         </div>
 
         <p class="mt-8 text-slate-600">
@@ -204,12 +203,11 @@
         </p>
       </section>
 
-      <!-- Skills Section -->
       <section id="skills" class="mb-24 scroll-mt-16">
         <h2 class="text-2xl font-bold mb-8">Skills</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
             <div class="flex items-center gap-3 mb-2">
               <i class="fa-solid fa-code text-slate-700"></i>
@@ -219,7 +217,7 @@
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
             <div class="flex items-center gap-3 mb-2">
               <i class="fa-solid fa-robot text-slate-700"></i>
@@ -229,7 +227,7 @@
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
             <div class="flex items-center gap-3 mb-2">
               <i class="fa-solid fa-globe text-slate-700"></i>
@@ -239,7 +237,7 @@
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="project-card bg-white p-6 rounded-lg border border-slate-200"
           >
             <div class="flex items-center gap-3 mb-2">
               <i class="fa-solid fa-microchip text-slate-700"></i>
@@ -250,7 +248,6 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section id="contact" class="scroll-mt-16">
         <h2 class="text-2xl font-bold mb-8">Let's Connect</h2>
         <div class="bg-white p-8 rounded-lg border border-slate-200">
@@ -262,8 +259,9 @@
             <li>
               <a
                 href="https://github.com/aryamaddel"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link text-slate-600"
                 title="GitHub"
+                aria-label="GitHub Profile"
               >
                 <i class="fa-brands fa-github text-2xl"></i>
               </a>
@@ -271,8 +269,9 @@
             <li>
               <a
                 href="https://www.linkedin.com/in/aryamaddel/"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link text-slate-600"
                 title="LinkedIn"
+                aria-label="LinkedIn Profile"
               >
                 <i class="fa-brands fa-linkedin text-2xl"></i>
               </a>
@@ -280,8 +279,9 @@
             <li>
               <a
                 href="https://www.instagram.com/arya_maddel/"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link text-slate-600"
                 title="Instagram"
+                aria-label="Instagram Profile"
               >
                 <i class="fa-brands fa-instagram text-2xl"></i>
               </a>
@@ -289,8 +289,9 @@
             <li>
               <a
                 href="mailto:maddelarya@gmail.com"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link text-slate-600"
                 title="Email"
+                aria-label="Send Email"
               >
                 <i class="fa-solid fa-envelope text-2xl"></i>
               </a>
@@ -302,21 +303,15 @@
       <footer class="mt-24 text-slate-600 text-sm">
         <p class="flex items-center gap-2 justify-center">
           Made by Arya Maddel
-          <img src="F1.svg" alt="F1 car icon" />
+          <img
+            src="F1.svg"
+            alt="F1 car icon"
+            width="20"
+            height="20"
+            loading="lazy"
+          />
         </p>
       </footer>
-    </div>
-
-    <!-- Smooth scroll behavior -->
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
+    </main>
   </body>
 </html>
