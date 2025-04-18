@@ -293,15 +293,11 @@
 
       <!-- Education Section -->
       <section id="education" class="mb-24 scroll-mt-16">
-        <div class="flex items-center justify-between mb-8">
+        <div id="educationHeader" class="flex items-center justify-between mb-8 cursor-pointer hover:bg-slate-100/50 p-2 rounded-lg -mx-2 transition-colors duration-200">
           <h2 class="text-2xl font-bold">Education</h2>
-          <button
-            id="toggleEducation"
-            class="text-slate-600 hover:text-slate-900 transition-colors duration-200 p-2 -mr-2"
-          >
-            <i class="fa-solid fa-chevron-down w-5 h-5 flex items-center justify-center"></i>
-            <span class="sr-only">Toggle education details</span>
-          </button>
+          <div class="text-slate-600">
+            <i id="educationIcon" class="fa-solid fa-chevron-down w-5 h-5 flex items-center justify-center"></i>
+          </div>
         </div>
         <div id="educationContent" class="hidden">
           <div class="bg-white p-6 rounded-lg border border-slate-200">
@@ -411,10 +407,10 @@
 
       // Toggle education section
       document
-        .getElementById("toggleEducation")
+        .getElementById("educationHeader")
         .addEventListener("click", function () {
           const content = document.getElementById("educationContent");
-          const icon = this.querySelector("i");
+          const icon = document.getElementById("educationIcon");
 
           if (content.classList.contains("hidden")) {
             content.classList.remove("hidden");
