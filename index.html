@@ -12,58 +12,90 @@
     <meta name="theme-color" content="#f8fafc" />
     <meta name="background-color" content="#f8fafc" />
     <meta name="display" content="standalone" />
-    <meta name="keywords" content="Arya Maddel, CS Student, Portfolio, Machine Learning, Automation, IoT, Programming">
-    <meta name="author" content="Arya Maddel">
-    <meta property="og:title" content="Arya Maddel | CS Student">
-    <meta property="og:description" content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware">
-    <meta property="og:image" content="Me.jpg">
-    <meta property="og:url" content="https://aryamaddel.github.io/">
+    <meta
+      name="keywords"
+      content="Arya Maddel, CS Student, Portfolio, Machine Learning, Automation, IoT, Programming"
+    />
+    <meta name="author" content="Arya Maddel" />
+    <meta property="og:title" content="Arya Maddel | CS Student" />
+    <meta
+      property="og:description"
+      content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware"
+    />
+    <meta property="og:image" content="Me.jpg" />
+    <meta property="og:url" content="https://aryamaddel.github.io/" />
     <title>Arya Maddel | CS Student</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      }(
+        // Check time and set dark mode if it's night time (7 PM to 6 AM)
+        function () {
+          const currentHour = new Date().getHours();
+          const isDarkMode = currentHour >= 19 || currentHour < 6;
+
+          if (isDarkMode) {
+            document.documentElement.classList.add("dark");
+            document
+              .querySelector('meta[name="theme-color"]')
+              .setAttribute("content", "#0f172a");
+            document
+              .querySelector('meta[name="background-color"]')
+              .setAttribute("content", "#0f172a");
+          }
+        }
+      )();
+    </script>
     <script
       src="https://kit.fontawesome.com/9569ff2ee1.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bg-slate-50 text-slate-700">
+  <body
+    class="bg-slate-50 text-slate-700 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300"
+  >
     <!-- Navigation -->
     <nav
-      class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50"
+      class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50 dark:bg-slate-900/80 dark:border-slate-800"
     >
       <div class="max-w-5xl mx-auto px-6 py-3">
         <ul class="flex gap-5 justify-center">
           <li>
             <a
               href="#about"
-              class="hover:text-slate-900 transition-colors duration-200"
+              class="hover:text-slate-900 transition-colors duration-200 dark:hover:text-white"
               >About</a
             >
           </li>
           <li>
             <a
               href="#projects"
-              class="hover:text-slate-900 transition-colors duration-200"
+              class="hover:text-slate-900 transition-colors duration-200 dark:hover:text-white"
               >Projects</a
             >
           </li>
           <li>
             <a
               href="#skills"
-              class="hover:text-slate-900 transition-colors duration-200"
+              class="hover:text-slate-900 transition-colors duration-200 dark:hover:text-white"
               >Skills</a
             >
           </li>
           <li>
             <a
               href="#education"
-              class="hover:text-slate-900 transition-colors duration-200"
+              class="hover:text-slate-900 transition-colors duration-200 dark:hover:text-white"
               >Education</a
             >
           </li>
           <li>
             <a
               href="#contact"
-              class="hover:text-slate-900 transition-colors duration-200"
+              class="hover:text-slate-900 transition-colors duration-200 dark:hover:text-white"
               >Contact</a
             >
           </li>
@@ -81,13 +113,17 @@
           <img
             src="Me.jpg"
             alt="portfolio photo"
-            class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
+            class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200 dark:ring-slate-700"
           />
         </div>
         <div class="text-center md:text-left">
-          <h1 class="text-4xl font-bold mb-4">Arya Maddel</h1>
-          <p class="text-xl mb-4 font-semibold">CS Student</p>
-          <p class="text-slate-600 leading-relaxed text-justify">
+          <h1 class="text-4xl font-bold mb-4 dark:text-white">Arya Maddel</h1>
+          <p class="text-xl mb-4 font-semibold dark:text-slate-200">
+            CS Student
+          </p>
+          <p
+            class="text-slate-600 leading-relaxed text-justify dark:text-slate-400"
+          >
             Passionate about machine learning, automation, and exploring CS's
             intersection with fields like physics and hardware. Currently
             focused on building innovative solutions and learning new
@@ -98,35 +134,45 @@
 
       <!-- Projects Section -->
       <section id="projects" class="mb-24 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
+        <h2 class="text-2xl font-bold mb-8 dark:text-white">
+          Featured Projects
+        </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <!-- AutoManim Project (New) -->
           <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <a href="https://github.com/aryamaddel/AutoManim">
               <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-square-root-variable text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
+                <i
+                  class="fa-solid fa-square-root-variable text-slate-700 dark:text-slate-400"
+                ></i>
+                <h3
+                  class="font-semibold group-hover:text-slate-900 dark:group-hover:text-white dark:text-slate-200"
+                >
                   AutoManim
                 </h3>
               </div>
-              <p class="text-slate-600">
+              <p class="text-slate-600 dark:text-slate-400">
                 AI-powered web app that generates and renders mathematical
                 animations using the Manim library from natural language
                 descriptions.
               </p>
               <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Flask</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >AI (Groq/Gemini)</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Manim</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Docker</span
                 >
               </div>
@@ -134,50 +180,65 @@
           </div>
 
           <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <a href="https://github.com/aryamaddel/sujalam-chemicals">
               <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-box-archive text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
+                <i
+                  class="fa-solid fa-box-archive text-slate-700 dark:text-slate-400"
+                ></i>
+                <h3
+                  class="font-semibold group-hover:text-slate-900 dark:group-hover:text-white dark:text-slate-200"
+                >
                   Inventory Management System
                 </h3>
               </div>
-              <p class="text-slate-600">
+              <p class="text-slate-600 dark:text-slate-400">
                 A comprehensive solution for managing inventory at Sujalam
                 Chemicals. Features real-time tracking and automated alerts.
               </p>
               <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >React Native</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Express.js</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
+                  >SQL</span
+                >
               </div>
             </a>
           </div>
 
           <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <a href="https://github.com/aryamaddel/Tatsumaki-Bot">
               <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-robot text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
+                <i
+                  class="fa-solid fa-robot text-slate-700 dark:text-slate-400"
+                ></i>
+                <h3
+                  class="font-semibold group-hover:text-slate-900 dark:group-hover:text-white dark:text-slate-200"
+                >
                   Tatsumaki Bot
                 </h3>
               </div>
-              <p class="text-slate-600">
+              <p class="text-slate-600 dark:text-slate-400">
                 A feature-rich Discord bot for server management with
                 customizable commands and moderation tools.
               </p>
               <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Discord.js</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Keep Alive Mechanism</span
                 >
               </div>
@@ -185,53 +246,71 @@
           </div>
 
           <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <a href="https://github.com/aryamaddel/alexa-pc-control">
               <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-microchip text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
+                <i
+                  class="fa-solid fa-microchip text-slate-700 dark:text-slate-400"
+                ></i>
+                <h3
+                  class="font-semibold group-hover:text-slate-900 dark:group-hover:text-white dark:text-slate-200"
+                >
                   IoT PC Control
                 </h3>
               </div>
-              <p class="text-slate-600">
+              <p class="text-slate-600 dark:text-slate-400">
                 Smart home integration using ESP32 for remote PC control.
                 Features voice commands and automation.
               </p>
               <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
+                  >C++</span
+                >
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >ESP32</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
+                  >IoT</span
+                >
               </div>
             </a>
           </div>
 
           <div
-            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            class="group bg-white p-6 rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <a
               href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
             >
               <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-plane text-slate-700"></i>
-                <h3 class="font-semibold group-hover:text-slate-900">
+                <i
+                  class="fa-solid fa-plane text-slate-700 dark:text-slate-400"
+                ></i>
+                <h3
+                  class="font-semibold group-hover:text-slate-900 dark:group-hover:text-white dark:text-slate-200"
+                >
                   Autonomous Drone
                 </h3>
               </div>
-              <p class="text-slate-600">
+              <p class="text-slate-600 dark:text-slate-400">
                 Award-winning drone project using Pixhawk controller for
                 autonomous deliveries and navigation.
               </p>
               <div class="mt-4 flex gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Python</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Pixhawk</span
                 >
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                <span
+                  class="text-xs bg-slate-100 px-2 py-1 rounded dark:bg-slate-700 dark:text-slate-300"
                   >Robotics</span
                 >
               </div>
@@ -239,11 +318,11 @@
           </div>
         </div>
 
-        <p class="mt-8 text-slate-600">
+        <p class="mt-8 text-slate-600 dark:text-slate-400">
           Explore more projects on
           <a
             href="https://github.com/aryamaddel/"
-            class="text-slate-700 hover:text-slate-900 font-medium inline-flex items-center gap-1 transition-colors duration-200"
+            class="text-slate-700 hover:text-slate-900 font-medium inline-flex items-center gap-1 transition-colors duration-200 dark:text-slate-300 dark:hover:text-white"
           >
             GitHub
             <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
@@ -253,46 +332,62 @@
 
       <!-- Skills Section -->
       <section id="skills" class="mb-24 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Skills</h2>
+        <h2 class="text-2xl font-bold mb-8 dark:text-white">Skills</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-code text-slate-700"></i>
-              <h3 class="font-semibold">Programming</h3>
+              <i
+                class="fa-solid fa-code text-slate-700 dark:text-slate-400"
+              ></i>
+              <h3 class="font-semibold dark:text-slate-200">Programming</h3>
             </div>
-            <p class="text-slate-600">Python, JavaScript, C++</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              Python, JavaScript, C++
+            </p>
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-robot text-slate-700"></i>
-              <h3 class="font-semibold">Automation</h3>
+              <i
+                class="fa-solid fa-robot text-slate-700 dark:text-slate-400"
+              ></i>
+              <h3 class="font-semibold dark:text-slate-200">Automation</h3>
             </div>
-            <p class="text-slate-600">Scripts, Bots, Process Optimization</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              Scripts, Bots, Process Optimization
+            </p>
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-globe text-slate-700"></i>
-              <h3 class="font-semibold">Web Development</h3>
+              <i
+                class="fa-solid fa-globe text-slate-700 dark:text-slate-400"
+              ></i>
+              <h3 class="font-semibold dark:text-slate-200">Web Development</h3>
             </div>
-            <p class="text-slate-600">Nuxt💚, React, React Native</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              Nuxt💚, React, React Native
+            </p>
           </div>
 
           <div
-            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md"
+            class="bg-white p-6 rounded-lg border border-slate-200 transform transition-all duration-300 hover:shadow-md dark:bg-slate-800 dark:border-slate-700 dark:hover:shadow-slate-700/30"
           >
             <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-microchip text-slate-700"></i>
-              <h3 class="font-semibold">Hardware</h3>
+              <i
+                class="fa-solid fa-microchip text-slate-700 dark:text-slate-400"
+              ></i>
+              <h3 class="font-semibold dark:text-slate-200">Hardware</h3>
             </div>
-            <p class="text-slate-600">ESP32, Pixhawk, IoT Integration</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              ESP32, Pixhawk, IoT Integration
+            </p>
           </div>
         </div>
       </section>
@@ -301,10 +396,10 @@
       <section id="education" class="mb-24 scroll-mt-16">
         <div
           id="educationHeader"
-          class="flex items-center justify-between mb-8 cursor-pointer hover:bg-slate-100/50 p-2 rounded-lg -mx-2 transition-colors duration-200"
+          class="flex items-center justify-between mb-8 cursor-pointer hover:bg-slate-100/50 p-2 rounded-lg -mx-2 transition-colors duration-200 dark:hover:bg-slate-800/50"
         >
-          <h2 class="text-2xl font-bold">Education</h2>
-          <div class="text-slate-600">
+          <h2 class="text-2xl font-bold dark:text-white">Education</h2>
+          <div class="text-slate-600 dark:text-slate-400">
             <i
               id="educationIcon"
               class="fa-solid fa-chevron-down w-5 h-5 flex items-center justify-center"
@@ -312,34 +407,50 @@
           </div>
         </div>
         <div id="educationContent" class="hidden">
-          <div class="bg-white p-6 rounded-lg border border-slate-200">
+          <div
+            class="bg-white p-6 rounded-lg border border-slate-200 dark:bg-slate-800 dark:border-slate-700"
+          >
             <div class="space-y-6">
               <div>
-                <h3 class="font-semibold text-lg">
+                <h3 class="font-semibold text-lg dark:text-slate-200">
                   B.Tech - Computer Science and Engineering
                 </h3>
-                <p class="text-slate-600">DES Pune University</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+                <p class="text-slate-600 dark:text-slate-400">
+                  DES Pune University
+                </p>
+                <div
+                  class="flex justify-between mt-2 text-sm text-slate-500 dark:text-slate-500"
+                >
                   <span>2024 - Present</span>
                   <span>8.8 CGPA</span>
                 </div>
               </div>
 
-              <div class="border-t border-slate-100 pt-6">
-                <h3 class="font-semibold text-lg">
+              <div class="border-t border-slate-100 pt-6 dark:border-slate-700">
+                <h3 class="font-semibold text-lg dark:text-slate-200">
                   Diploma in Computer Science and Engineering
                 </h3>
-                <p class="text-slate-600">Sou. Venutai Chavan Polytechnic</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+                <p class="text-slate-600 dark:text-slate-400">
+                  Sou. Venutai Chavan Polytechnic
+                </p>
+                <div
+                  class="flex justify-between mt-2 text-sm text-slate-500 dark:text-slate-500"
+                >
                   <span>2021 - 2024</span>
                   <span>86%</span>
                 </div>
               </div>
 
-              <div class="border-t border-slate-100 pt-6">
-                <h3 class="font-semibold text-lg">High School</h3>
-                <p class="text-slate-600">Hutchings High School</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+              <div class="border-t border-slate-100 pt-6 dark:border-slate-700">
+                <h3 class="font-semibold text-lg dark:text-slate-200">
+                  High School
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Hutchings High School
+                </p>
+                <div
+                  class="flex justify-between mt-2 text-sm text-slate-500 dark:text-slate-500"
+                >
                   <span>2021</span>
                   <span>92%</span>
                 </div>
@@ -351,9 +462,11 @@
 
       <!-- Contact Section -->
       <section id="contact" class="scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Let's Connect</h2>
-        <div class="bg-white p-8 rounded-lg border border-slate-200">
-          <p class="text-slate-600 mb-6">
+        <h2 class="text-2xl font-bold mb-8 dark:text-white">Let's Connect</h2>
+        <div
+          class="bg-white p-8 rounded-lg border border-slate-200 dark:bg-slate-800 dark:border-slate-700"
+        >
+          <p class="text-slate-600 mb-6 dark:text-slate-400">
             I'm always interested in new opportunities and collaborations. Feel
             free to reach out!
           </p>
@@ -361,7 +474,7 @@
             <li>
               <a
                 href="https://github.com/aryamaddel"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block dark:text-slate-400 dark:hover:text-white"
                 title="GitHub"
               >
                 <i class="fa-brands fa-github text-2xl"></i>
@@ -370,7 +483,7 @@
             <li>
               <a
                 href="https://www.linkedin.com/in/aryamaddel/"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block dark:text-slate-400 dark:hover:text-white"
                 title="LinkedIn"
               >
                 <i class="fa-brands fa-linkedin text-2xl"></i>
@@ -379,7 +492,7 @@
             <li>
               <a
                 href="https://www.instagram.com/arya_maddel/"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block dark:text-slate-400 dark:hover:text-white"
                 title="Instagram"
               >
                 <i class="fa-brands fa-instagram text-2xl"></i>
@@ -388,7 +501,7 @@
             <li>
               <a
                 href="mailto:maddelarya@gmail.com"
-                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block"
+                class="text-slate-600 hover:text-slate-900 transition-all duration-200 hover:scale-110 inline-block dark:text-slate-400 dark:hover:text-white"
                 title="Email"
               >
                 <i class="fa-solid fa-envelope text-2xl"></i>
@@ -398,7 +511,7 @@
         </div>
       </section>
 
-      <footer class="mt-16 text-slate-600 text-sm">
+      <footer class="mt-16 text-slate-600 text-sm dark:text-slate-500">
         <p class="flex items-center gap-2 justify-center">
           Made by Arya Maddel
           <img src="F1.svg" alt="F1 car icon" />
