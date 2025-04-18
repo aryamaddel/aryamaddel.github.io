@@ -25,7 +25,7 @@
       class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50"
     >
       <div class="max-w-5xl mx-auto px-6 py-3">
-        <ul class="flex gap-6 justify-end">
+        <ul class="flex gap-5 justify-center">
           <li>
             <a
               href="#about"
@@ -67,25 +67,26 @@
 
     <div class="max-w-3xl mx-auto px-6 py-12">
       <!-- About Me Section -->
-      <section id="about" class="mb-24 scroll-mt-16">
-        <h1 class="text-4xl font-bold mb-8">Arya Maddel</h1>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div>
-            <img
-              src="Me.jpg"
-              alt="portfolio photo"
-              class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
-            />
-          </div>
-          <div class="text-center md:text-left">
-            <p class="text-xl mb-4 font-semibold">CS Student</p>
-            <p class="text-slate-600 leading-relaxed">
-              Passionate about machine learning, automation, and exploring CS's
-              intersection with fields like physics and hardware. Currently
-              focused on building innovative solutions and learning new
-              technologies.
-            </p>
-          </div>
+      <section
+        id="about"
+        class="mb-24 scroll-mt-16 flex flex-col md:flex-row items-center gap-8"
+      >
+      <div>
+        <img
+        src="Me.jpg"
+        alt="portfolio photo"
+        class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
+        />
+      </div>
+      <div class="text-center md:text-left">
+            <h1 class="text-4xl font-bold mb-4">Arya Maddel</h1>
+          <p class="text-xl mb-4 font-semibold">CS Student</p>
+          <p class="text-slate-600 leading-relaxed">
+            Passionate about machine learning, automation, and exploring CS's
+            intersection with fields like physics and hardware. Currently
+            focused on building innovative solutions and learning new
+            technologies.
+          </p>
         </div>
       </section>
 
@@ -105,13 +106,23 @@
                 </h3>
               </div>
               <p class="text-slate-600">
-                AI-powered web app that generates and renders mathematical animations using the Manim library from natural language descriptions.
+                AI-powered web app that generates and renders mathematical
+                animations using the Manim library from natural language
+                descriptions.
               </p>
               <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Flask</span>
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">AI (Groq/Gemini)</span>
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Manim</span>
-                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Docker</span>
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Flask</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >AI (Groq/Gemini)</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Manim</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Docker</span
+                >
               </div>
             </a>
           </div>
@@ -284,30 +295,37 @@
       <section id="education" class="mb-24 scroll-mt-16">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-2xl font-bold">Education</h2>
-          <button id="toggleEducation" class="text-slate-600 hover:text-slate-900 transition-colors duration-200">
+          <button
+            id="toggleEducation"
+            class="text-slate-600 hover:text-slate-900 transition-colors duration-200"
+          >
             <i class="fa-solid fa-chevron-down"></i>
             <span class="sr-only">Toggle education details</span>
           </button>
         </div>
         <div id="educationContent" class="space-y-6 hidden">
           <div class="bg-white p-6 rounded-lg border border-slate-200">
-            <h3 class="font-semibold text-lg">B.Tech - Computer Science and Engineering</h3>
+            <h3 class="font-semibold text-lg">
+              B.Tech - Computer Science and Engineering
+            </h3>
             <p class="text-slate-600">DES Pune University</p>
             <div class="flex justify-between mt-2 text-sm text-slate-500">
               <span>2024 - Present</span>
               <span>8.8 CGPA</span>
             </div>
           </div>
-          
+
           <div class="bg-white p-6 rounded-lg border border-slate-200">
-            <h3 class="font-semibold text-lg">Diploma in Computer Science and Engineering</h3>
+            <h3 class="font-semibold text-lg">
+              Diploma in Computer Science and Engineering
+            </h3>
             <p class="text-slate-600">Sou. Venutai Chavan Polytechnic</p>
             <div class="flex justify-between mt-2 text-sm text-slate-500">
               <span>2021 - 2024</span>
               <span>86%</span>
             </div>
           </div>
-          
+
           <div class="bg-white p-6 rounded-lg border border-slate-200">
             <h3 class="font-semibold text-lg">High School</h3>
             <p class="text-slate-600">Hutchings High School</p>
@@ -386,22 +404,24 @@
           });
         });
       });
-      
+
       // Toggle education section
-      document.getElementById('toggleEducation').addEventListener('click', function() {
-        const content = document.getElementById('educationContent');
-        const icon = this.querySelector('i');
-        
-        if (content.classList.contains('hidden')) {
-          content.classList.remove('hidden');
-          icon.classList.remove('fa-chevron-down');
-          icon.classList.add('fa-chevron-up');
-        } else {
-          content.classList.add('hidden');
-          icon.classList.remove('fa-chevron-up');
-          icon.classList.add('fa-chevron-down');
-        }
-      });
+      document
+        .getElementById("toggleEducation")
+        .addEventListener("click", function () {
+          const content = document.getElementById("educationContent");
+          const icon = this.querySelector("i");
+
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          } else {
+            content.classList.add("hidden");
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          }
+        });
     </script>
   </body>
 </html>
