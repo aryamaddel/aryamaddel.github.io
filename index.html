@@ -36,13 +36,59 @@
         transform: scale(1.1);
         color: rgb(15 23 42);
       }
+
+      /* Broken grid layout for larger screens */
+      @media (min-width: 1280px) {
+        .broken-grid {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          grid-template-rows: auto;
+          gap: 1.5rem;
+        }
+        .about-section {
+          grid-column: 1 / 13;
+          grid-row: 1;
+        }
+        .projects-section {
+          grid-column: 1 / 8;
+          grid-row: 2 / 4;
+        }
+        .skills-section {
+          grid-column: 8 / 13;
+          grid-row: 2;
+        }
+        .education-section {
+          grid-column: 8 / 13;
+          grid-row: 3;
+        }
+        .contact-section {
+          grid-column: 1 / 13;
+          grid-row: 4;
+        }
+
+        /* Adjust content height to fit in viewport */
+        .main-content {
+          min-height: calc(100vh - 8rem);
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* Style for the education toggle */
+      details summary {
+        cursor: pointer;
+        user-select: none;
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
     </style>
   </head>
   <body class="bg-slate-50 text-slate-700">
     <nav
       class="sticky top-0 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 z-50"
     >
-      <div class="max-w-3xl mx-auto px-6 py-4">
+      <div class="max-w-5xl mx-auto px-6 py-3">
         <ul class="flex gap-6 justify-end">
           <li>
             <a
@@ -67,6 +113,13 @@
           </li>
           <li>
             <a
+              href="#education"
+              class="hover:text-slate-900 transition-colors duration-200"
+              >Education</a
+            >
+          </li>
+          <li>
+            <a
               href="#contact"
               class="hover:text-slate-900 transition-colors duration-200"
               >Contact</a
@@ -76,263 +129,313 @@
       </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-6 py-12">
-      <section id="about" class="mb-24 scroll-mt-16">
-        <h1 class="text-4xl font-bold mb-8">Arya Maddel</h1>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div>
-            <img
-              src="Me.jpg"
-              alt="Arya Maddel"
-              class="w-40 md:w-96 rounded-lg object-cover ring-2 ring-slate-200"
-              loading="lazy"
-            />
+    <main class="max-w-5xl mx-auto px-6 py-8 main-content">
+      <div class="broken-grid">
+        <section id="about" class="mb-12 scroll-mt-16 about-section">
+          <h1 class="text-3xl font-bold mb-6">Arya Maddel</h1>
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div>
+              <img
+                src="Me.jpg"
+                alt="Arya Maddel"
+                class="w-32 md:w-64 rounded-lg object-cover ring-1 ring-slate-200"
+                loading="lazy"
+              />
+            </div>
+            <div class="text-center md:text-left">
+              <p class="text-xl mb-3 font-semibold">CS Student</p>
+              <p class="text-slate-600 leading-relaxed">
+                Passionate about machine learning, automation, and exploring
+                CS's intersection with fields like physics and hardware.
+                Currently focused on building innovative solutions and learning
+                new technologies.
+              </p>
+            </div>
           </div>
-          <div class="text-center md:text-left">
-            <p class="text-xl mb-4 font-semibold">CS Student</p>
-            <p class="text-slate-600 leading-relaxed">
-              Passionate about machine learning, automation, and exploring CS's
-              intersection with fields like physics and hardware. Currently
-              focused on building innovative solutions and learning new
-              technologies.
-            </p>
+        </section>
+
+        <section id="projects" class="mb-12 scroll-mt-16 projects-section">
+          <h2 class="text-2xl font-bold mb-6">Featured Projects</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <a
+              href="https://github.com/aryamaddel/AutoManim"
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-wand-magic-sparkles text-slate-700"></i>
+                <h3 class="font-semibold">AutoManim</h3>
+              </div>
+              <p class="text-slate-600">
+                AI-powered web application that generates mathematical
+                animations from natural language descriptions using the Manim
+                library.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Flask</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >AI APIs</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Manim</span
+                >
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/aryamaddel/sujalam-chemicals"
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-box-archive text-slate-700"></i>
+                <h3 class="font-semibold">Inventory Management System</h3>
+              </div>
+              <p class="text-slate-600">
+                A comprehensive solution for managing inventory at Sujalam
+                Chemicals. Features real-time tracking and automated alerts.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >React Native</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Express.js</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/aryamaddel/Tatsumaki-Bot"
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-robot text-slate-700"></i>
+                <h3 class="font-semibold">Tatsumaki Bot</h3>
+              </div>
+              <p class="text-slate-600">
+                A feature-rich Discord bot for server management with
+                customizable commands and moderation tools.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Discord.js</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Keep Alive Mechanism</span
+                >
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/aryamaddel/alexa-pc-control"
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-microchip text-slate-700"></i>
+                <h3 class="font-semibold">IoT PC Control</h3>
+              </div>
+              <p class="text-slate-600">
+                Smart home integration using ESP32 for remote PC control.
+                Features voice commands and automation.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >ESP32</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
+              </div>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-plane text-slate-700"></i>
+                <h3 class="font-semibold">Autonomous Drone</h3>
+              </div>
+              <p class="text-slate-600">
+                Award-winning drone project using Pixhawk controller for
+                autonomous deliveries and navigation.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Pixhawk</span
+                >
+                <span class="text-xs bg-slate-100 px-2 py-1 rounded"
+                  >Robotics</span
+                >
+              </div>
+            </a>
           </div>
-        </div>
-      </section>
-
-      <section id="projects" class="mb-24 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <a
-            href="https://github.com/aryamaddel/AutoManim"
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-wand-magic-sparkles text-slate-700"></i>
-              <h3 class="font-semibold">AutoManim</h3>
-            </div>
-            <p class="text-slate-600">
-              AI-powered web application that generates mathematical animations
-              from natural language descriptions using the Manim library.
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">Flask</span>
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >AI APIs</span
-              >
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">Manim</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/sujalam-chemicals"
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-box-archive text-slate-700"></i>
-              <h3 class="font-semibold">Inventory Management System</h3>
-            </div>
-            <p class="text-slate-600">
-              A comprehensive solution for managing inventory at Sujalam
-              Chemicals. Features real-time tracking and automated alerts.
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >React Native</span
-              >
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >Express.js</span
-              >
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">SQL</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/Tatsumaki-Bot"
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-robot text-slate-700"></i>
-              <h3 class="font-semibold">Tatsumaki Bot</h3>
-            </div>
-            <p class="text-slate-600">
-              A feature-rich Discord bot for server management with customizable
-              commands and moderation tools.
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >Discord.js</span
-              >
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >Keep Alive Mechanism</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/alexa-pc-control"
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-microchip text-slate-700"></i>
-              <h3 class="font-semibold">IoT PC Control</h3>
-            </div>
-            <p class="text-slate-600">
-              Smart home integration using ESP32 for remote PC control. Features
-              voice commands and automation.
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">C++</span>
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">ESP32</span>
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">IoT</span>
-            </div>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-plane text-slate-700"></i>
-              <h3 class="font-semibold">Autonomous Drone</h3>
-            </div>
-            <p class="text-slate-600">
-              Award-winning drone project using Pixhawk controller for
-              autonomous deliveries and navigation.
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded">Python</span>
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >Pixhawk</span
-              >
-              <span class="text-xs bg-slate-100 px-2 py-1 rounded"
-                >Robotics</span
-              >
-            </div>
-          </a>
-        </div>
-
-        <p class="mt-8 text-slate-600">
-          Explore more projects on
-          <a
-            href="https://github.com/aryamaddel/"
-            class="text-slate-700 hover:text-slate-900 font-medium inline-flex items-center gap-1 transition-colors duration-200"
-          >
-            GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-          </a>
-        </p>
-      </section>
-
-      <section id="skills" class="mb-24 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Skills</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-code text-slate-700"></i>
-              <h3 class="font-semibold">Programming</h3>
-            </div>
-            <p class="text-slate-600">Python, JavaScript, C++</p>
-          </div>
-
-          <div
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-robot text-slate-700"></i>
-              <h3 class="font-semibold">Automation</h3>
-            </div>
-            <p class="text-slate-600">Scripts, Bots, Process Optimization</p>
-          </div>
-
-          <div
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-globe text-slate-700"></i>
-              <h3 class="font-semibold">Web Development</h3>
-            </div>
-            <p class="text-slate-600">Nuxt💚, React, React Native</p>
-          </div>
-
-          <div
-            class="project-card bg-white p-6 rounded-lg border border-slate-200"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-microchip text-slate-700"></i>
-              <h3 class="font-semibold">Hardware</h3>
-            </div>
-            <p class="text-slate-600">ESP32, Pixhawk, IoT Integration</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8">Let's Connect</h2>
-        <div class="bg-white p-8 rounded-lg border border-slate-200">
-          <p class="text-slate-600 mb-6">
-            I'm always interested in new opportunities and collaborations. Feel
-            free to reach out!
+          <p class="mt-6 text-slate-600">
+            Explore more projects on
+            <a
+              href="https://github.com/aryamaddel/"
+              class="text-slate-700 hover:text-slate-900 font-medium inline-flex items-center gap-1 transition-colors duration-200"
+            >
+              GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
           </p>
-          <ul class="flex gap-6">
-            <li>
-              <a
-                href="https://github.com/aryamaddel"
-                class="social-link text-slate-600"
-                title="GitHub"
-                aria-label="GitHub Profile"
-              >
-                <i class="fa-brands fa-github text-2xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/aryamaddel/"
-                class="social-link text-slate-600"
-                title="LinkedIn"
-                aria-label="LinkedIn Profile"
-              >
-                <i class="fa-brands fa-linkedin text-2xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/arya_maddel/"
-                class="social-link text-slate-600"
-                title="Instagram"
-                aria-label="Instagram Profile"
-              >
-                <i class="fa-brands fa-instagram text-2xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:maddelarya@gmail.com"
-                class="social-link text-slate-600"
-                title="Email"
-                aria-label="Send Email"
-              >
-                <i class="fa-solid fa-envelope text-2xl"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </section>
 
-      <footer class="mt-24 text-slate-600 text-sm">
+        <section id="skills" class="mb-12 scroll-mt-16 skills-section">
+          <h2 class="text-2xl font-bold mb-6">Skills</h2>
+          <div class="grid gap-4">
+            <div
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fa-solid fa-code text-slate-700"></i>
+                <h3 class="font-semibold">Programming</h3>
+              </div>
+              <p class="text-slate-600">Python, JavaScript, C++</p>
+            </div>
+
+            <div
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fa-solid fa-robot text-slate-700"></i>
+                <h3 class="font-semibold">Automation</h3>
+              </div>
+              <p class="text-slate-600">Scripts, Bots, Process Optimization</p>
+            </div>
+
+            <div
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fa-solid fa-globe text-slate-700"></i>
+                <h3 class="font-semibold">Web Development</h3>
+              </div>
+              <p class="text-slate-600">Nuxt💚, React, React Native</p>
+            </div>
+
+            <div
+              class="project-card bg-white p-6 rounded-lg border border-slate-200"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fa-solid fa-microchip text-slate-700"></i>
+                <h3 class="font-semibold">Hardware</h3>
+              </div>
+              <p class="text-slate-600">ESP32, Pixhawk, IoT Integration</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="mb-12 scroll-mt-16 education-section">
+          <h2 class="text-2xl font-bold mb-6">Education</h2>
+          <details>
+            <summary
+              class="bg-white p-4 rounded-lg border border-slate-200 font-semibold flex items-center justify-between"
+            >
+              Education History
+              <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="mt-2 bg-white p-4 rounded-lg border border-slate-200">
+              <div class="mb-4">
+                <h3 class="font-semibold">Computer Science Engineering</h3>
+                <p class="text-slate-600">VIT University, 2021 - Present</p>
+                <p class="text-sm text-slate-500">CGPA: 8.5/10</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">High School</h3>
+                <p class="text-slate-600">Sri Chaitanya School, 2019 - 2021</p>
+                <p class="text-sm text-slate-500">Grade: 95%</p>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <section id="contact" class="scroll-mt-16 contact-section">
+          <h2 class="text-2xl font-bold mb-6">Let's Connect</h2>
+          <div class="bg-white p-6 rounded-lg border border-slate-200">
+            <p class="text-slate-600 mb-4">
+              I'm always interested in new opportunities and collaborations.
+              Feel free to reach out!
+            </p>
+            <ul class="flex gap-6">
+              <li>
+                <a
+                  href="https://github.com/aryamaddel"
+                  class="social-link text-slate-600"
+                  title="GitHub"
+                  aria-label="GitHub Profile"
+                >
+                  <i class="fa-brands fa-github text-2xl"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/aryamaddel/"
+                  class="social-link text-slate-600"
+                  title="LinkedIn"
+                  aria-label="LinkedIn Profile"
+                >
+                  <i class="fa-brands fa-linkedin text-2xl"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/arya_maddel/"
+                  class="social-link text-slate-600"
+                  title="Instagram"
+                  aria-label="Instagram Profile"
+                >
+                  <i class="fa-brands fa-instagram text-2xl"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:maddelarya@gmail.com"
+                  class="social-link text-slate-600"
+                  title="Email"
+                  aria-label="Send Email"
+                >
+                  <i class="fa-solid fa-envelope text-2xl"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <footer class="mt-16 text-slate-600 text-sm">
         <p class="flex items-center gap-2 justify-center">
           Made by Arya Maddel
           <img
             src="F1.svg"
             alt="F1 car icon"
-            width="20"
-            height="20"
+            width="16"
+            height="16"
             loading="lazy"
           />
         </p>
       </footer>
     </main>
+
+    <script>
+      // Toggle education details
+      document
+        .querySelector("details summary")
+        .addEventListener("click", function () {
+          const icon = this.querySelector("i");
+          if (this.parentElement.open) {
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          } else {
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          }
+        });
+    </script>
   </body>
 </html>
