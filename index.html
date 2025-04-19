@@ -27,28 +27,21 @@
     <title>Arya Maddel | CS Student</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {},
-        },
-      }(
-        // Check time and set dark mode if it's night time (7 PM to 6 AM)
-        function () {
-          const currentHour = new Date().getHours();
-          const isDarkMode = currentHour >= 19 || currentHour < 6;
+      tailwind.config = { darkMode: "class" };
+      // Check time and set dark mode if it's night time (7 PM to 6 AM)
 
-          if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-            document
-              .querySelector('meta[name="theme-color"]')
-              .setAttribute("content", "#0f172a");
-            document
-              .querySelector('meta[name="background-color"]')
-              .setAttribute("content", "#0f172a");
-          }
-        }
-      )();
+      const currentHour = new Date().getHours();
+      const isDarkMode = currentHour >= 19 || currentHour < 6;
+
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", "#0f172a");
+        document
+          .querySelector('meta[name="background-color"]')
+          .setAttribute("content", "#0f172a");
+      }
     </script>
     <script
       src="https://kit.fontawesome.com/9569ff2ee1.js"
