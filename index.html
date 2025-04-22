@@ -28,7 +28,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: "class" };
-      // Check time and set dark mode if it's night time (7 PM to 6 AM)
 
       const currentHour = new Date().getHours();
       const isDarkMode = currentHour >= 19 || currentHour < 6;
