@@ -79,6 +79,16 @@
         gap: 2rem;
       }
 
+      .me {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .mename {
+        align-content: center;
+        text-align: center;
+      }
+
       @media (min-width: 768px) {
         .about-container {
           flex-direction: row;
@@ -87,7 +97,7 @@
 
       .profile-image {
         width: 12rem;
-        border-radius: 0.5rem;
+        border-radius: 62% 38% 21% 79% / 83% 54% 46% 17%;
         border: 2px solid #475569;
       }
 
@@ -422,9 +432,10 @@
               loading="lazy"
               class="profile-image"
             />
-
-            <h1 class="about-title">Arya Maddel</h1>
-            <p class="about-subtitle">CS Student</p>
+            <div class="mename">
+              <h1 class="about-title">Arya Maddel</h1>
+              <p class="about-subtitle">CS Student</p>
+            </div>
           </div>
 
           <p class="about-description">
