@@ -44,45 +44,6 @@
         transition: all 0.3s ease;
       }
 
-      /* Navigation */
-      nav {
-        position: sticky;
-        top: 0;
-        background-color: rgba(30, 41, 59, 0.8);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid #475569;
-        z-index: 50;
-      }
-
-      .nav-container {
-        max-width: 576px;
-        margin: 0 auto;
-        padding: 0.75rem 1.5rem;
-      }
-
-      .nav-list {
-        display: flex;
-        gap: 0.5rem;
-        justify-content: center;
-        list-style: none;
-      }
-
-      @media (min-width: 768px) {
-        .nav-list {
-          gap: 1.5rem;
-        }
-      }
-
-      .nav-list a {
-        color: #cbd5e1;
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .nav-list a:hover {
-        color: white;
-      }
-
       /* Main Container */
       .container {
         max-width: 768px;
@@ -133,16 +94,6 @@
       @media (min-width: 768px) {
         .profile-image {
           width: 16rem;
-        }
-      }
-
-      .about-text {
-        text-align: center;
-      }
-
-      @media (min-width: 768px) {
-        .about-text {
-          text-align: left;
         }
       }
 
@@ -460,53 +411,28 @@
     </style>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <ul class="nav-list">
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#education">Education</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a href="https://frshtech.vercel.app/" target="_blank">Blog</a>
-          </li>
-          <li>
-            <a href="ARYA MADDEL Resume.pdf" download>Resume</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
     <div class="container">
       <!-- About Me Section -->
       <section id="about" class="section">
         <div class="about-container">
-          <img
-            src="https://avatars.githubusercontent.com/u/84805906"
-            alt="Arya Maddel"
-            loading="lazy"
-            class="profile-image"
-          />
+            <div class="me"></div>
+            <img
+              src="https://avatars.githubusercontent.com/u/84805906"
+              alt="Arya Maddel"
+              loading="lazy"
+              class="profile-image"
+            />
 
-          <div class="about-text">
             <h1 class="about-title">Arya Maddel</h1>
             <p class="about-subtitle">CS Student</p>
-            <p class="about-description">
-              Passionate about machine learning, automation, and exploring CS's
-              intersection with fields like physics and hardware. Currently
-              focused on building innovative solutions and learning new
-              technologies.
-            </p>
-          </div>
+            </div>
+
+          <p class="about-description">
+            Passionate about machine learning, automation, and exploring CS's
+            intersection with fields like physics and hardware. Currently
+            focused on building innovative solutions and learning new
+            technologies.
+          </p>
         </div>
       </section>
 
@@ -710,7 +636,9 @@
                 <h3 class="education-degree">
                   B.Tech - Computer Science and Engineering
                 </h3>
-                <p class="education-school">DES Pune University</p>
+                <a href="https://despu.edu.in" class="education-school"
+                  >DES Pune University</a
+                >
                 <div class="education-meta">
                   <span>2024 - Present</span>
                   <span>8.8 CGPA</span>
