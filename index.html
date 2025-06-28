@@ -25,120 +25,519 @@
     <meta property="og:image" content="Me.jpg" />
     <meta property="og:url" content="https://aryamaddel.github.io/" />
     <title>Arya Maddel | CS Student</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://kit.fontawesome.com/9569ff2ee1.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #1e293b;
+        color: #cbd5e1;
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+      }
+
+      /* Navigation */
+      nav {
+        position: sticky;
+        top: 0;
+        background-color: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #475569;
+        z-index: 50;
+      }
+
+      .nav-container {
+        max-width: 576px;
+        margin: 0 auto;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .nav-list {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        list-style: none;
+      }
+
+      @media (min-width: 768px) {
+        .nav-list {
+          gap: 1.5rem;
+        }
+      }
+
+      .nav-list a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .nav-list a:hover {
+        color: white;
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 896px;
+          padding: 3rem 1.5rem;
+        }
+      }
+
+      /* Section Spacing */
+      .section {
+        margin-bottom: 5rem;
+        scroll-margin-top: 4rem;
+      }
+
+      .section-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      /* About Section */
+      .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .about-container {
+          flex-direction: row;
+        }
+      }
+
+      .profile-image {
+        width: 12rem;
+        border-radius: 0.5rem;
+        ring: 2px solid #475569;
+      }
+
+      @media (min-width: 768px) {
+        .profile-image {
+          width: 16rem;
+        }
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .about-text {
+          text-align: left;
+        }
+      }
+
+      .about-title {
+        color: white;
+        font-size: 2.25rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .about-subtitle {
+        color: #e2e8f0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .about-description {
+        color: #94a3b8;
+        text-align: justify;
+      }
+
+      /* Card Styles */
+      .card {
+        background-color: #334155;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #475569;
+      }
+
+      .card-hover {
+        transition: all 0.2s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0 10px 15px -3px rgba(71, 85, 105, 0.3);
+      }
+
+      /* Experience Section */
+      .experience-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .experience-item {
+        border-bottom: 1px solid #475569;
+        padding-bottom: 1.5rem;
+      }
+
+      .experience-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .experience-title {
+        color: #e2e8f0;
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+
+      .experience-company {
+        color: #94a3b8;
+      }
+
+      .experience-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: #64748b;
+      }
+
+      .experience-description {
+        margin-top: 0.75rem;
+        color: #94a3b8;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .project-card {
+        background-color: #334155;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #475569;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .project-card:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0 10px 15px -3px rgba(71, 85, 105, 0.3);
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-icon {
+        color: #94a3b8;
+      }
+
+      .project-title {
+        color: #e2e8f0;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .project-card:hover .project-title {
+        color: white;
+      }
+
+      .project-description {
+        color: #94a3b8;
+        margin-bottom: 1rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .project-tag {
+        background-color: #475569;
+        color: #cbd5e1;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+      }
+
+      .github-link {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        transition: color 0.2s ease;
+      }
+
+      .github-link:hover {
+        color: white;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .skill-card {
+        background-color: #334155;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #475569;
+        transition: all 0.3s ease;
+      }
+
+      .skill-card:hover {
+        box-shadow: 0 4px 6px -1px rgba(71, 85, 105, 0.3);
+      }
+
+      .skill-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .skill-icon {
+        color: #94a3b8;
+      }
+
+      .skill-title {
+        color: #e2e8f0;
+        font-weight: 600;
+      }
+
+      .skill-description {
+        color: #94a3b8;
+      }
+
+      /* Education Section */
+      .education-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin: 0 -0.5rem 2rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .education-header:hover {
+        background-color: rgba(51, 65, 85, 0.5);
+      }
+
+      .education-icon {
+        color: #94a3b8;
+        width: 1.25rem;
+        height: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .education-content {
+        display: none;
+      }
+
+      .education-content.show {
+        display: block;
+      }
+
+      .education-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .education-item {
+        border-top: 1px solid #475569;
+        padding-top: 1.5rem;
+      }
+
+      .education-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .education-degree {
+        color: #e2e8f0;
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+
+      .education-school {
+        color: #94a3b8;
+      }
+
+      .education-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: #64748b;
+      }
+
+      /* Contact Section */
+      .contact-description {
+        color: #94a3b8;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+
+      .social-link {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+      }
+
+      .social-link:hover {
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .social-icon {
+        font-size: 1.5rem;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 4rem;
+        color: #64748b;
+        font-size: 0.875rem;
+        text-align: center;
+      }
+
+      /* Utility Classes */
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
-  <body class="bg-slate-800 text-slate-300 transition-colors duration-300">
+  <body>
     <!-- Navigation -->
-    <nav
-      class="sticky top-0 bg-slate-800/80 backdrop-blur-sm border-b border-slate-600 z-50"
-    >
-      <div class="max-w-xl mx-auto px-6 py-3">
-        <ul class="flex gap-2 md:gap-6 justify-center">
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
           <li>
-            <a
-              href="#projects"
-              class="hover:text-white transition-colors duration-200"
-              >Projects</a
-            >
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a
-              href="#skills"
-              class="hover:text-white transition-colors duration-200"
-              >Skills</a
-            >
+            <a href="#skills">Skills</a>
           </li>
           <li>
-            <a
-              href="#education"
-              class="hover:text-white transition-colors duration-200"
-              >Education</a
-            >
+            <a href="#education">Education</a>
           </li>
           <li>
-            <a
-              href="#contact"
-              class="hover:text-white transition-colors duration-200"
-              >Contact</a
-            >
+            <a href="#contact">Contact</a>
           </li>
           <li>
-            <a
-              href="https://frshtech.vercel.app/"
-              target="_blank"
-              class="hover:text-white transition-colors duration-200"
-              >Blog</a
-            >
+            <a href="https://frshtech.vercel.app/" target="_blank">Blog</a>
           </li>
           <li>
-            <a
-              href="ARYA MADDEL Resume.pdf"
-              download
-              class="hover:text-white transition-colors duration-200"
-              >Resume</a
-            >
+            <a href="ARYA MADDEL Resume.pdf" download>Resume</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="max-w-3xl md:max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="container">
       <!-- About Me Section -->
-      <section
-        id="about"
-        class="mb-20 scroll-mt-16 flex flex-col md:flex-row items-center gap-8"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/84805906"
-          alt="Arya Maddel"
-          loading="lazy"
-          class="w-48 md:w-64 rounded-lg ring-2 ring-slate-600"
-        />
+      <section id="about" class="section">
+        <div class="about-container">
+          <img
+            src="https://avatars.githubusercontent.com/u/84805906"
+            alt="Arya Maddel"
+            loading="lazy"
+            class="profile-image"
+          />
 
-        <div class="text-center md:text-left">
-          <h1 class="text-4xl font-bold mb-4 text-white">Arya Maddel</h1>
-          <p class="text-xl mb-4 font-semibold text-slate-200">CS Student</p>
-          <p class="text-slate-400 leading-relaxed text-justify">
-            Passionate about machine learning, automation, and exploring CS's
-            intersection with fields like physics and hardware. Currently
-            focused on building innovative solutions and learning new
-            technologies.
-          </p>
+          <div class="about-text">
+            <h1 class="about-title">Arya Maddel</h1>
+            <p class="about-subtitle">CS Student</p>
+            <p class="about-description">
+              Passionate about machine learning, automation, and exploring CS's
+              intersection with fields like physics and hardware. Currently
+              focused on building innovative solutions and learning new
+              technologies.
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- Experience Section -->
-      <section id="experience" class="mb-20 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8 text-white">Experience</h2>
-        <div class="bg-slate-700 p-6 rounded-lg border border-slate-600">
-          <ul class="space-y-6">
-            <li class="border-b border-slate-600 pb-6">
-              <h3 class="font-semibold text-lg text-slate-200">Project Lead</h3>
-              <p class="text-slate-400">AERIAL MAPPERS & SURVEYORS LLP</p>
-              <div class="flex justify-between mt-2 text-sm text-slate-500">
+      <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="card">
+          <ul class="experience-list">
+            <li class="experience-item">
+              <h3 class="experience-title">Project Lead</h3>
+              <p class="experience-company">AERIAL MAPPERS & SURVEYORS LLP</p>
+              <div class="experience-meta">
                 <span>Jan 2024 – March 2024</span>
                 <span>Pune</span>
               </div>
-              <p class="mt-3 text-slate-400">
+              <p class="experience-description">
                 Development of An Autonomous Drone System with variable Payload
                 for versatile tasks using the open source Pixhawk flight
                 Controller.
               </p>
             </li>
-            <li>
-              <h3 class="font-semibold text-lg text-slate-200">
+            <li class="experience-item">
+              <h3 class="experience-title">
                 Project Lead / Full stack developer
               </h3>
-              <p class="text-slate-400">SUJALAM CHEMICALS</p>
-              <div class="flex justify-between mt-2 text-sm text-slate-500">
+              <p class="experience-company">SUJALAM CHEMICALS</p>
+              <div class="experience-meta">
                 <span>May 2023 – August 2023</span>
                 <span>Pune</span>
               </div>
-              <p class="mt-3 text-slate-400">
+              <p class="experience-description">
                 Development of an Inventory management software for Android and
                 IOS A comprehensive tech stack incorporating React Native,
                 Express, SQLite, Ngrok, and UI designing for mobile app
@@ -150,270 +549,189 @@
       </section>
 
       <!-- Projects Section -->
-      <section id="projects" class="mb-20 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8 text-white">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            class="group bg-slate-700 p-6 rounded-lg border border-slate-600 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600/30"
-          >
-            <a href="https://frshtech.vercel.app/">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-bookmark text-slate-400"></i>
-                <h3 class="font-semibold group-hover:text-white text-slate-200">
-                  frsh - Tech Blog
-                </h3>
-              </div>
-              <p class="text-slate-400">
-                Personal blog collaboratively maintained with friends. Built
-                using Nuxt.js | Nuxt Content.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Tech Writing</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Web Development</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Nuxt.js</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Vercel</span
-                >
-              </div>
-            </a>
-          </div>
+      <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <a href="https://frshtech.vercel.app/" class="project-card">
+            <div class="project-header">
+              <i class="fa-solid fa-bookmark project-icon"></i>
+              <h3 class="project-title">frsh - Tech Blog</h3>
+            </div>
+            <p class="project-description">
+              Personal blog collaboratively maintained with friends. Built using
+              Nuxt.js | Nuxt Content.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Tech Writing</span>
+              <span class="project-tag">Web Development</span>
+              <span class="project-tag">Nuxt.js</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-slate-700 p-6 rounded-lg border border-slate-600 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600/30"
+          <a
+            href="https://github.com/aryamaddel/sujalam-chemicals"
+            class="project-card"
           >
-            <a href="https://github.com/aryamaddel/sujalam-chemicals">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-box-archive text-slate-400"></i>
-                <h3 class="font-semibold group-hover:text-white text-slate-200">
-                  Inventory Management System
-                </h3>
-              </div>
-              <p class="text-slate-400">
-                A comprehensive solution for managing inventory at Sujalam
-                Chemicals. Features real-time tracking and automated alerts.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >React Native</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Express.js</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >SQL</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="project-header">
+              <i class="fa-solid fa-box-archive project-icon"></i>
+              <h3 class="project-title">Inventory Management System</h3>
+            </div>
+            <p class="project-description">
+              A comprehensive solution for managing inventory at Sujalam
+              Chemicals. Features real-time tracking and automated alerts.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">SQL</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-slate-700 p-6 rounded-lg border border-slate-600 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600/30"
+          <a
+            href="https://github.com/aryamaddel/Tatsumaki-Bot"
+            class="project-card"
           >
-            <a href="https://github.com/aryamaddel/Tatsumaki-Bot">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-robot text-slate-400"></i>
-                <h3 class="font-semibold group-hover:text-white text-slate-200">
-                  Tatsumaki Bot
-                </h3>
-              </div>
-              <p class="text-slate-400">
-                A feature-rich Discord bot for server management with
-                customizable commands and moderation tools.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Discord.js</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Keep Alive Mechanism</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="project-header">
+              <i class="fa-solid fa-robot project-icon"></i>
+              <h3 class="project-title">Tatsumaki Bot</h3>
+            </div>
+            <p class="project-description">
+              A feature-rich Discord bot for server management with customizable
+              commands and moderation tools.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Discord.js</span>
+              <span class="project-tag">Keep Alive Mechanism</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-slate-700 p-6 rounded-lg border border-slate-600 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600/30"
+          <a
+            href="https://github.com/aryamaddel/alexa-pc-control"
+            class="project-card"
           >
-            <a href="https://github.com/aryamaddel/alexa-pc-control">
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-microchip text-slate-400"></i>
-                <h3 class="font-semibold group-hover:text-white text-slate-200">
-                  IoT PC Control
-                </h3>
-              </div>
-              <p class="text-slate-400">
-                Smart home integration using ESP32 for remote PC control.
-                Features voice commands and automation.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >C++</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >ESP32</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >IoT</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="project-header">
+              <i class="fa-solid fa-microchip project-icon"></i>
+              <h3 class="project-title">IoT PC Control</h3>
+            </div>
+            <p class="project-description">
+              Smart home integration using ESP32 for remote PC control. Features
+              voice commands and automation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">C++</span>
+              <span class="project-tag">ESP32</span>
+              <span class="project-tag">IoT</span>
+            </div>
+          </a>
 
-          <div
-            class="group bg-slate-700 p-6 rounded-lg border border-slate-600 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600/30"
+          <a
+            href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
+            class="project-card"
           >
-            <a
-              href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-            >
-              <div class="flex items-center gap-3 mb-3">
-                <i class="fa-solid fa-plane text-slate-400"></i>
-                <h3 class="font-semibold group-hover:text-white text-slate-200">
-                  Autonomous Drone
-                </h3>
-              </div>
-              <p class="text-slate-400">
-                Award-winning drone project using Pixhawk controller for
-                autonomous deliveries and navigation.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Python</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Pixhawk</span
-                >
-                <span
-                  class="text-xs bg-slate-600 px-2 py-1 rounded text-slate-300"
-                  >Robotics</span
-                >
-              </div>
-            </a>
-          </div>
+            <div class="project-header">
+              <i class="fa-solid fa-plane project-icon"></i>
+              <h3 class="project-title">Autonomous Drone</h3>
+            </div>
+            <p class="project-description">
+              Award-winning drone project using Pixhawk controller for
+              autonomous deliveries and navigation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pixhawk</span>
+              <span class="project-tag">Robotics</span>
+            </div>
+          </a>
         </div>
 
-        <p class="mt-8 text-slate-400">
+        <p style="margin-top: 2rem; color: #94a3b8">
           Explore more projects on
-          <a
-            href="https://github.com/aryamaddel/"
-            class="text-slate-300 hover:text-white font-medium inline-flex items-center gap-1 transition-colors duration-200"
-          >
+          <a href="https://github.com/aryamaddel/" class="github-link">
             GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square"
+              style="font-size: 0.875rem"
+            ></i>
           </a>
         </p>
       </section>
 
       <!-- Skills Section -->
-      <section id="skills" class="mb-20 scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8 text-white">Skills</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            class="bg-slate-700 p-6 rounded-lg border border-slate-600 transform transition-all duration-300 hover:shadow-md hover:shadow-slate-600/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-code text-slate-400"></i>
-              <h3 class="font-semibold text-slate-200">Programming</h3>
+      <section id="skills" class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fa-solid fa-code skill-icon"></i>
+              <h3 class="skill-title">Programming</h3>
             </div>
-            <p class="text-slate-400">Python, JavaScript, C++</p>
+            <p class="skill-description">Python, JavaScript, C++</p>
           </div>
 
-          <div
-            class="bg-slate-700 p-6 rounded-lg border border-slate-600 transform transition-all duration-300 hover:shadow-md hover:shadow-slate-600/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-robot text-slate-400"></i>
-              <h3 class="font-semibold text-slate-200">Automation</h3>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fa-solid fa-robot skill-icon"></i>
+              <h3 class="skill-title">Automation</h3>
             </div>
-            <p class="text-slate-400">Scripts, Bots, Process Optimization</p>
+            <p class="skill-description">Scripts, Bots, Process Optimization</p>
           </div>
 
-          <div
-            class="bg-slate-700 p-6 rounded-lg border border-slate-600 transform transition-all duration-300 hover:shadow-md hover:shadow-slate-600/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-globe text-slate-400"></i>
-              <h3 class="font-semibold text-slate-200">Web Development</h3>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fa-solid fa-globe skill-icon"></i>
+              <h3 class="skill-title">Web Development</h3>
             </div>
-            <p class="text-slate-400">Nuxt💚, React, React Native</p>
+            <p class="skill-description">Nuxt💚, React, React Native</p>
           </div>
 
-          <div
-            class="bg-slate-700 p-6 rounded-lg border border-slate-600 transform transition-all duration-300 hover:shadow-md hover:shadow-slate-600/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <i class="fa-solid fa-microchip text-slate-400"></i>
-              <h3 class="font-semibold text-slate-200">Hardware</h3>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fa-solid fa-microchip skill-icon"></i>
+              <h3 class="skill-title">Hardware</h3>
             </div>
-            <p class="text-slate-400">ESP32, Pixhawk, IoT Integration</p>
+            <p class="skill-description">ESP32, Pixhawk, IoT Integration</p>
           </div>
         </div>
       </section>
 
       <!-- Education Section -->
-      <section id="education" class="mb-20 scroll-mt-16">
-        <div
-          id="educationHeader"
-          class="flex items-center justify-between mb-8 cursor-pointer hover:bg-slate-700/50 p-2 rounded-lg -mx-2 transition-colors duration-200"
-        >
-          <h2 class="text-2xl font-bold text-white">Education</h2>
-          <div class="text-slate-400">
-            <i
-              id="educationIcon"
-              class="fa-solid fa-chevron-down w-5 h-5 flex items-center justify-center"
-            ></i>
+      <section id="education" class="section">
+        <div id="educationHeader" class="education-header">
+          <h2 class="section-title" style="margin-bottom: 0">Education</h2>
+          <div class="education-icon">
+            <i id="educationIcon" class="fa-solid fa-chevron-down"></i>
           </div>
         </div>
-        <div id="educationContent" class="hidden">
-          <div class="bg-slate-700 p-6 rounded-lg border border-slate-600">
-            <div class="space-y-6">
-              <div>
-                <h3 class="font-semibold text-lg text-slate-200">
+        <div id="educationContent" class="education-content hidden">
+          <div class="card">
+            <div class="education-list">
+              <div class="education-item">
+                <h3 class="education-degree">
                   B.Tech - Computer Science and Engineering
                 </h3>
-                <p class="text-slate-400">DES Pune University</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+                <p class="education-school">DES Pune University</p>
+                <div class="education-meta">
                   <span>2024 - Present</span>
                   <span>8.8 CGPA</span>
                 </div>
               </div>
 
-              <div class="border-t border-slate-600 pt-6">
-                <h3 class="font-semibold text-lg text-slate-200">
+              <div class="education-item">
+                <h3 class="education-degree">
                   Diploma in Computer Science and Engineering
                 </h3>
-                <p class="text-slate-400">Sou. Venutai Chavan Polytechnic</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+                <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
+                <div class="education-meta">
                   <span>2021 - 2024</span>
                   <span>86%</span>
                 </div>
               </div>
 
-              <div class="border-t border-slate-600 pt-6">
-                <h3 class="font-semibold text-lg text-slate-200">
-                  High School
-                </h3>
-                <p class="text-slate-400">Hutchings High School</p>
-                <div class="flex justify-between mt-2 text-sm text-slate-500">
+              <div class="education-item">
+                <h3 class="education-degree">High School</h3>
+                <p class="education-school">Hutchings High School</p>
+                <div class="education-meta">
                   <span>2021</span>
                   <span>92%</span>
                 </div>
@@ -424,56 +742,56 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="scroll-mt-16">
-        <h2 class="text-2xl font-bold mb-8 text-white">Let's Connect</h2>
-        <div class="bg-slate-700 p-8 rounded-lg border border-slate-600">
-          <p class="text-slate-400 mb-6">
+      <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="card" style="padding: 2rem">
+          <p class="contact-description">
             I'm always interested in new opportunities and collaborations. Feel
             free to reach out!
           </p>
-          <ul class="flex gap-6">
+          <ul class="social-links">
             <li>
               <a
                 href="https://github.com/aryamaddel"
-                class="text-slate-400 hover:text-white transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link"
                 title="GitHub"
               >
-                <i class="fa-brands fa-github text-2xl"></i>
+                <i class="fa-brands fa-github social-icon"></i>
               </a>
             </li>
             <li>
               <a
                 href="https://www.linkedin.com/in/aryamaddel/"
-                class="text-slate-400 hover:text-white transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link"
                 title="LinkedIn"
               >
-                <i class="fa-brands fa-linkedin text-2xl"></i>
+                <i class="fa-brands fa-linkedin social-icon"></i>
               </a>
             </li>
             <li>
               <a
                 href="https://www.instagram.com/arya_maddel/"
-                class="text-slate-400 hover:text-white transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link"
                 title="Instagram"
               >
-                <i class="fa-brands fa-instagram text-2xl"></i>
+                <i class="fa-brands fa-instagram social-icon"></i>
               </a>
             </li>
             <li>
               <a
                 href="mailto:aryamaddel@gmail.com"
-                class="text-slate-400 hover:text-white transition-all duration-200 hover:scale-110 inline-block"
+                class="social-link"
                 title="Email"
               >
-                <i class="fa-solid fa-envelope text-2xl"></i>
+                <i class="fa-solid fa-envelope social-icon"></i>
               </a>
             </li>
           </ul>
         </div>
       </section>
 
-      <footer class="mt-16 text-slate-500 text-sm">
-        <p class="text-center">Made by Arya Maddel</p>
+      <footer>
+        <p>Made by Arya Maddel</p>
       </footer>
     </div>
 
@@ -486,10 +804,12 @@
 
           if (content.classList.contains("hidden")) {
             content.classList.remove("hidden");
+            content.classList.add("show");
             icon.classList.remove("fa-chevron-down");
             icon.classList.add("fa-chevron-up");
           } else {
             content.classList.add("hidden");
+            content.classList.remove("show");
             icon.classList.remove("fa-chevron-up");
             icon.classList.add("fa-chevron-down");
           }
