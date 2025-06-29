@@ -189,7 +189,7 @@ body {
 
 .education-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   margin: 0 -0.5rem 2rem;
   padding: 0.5rem;
