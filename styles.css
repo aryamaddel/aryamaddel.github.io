@@ -107,7 +107,6 @@ body {
 }
 
 /* Lists & Items */
-.experience-list,
 .education-list {
   list-style: none;
   display: flex;
@@ -115,26 +114,11 @@ body {
   gap: 1.5rem;
 }
 
-.experience-item,
-.education-item {
-  border-top: 1px solid var(--border-color);
-  padding-top: 1.5rem;
-}
-
-.experience-item {
-  border-top: none;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1.5rem;
-}
-
-.experience-item:last-child,
-.education-item:first-child {
+.experience-separator,
+.education-separator {
   border: none;
-  padding-top: 0;
-}
-
-.experience-item:last-child {
-  padding-bottom: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
 }
 
 .experience-title,
