@@ -54,16 +54,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   min-height: 100vh;
   justify-content: center;
   text-align: center;
-}
-
-#about .about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .profile-image {
@@ -95,7 +89,7 @@ body {
 .experience-separator,
 .education-separator {
   border: none;
-  border-top: 1px solid var(--border-color);
+  border: 0.5px solid var(--border-color);
   margin: 1.5rem 0;
 }
 
@@ -269,23 +263,18 @@ footer {
 
 @media (min-width: 768px) {
   body {
-    padding: 5%;
-  }
-  #about {
-    flex-direction: row;
-    justify-content: start;
-    min-height: auto;
+    padding: 0 22.5%;
   }
 
-  #about .about-content {
-    max-width: 30%;
-    align-items: flex-start;
-  }
-
-  .profile-image {
-    width: 14rem;
-  }
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .experience-list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
   }
 }
