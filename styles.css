@@ -37,8 +37,7 @@ body {
   .profile-image {
     width: 16rem;
   }
-  .projects-grid,
-  .skills-grid {
+  .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -69,25 +68,20 @@ body {
 }
 
 /* Cards & Hover Effects */
-.project-card,
-.skill-card {
+.project-card {
   background-color: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
   transition: all 0.2s ease;
-}
-
-.project-card:hover,
-.skill-card:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: var(--shadow);
-}
-
-.project-card {
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+.project-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow);
 }
 
 #about {
@@ -148,14 +142,41 @@ body {
 }
 
 /* Grids & Headers */
-.projects-grid,
-.skills-grid {
+.projects-grid {
   display: grid;
   gap: 1.5rem;
 }
 
-.project-header,
-.skill-header {
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.skill-icon {
+  color: var(--text-secondary);
+  width: 1.25rem;
+  flex-shrink: 0;
+}
+
+.skill-title {
+  color: var(--text-highlight);
+  font-weight: 600;
+  min-width: 9rem;
+}
+
+.skill-description {
+  color: var(--text-secondary);
+}
+
+.project-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
