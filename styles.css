@@ -31,7 +31,7 @@ body {
     max-width: 896px;
     padding: 3rem 1.5rem;
   }
-  .about-container {
+  #about {
     flex-direction: row;
   }
   .profile-image {
@@ -96,7 +96,7 @@ body {
 }
 
 /* About Section */
-.about-container {
+#about {
   display: flex;
   flex-direction: column;
   align-items: center;
