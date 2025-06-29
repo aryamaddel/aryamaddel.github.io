@@ -43,11 +43,12 @@ body {
   }
 }
 
-.section-title {
-  margin-bottom: 2rem;
+.section {
+  margin-bottom: 4rem;
 }
 
 .section-title {
+  margin-bottom: 2rem;
   font-size: 1.5rem;
 }
 .about-title {
@@ -63,7 +64,6 @@ body {
 }
 
 /* Cards & Hover Effects */
-.card,
 .project-card,
 .skill-card {
   background-color: var(--bg-secondary);
@@ -73,7 +73,6 @@ body {
   transition: all 0.2s ease;
 }
 
-.card-hover:hover,
 .project-card:hover,
 .skill-card:hover {
   transform: translateY(-0.25rem);
@@ -256,6 +255,10 @@ body {
 }
 
 /* Contact & Links */
+#contact {
+  margin-bottom: 4rem;
+}
+
 .contact-description {
   margin-bottom: 1.5rem;
 }
