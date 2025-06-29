@@ -23,7 +23,7 @@ body {
   line-height: 1.6;
   max-width: 768px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 768px) {
@@ -43,16 +43,7 @@ body {
   }
 }
 
-/* Sections & Titles */
-.section {
-  margin-bottom: 5rem;
-  scroll-margin-top: 4rem;
-}
-
-.section-title,
-.about-title {
-  color: var(--text-white);
-  font-weight: bold;
+.section-title {
   margin-bottom: 2rem;
 }
 
@@ -60,15 +51,15 @@ body {
   font-size: 1.5rem;
 }
 .about-title {
+  color: var(--text-white);
+  font-weight: bold;
   font-size: 2.25rem;
-  margin-bottom: 1rem;
 }
 
 .about-subtitle {
   color: var(--text-highlight);
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 /* Cards & Hover Effects */
@@ -95,20 +86,13 @@ body {
   display: block;
 }
 
-/* About Section */
 #about {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-}
-
-.me {
-  display: flex;
-  gap: 1.5rem;
-}
-.mename {
-  align-content: center;
+  min-height: 100vh;
+  justify-content: center;
   text-align: center;
 }
 
