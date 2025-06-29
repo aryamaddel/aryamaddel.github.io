@@ -42,17 +42,13 @@
         font-family: system-ui, -apple-system, sans-serif;
         line-height: 1.6;
         transition: all 0.3s ease;
-      }
-
-      /* Main Container */
-      .container {
         max-width: 768px;
         margin: 0 auto;
         padding: 3rem 1rem;
       }
 
       @media (min-width: 768px) {
-        .container {
+        body {
           max-width: 896px;
           padding: 3rem 1.5rem;
         }
@@ -421,318 +417,315 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <!-- About Me Section -->
-      <section id="about" class="section">
-        <div class="about-container">
-          <div class="me">
-            <img
-              src="https://avatars.githubusercontent.com/u/84805906"
-              alt="Arya Maddel"
-              loading="lazy"
-              class="profile-image"
-            />
-            <div class="mename">
-              <h1 class="about-title">Arya Maddel</h1>
-              <p class="about-subtitle">CS Student</p>
-            </div>
+    <!-- About Me Section -->
+    <section id="about" class="section">
+      <div class="about-container">
+        <div class="me">
+          <img
+            src="https://avatars.githubusercontent.com/u/84805906"
+            alt="Arya Maddel"
+            loading="lazy"
+            class="profile-image"
+          />
+          <div class="mename">
+            <h1 class="about-title">Arya Maddel</h1>
+            <p class="about-subtitle">CS Student</p>
           </div>
-
-          <p class="about-description">
-            Passionate about machine learning, automation, and exploring CS's
-            intersection with fields like physics and hardware. Currently
-            focused on building innovative solutions and learning new
-            technologies.
-          </p>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="section">
-        <h2 class="section-title">Experience</h2>
-        <div class="card">
-          <ul class="experience-list">
-            <li class="experience-item">
-              <h3 class="experience-title">Project Lead</h3>
-              <p class="experience-company">AERIAL MAPPERS & SURVEYORS LLP</p>
-              <div class="experience-meta">
-                <span>Jan 2024 - March 2024</span>
-                <span>Pune</span>
-              </div>
-              <p class="experience-description">
-                Development of An Autonomous Drone System with variable Payload
-                for versatile tasks using the open source Pixhawk flight
-                Controller.
-              </p>
-            </li>
-            <li class="experience-item">
-              <h3 class="experience-title">
-                Project Lead / Full stack developer
-              </h3>
-              <p class="experience-company">SUJALAM CHEMICALS</p>
-              <div class="experience-meta">
-                <span>May 2023 - August 2023</span>
-                <span>Pune</span>
-              </div>
-              <p class="experience-description">
-                Development of an Inventory management software for Android and
-                IOS A comprehensive tech stack incorporating React Native,
-                Express, SQLite, Ngrok, and UI designing for mobile app
-                development, backend, database, tunnelling.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <a href="https://frshtech.vercel.app/" class="project-card">
-            <div class="project-header">
-              <i class="fa-solid fa-bookmark project-icon"></i>
-              <h3 class="project-title">frsh - Tech Blog</h3>
-            </div>
-            <p class="project-description">
-              Personal blog collaboratively maintained with friends. Built using
-              Nuxt.js | Nuxt Content.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Tech Writing</span>
-              <span class="project-tag">Web Development</span>
-              <span class="project-tag">Nuxt.js</span>
-              <span class="project-tag">Vercel</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/sujalam-chemicals"
-            class="project-card"
-          >
-            <div class="project-header">
-              <i class="fa-solid fa-box-archive project-icon"></i>
-              <h3 class="project-title">Inventory Management System</h3>
-            </div>
-            <p class="project-description">
-              A comprehensive solution for managing inventory at Sujalam
-              Chemicals. Features real-time tracking and automated alerts.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">React Native</span>
-              <span class="project-tag">Express.js</span>
-              <span class="project-tag">SQL</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/Tatsumaki-Bot"
-            class="project-card"
-          >
-            <div class="project-header">
-              <i class="fa-solid fa-robot project-icon"></i>
-              <h3 class="project-title">Tatsumaki Bot</h3>
-            </div>
-            <p class="project-description">
-              A feature-rich Discord bot for server management with customizable
-              commands and moderation tools.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Discord.js</span>
-              <span class="project-tag">Keep Alive Mechanism</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/alexa-pc-control"
-            class="project-card"
-          >
-            <div class="project-header">
-              <i class="fa-solid fa-microchip project-icon"></i>
-              <h3 class="project-title">IoT PC Control</h3>
-            </div>
-            <p class="project-description">
-              Smart home integration using ESP32 for remote PC control. Features
-              voice commands and automation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">C++</span>
-              <span class="project-tag">ESP32</span>
-              <span class="project-tag">IoT</span>
-            </div>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-            class="project-card"
-          >
-            <div class="project-header">
-              <i class="fa-solid fa-plane project-icon"></i>
-              <h3 class="project-title">Autonomous Drone</h3>
-            </div>
-            <p class="project-description">
-              Award-winning drone project using Pixhawk controller for
-              autonomous deliveries and navigation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pixhawk</span>
-              <span class="project-tag">Robotics</span>
-            </div>
-          </a>
         </div>
 
-        <p style="margin-top: 2rem; color: #94a3b8">
-          Explore more projects on
-          <a href="https://github.com/aryamaddel/" class="github-link">
-            GitHub
-            <i
-              class="fa-solid fa-arrow-up-right-from-square"
-              style="font-size: 0.875rem"
-            ></i>
-          </a>
+        <p class="about-description">
+          Passionate about machine learning, automation, and exploring CS's
+          intersection with fields like physics and hardware. Currently focused
+          on building innovative solutions and learning new technologies.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="section">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-code skill-icon"></i>
-              <h3 class="skill-title">Programming</h3>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="card">
+        <ul class="experience-list">
+          <li class="experience-item">
+            <h3 class="experience-title">Project Lead</h3>
+            <p class="experience-company">AERIAL MAPPERS & SURVEYORS LLP</p>
+            <div class="experience-meta">
+              <span>Jan 2024 - March 2024</span>
+              <span>Pune</span>
             </div>
-            <p class="skill-description">Python, JavaScript, C++</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-robot skill-icon"></i>
-              <h3 class="skill-title">Automation</h3>
+            <p class="experience-description">
+              Development of An Autonomous Drone System with variable Payload
+              for versatile tasks using the open source Pixhawk flight
+              Controller.
+            </p>
+          </li>
+          <li class="experience-item">
+            <h3 class="experience-title">
+              Project Lead / Full stack developer
+            </h3>
+            <p class="experience-company">SUJALAM CHEMICALS</p>
+            <div class="experience-meta">
+              <span>May 2023 - August 2023</span>
+              <span>Pune</span>
             </div>
-            <p class="skill-description">Scripts, Bots, Process Optimization</p>
+            <p class="experience-description">
+              Development of an Inventory management software for Android and
+              IOS A comprehensive tech stack incorporating React Native,
+              Express, SQLite, Ngrok, and UI designing for mobile app
+              development, backend, database, tunnelling.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <a href="https://frshtech.vercel.app/" class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-bookmark project-icon"></i>
+            <h3 class="project-title">frsh - Tech Blog</h3>
           </div>
-
-          <div class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-globe skill-icon"></i>
-              <h3 class="skill-title">Web Development</h3>
-            </div>
-            <p class="skill-description">Nuxt💚, React, React Native</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-microchip skill-icon"></i>
-              <h3 class="skill-title">Hardware</h3>
-            </div>
-            <p class="skill-description">ESP32, Pixhawk, IoT Integration</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="section">
-        <div id="educationHeader" class="education-header">
-          <h2 class="section-title" style="margin-bottom: 0">Education</h2>
-          <div class="education-icon">
-            <i id="educationIcon" class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
-        <div id="educationContent" class="education-content hidden">
-          <div class="card">
-            <div class="education-list">
-              <div class="education-item">
-                <h3 class="education-degree">
-                  B.Tech - Computer Science and Engineering
-                </h3>
-                <a href="https://despu.edu.in" class="education-school"
-                  >DES Pune University</a
-                >
-                <div class="education-meta">
-                  <span>2024 - Present</span>
-                  <span>8.8 CGPA</span>
-                </div>
-              </div>
-
-              <div class="education-item">
-                <h3 class="education-degree">
-                  Diploma in Computer Science and Engineering
-                </h3>
-                <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
-                <div class="education-meta">
-                  <span>2021 - 2024</span>
-                  <span>86%</span>
-                </div>
-              </div>
-
-              <div class="education-item">
-                <h3 class="education-degree">High School</h3>
-                <p class="education-school">Hutchings High School</p>
-                <div class="education-meta">
-                  <span>2021</span>
-                  <span>92%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="card" style="padding: 2rem">
-          <p class="contact-description">
-            I'm always interested in new opportunities and collaborations. Feel
-            free to reach out!
+          <p class="project-description">
+            Personal blog collaboratively maintained with friends. Built using
+            Nuxt.js | Nuxt Content.
           </p>
-          <ul class="social-links">
-            <li>
-              <a
-                href="https://github.com/aryamaddel"
-                class="social-link"
-                title="GitHub"
-              >
-                <i class="fa-brands fa-github social-icon"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/aryamaddel/"
-                class="social-link"
-                title="LinkedIn"
-              >
-                <i class="fa-brands fa-linkedin social-icon"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/arya_maddel/"
-                class="social-link"
-                title="Instagram"
-              >
-                <i class="fa-brands fa-instagram social-icon"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:aryamaddel@gmail.com"
-                class="social-link"
-                title="Email"
-              >
-                <i class="fa-solid fa-envelope social-icon"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <div class="project-tags">
+            <span class="project-tag">Tech Writing</span>
+            <span class="project-tag">Web Development</span>
+            <span class="project-tag">Nuxt.js</span>
+            <span class="project-tag">Vercel</span>
+          </div>
+        </a>
 
-      <footer>
-        <p>Made by Arya Maddel</p>
-      </footer>
-    </div>
+        <a
+          href="https://github.com/aryamaddel/sujalam-chemicals"
+          class="project-card"
+        >
+          <div class="project-header">
+            <i class="fa-solid fa-box-archive project-icon"></i>
+            <h3 class="project-title">Inventory Management System</h3>
+          </div>
+          <p class="project-description">
+            A comprehensive solution for managing inventory at Sujalam
+            Chemicals. Features real-time tracking and automated alerts.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">Express.js</span>
+            <span class="project-tag">SQL</span>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/aryamaddel/Tatsumaki-Bot"
+          class="project-card"
+        >
+          <div class="project-header">
+            <i class="fa-solid fa-robot project-icon"></i>
+            <h3 class="project-title">Tatsumaki Bot</h3>
+          </div>
+          <p class="project-description">
+            A feature-rich Discord bot for server management with customizable
+            commands and moderation tools.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Discord.js</span>
+            <span class="project-tag">Keep Alive Mechanism</span>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/aryamaddel/alexa-pc-control"
+          class="project-card"
+        >
+          <div class="project-header">
+            <i class="fa-solid fa-microchip project-icon"></i>
+            <h3 class="project-title">IoT PC Control</h3>
+          </div>
+          <p class="project-description">
+            Smart home integration using ESP32 for remote PC control. Features
+            voice commands and automation.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">C++</span>
+            <span class="project-tag">ESP32</span>
+            <span class="project-tag">IoT</span>
+          </div>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
+          class="project-card"
+        >
+          <div class="project-header">
+            <i class="fa-solid fa-plane project-icon"></i>
+            <h3 class="project-title">Autonomous Drone</h3>
+          </div>
+          <p class="project-description">
+            Award-winning drone project using Pixhawk controller for autonomous
+            deliveries and navigation.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Pixhawk</span>
+            <span class="project-tag">Robotics</span>
+          </div>
+        </a>
+      </div>
+
+      <p style="margin-top: 2rem; color: #94a3b8">
+        Explore more projects on
+        <a href="https://github.com/aryamaddel/" class="github-link">
+          GitHub
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            style="font-size: 0.875rem"
+          ></i>
+        </a>
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-code skill-icon"></i>
+            <h3 class="skill-title">Programming</h3>
+          </div>
+          <p class="skill-description">Python, JavaScript, C++</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-robot skill-icon"></i>
+            <h3 class="skill-title">Automation</h3>
+          </div>
+          <p class="skill-description">Scripts, Bots, Process Optimization</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-globe skill-icon"></i>
+            <h3 class="skill-title">Web Development</h3>
+          </div>
+          <p class="skill-description">Nuxt💚, React, React Native</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-microchip skill-icon"></i>
+            <h3 class="skill-title">Hardware</h3>
+          </div>
+          <p class="skill-description">ESP32, Pixhawk, IoT Integration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div id="educationHeader" class="education-header">
+        <h2 class="section-title" style="margin-bottom: 0">Education</h2>
+        <div class="education-icon">
+          <i id="educationIcon" class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+      <div id="educationContent" class="education-content hidden">
+        <div class="card">
+          <div class="education-list">
+            <div class="education-item">
+              <h3 class="education-degree">
+                B.Tech - Computer Science and Engineering
+              </h3>
+              <a href="https://despu.edu.in" class="education-school"
+                >DES Pune University</a
+              >
+              <div class="education-meta">
+                <span>2024 - Present</span>
+                <span>8.8 CGPA</span>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <h3 class="education-degree">
+                Diploma in Computer Science and Engineering
+              </h3>
+              <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
+              <div class="education-meta">
+                <span>2021 - 2024</span>
+                <span>86%</span>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <h3 class="education-degree">High School</h3>
+              <p class="education-school">Hutchings High School</p>
+              <div class="education-meta">
+                <span>2021</span>
+                <span>92%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="card" style="padding: 2rem">
+        <p class="contact-description">
+          I'm always interested in new opportunities and collaborations. Feel
+          free to reach out!
+        </p>
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://github.com/aryamaddel"
+              class="social-link"
+              title="GitHub"
+            >
+              <i class="fa-brands fa-github social-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/aryamaddel/"
+              class="social-link"
+              title="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin social-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/arya_maddel/"
+              class="social-link"
+              title="Instagram"
+            >
+              <i class="fa-brands fa-instagram social-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:aryamaddel@gmail.com"
+              class="social-link"
+              title="Email"
+            >
+              <i class="fa-solid fa-envelope social-icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made by Arya Maddel</p>
+    </footer>
 
     <script>
       document
