@@ -63,6 +63,11 @@ body {
   font-weight: 600;
 }
 
+.about-description {
+  color: var(--text-secondary);
+  text-align: justify;
+}
+
 /* Cards & Hover Effects */
 .project-card,
 .skill-card {
@@ -101,19 +106,6 @@ body {
   border: 4px solid var(--border-color);
 }
 
-.about-description {
-  color: var(--text-secondary);
-  text-align: justify;
-}
-
-/* Lists & Items */
-.education-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .experience-separator,
 .education-separator {
   border: none;
@@ -134,12 +126,10 @@ body {
   font-size: 1.125rem;
 }
 
-.experience-company,
 .education-school,
 .experience-description,
 .project-description,
 .skill-description,
-.about-description,
 .contact-description {
   color: var(--text-secondary);
 }
