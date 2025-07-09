@@ -225,38 +225,6 @@
         border-radius: 0.25rem;
       }
 
-      .education-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin: 0 -0.5rem 2rem;
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 0.5rem;
-        transition: background-color 0.2s ease;
-      }
-
-      .education-header:hover {
-        background-color: rgba(51, 65, 85, 0.5);
-      }
-
-      .education-icon {
-        color: var(--text-secondary);
-        width: 1.25rem;
-        height: 1.25rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .education-content {
-        display: none;
-      }
-
-      .education-content.show {
-        display: block;
-      }
-
       .contact-description {
         margin-bottom: 1.5rem;
       }
@@ -520,48 +488,41 @@
 
     <!-- Education Section -->
     <section id="education" class="section">
-      <div id="educationHeader" class="education-header">
-        <h2 class="section-title">Education</h2>
-        <div class="education-icon">
-          <i id="educationIcon" class="fa-solid fa-chevron-down"></i>
+      <h2 class="section-title">Education</h2>
+      <div class="education-item">
+        <h3 class="education-degree">
+          B.Tech - Computer Science and Engineering
+        </h3>
+        <a href="https://despu.edu.in" class="education-school"
+          >DES Pune University</a
+        >
+        <div class="education-meta">
+          <span>2024 - Present</span>
+          <span>8.8 CGPA</span>
         </div>
       </div>
-      <div id="educationContent" class="education-content hidden">
-        <div class="education-item">
-          <h3 class="education-degree">
-            B.Tech - Computer Science and Engineering
-          </h3>
-          <a href="https://despu.edu.in" class="education-school"
-            >DES Pune University</a
-          >
-          <div class="education-meta">
-            <span>2024 - Present</span>
-            <span>8.8 CGPA</span>
-          </div>
+
+      <hr class="education-separator" />
+
+      <div class="education-item">
+        <h3 class="education-degree">
+          Diploma in Computer Science and Engineering
+        </h3>
+        <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
+        <div class="education-meta">
+          <span>2021 - 2024</span>
+          <span>86%</span>
         </div>
+      </div>
 
-        <hr class="education-separator" />
+      <hr class="education-separator" />
 
-        <div class="education-item">
-          <h3 class="education-degree">
-            Diploma in Computer Science and Engineering
-          </h3>
-          <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
-          <div class="education-meta">
-            <span>2021 - 2024</span>
-            <span>86%</span>
-          </div>
-        </div>
-
-        <hr class="education-separator" />
-
-        <div class="education-item">
-          <h3 class="education-degree">High School</h3>
-          <p class="education-school">Hutchings High School</p>
-          <div class="education-meta">
-            <span>2021</span>
-            <span>92%</span>
-          </div>
+      <div class="education-item">
+        <h3 class="education-degree">High School</h3>
+        <p class="education-school">Hutchings High School</p>
+        <div class="education-meta">
+          <span>2021</span>
+          <span>92%</span>
         </div>
       </div>
     </section>
@@ -614,26 +575,5 @@
     </section>
 
     <footer>Made by Arya Maddel</footer>
-
-    <script>
-      document
-        .getElementById("educationHeader")
-        .addEventListener("click", function () {
-          const content = document.getElementById("educationContent");
-          const icon = document.getElementById("educationIcon");
-
-          if (content.classList.contains("hidden")) {
-            content.classList.remove("hidden");
-            content.classList.add("show");
-            icon.classList.remove("fa-chevron-down");
-            icon.classList.add("fa-chevron-up");
-          } else {
-            content.classList.add("hidden");
-            content.classList.remove("show");
-            icon.classList.remove("fa-chevron-up");
-            icon.classList.add("fa-chevron-down");
-          }
-        });
-    </script>
   </body>
 </html>
