@@ -131,26 +131,22 @@
         color: var(--text-white);
       }
 
-      .experience-separator,
-      .education-separator {
+      .experience-separator {
         border: 0.5px solid var(--border-color);
         margin: 1.5rem 0;
       }
 
       .experience-title,
-      .education-degree,
       .project-title,
       .skill-title {
         color: var(--text-highlight);
         font-weight: 600;
       }
 
-      .experience-title,
-      .education-degree {
+      .experience-title {
         font-size: 1.125rem;
       }
 
-      .education-school,
       .experience-description,
       .project-description,
       .skill-description,
@@ -158,8 +154,7 @@
         color: var(--text-secondary);
       }
 
-      .experience-meta,
-      .education-meta {
+      .experience-meta {
         display: flex;
         justify-content: space-between;
         margin-top: 0.5rem;
@@ -255,6 +250,52 @@
 
       .education-content.show {
         display: block;
+      }
+
+      .education-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      .education-table th {
+        color: var(--text-highlight);
+        font-weight: 600;
+        text-align: left;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .education-table td {
+        padding: 0.75rem 0;
+        vertical-align: top;
+      }
+
+      .education-table tbody tr:not(:last-child) td {
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .education-degree {
+        color: var(--text-highlight);
+        font-weight: 600;
+        font-size: 1.125rem;
+        margin: 0;
+      }
+
+      .education-school {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin: 0;
+      }
+
+      .education-school:hover {
+        color: var(--text-white);
+      }
+
+      .education-duration,
+      .education-grade {
+        color: var(--text-muted);
+        font-size: 0.875rem;
       }
 
       .contact-description {
@@ -527,42 +568,54 @@
         </div>
       </div>
       <div id="educationContent" class="education-content hidden">
-        <div class="education-item">
-          <h3 class="education-degree">
-            B.Tech - Computer Science and Engineering
-          </h3>
-          <a href="https://despu.edu.in" class="education-school"
-            >DES Pune University</a
-          >
-          <div class="education-meta">
-            <span>2024 - Present</span>
-            <span>8.8 CGPA</span>
-          </div>
-        </div>
-
-        <hr class="education-separator" />
-
-        <div class="education-item">
-          <h3 class="education-degree">
-            Diploma in Computer Science and Engineering
-          </h3>
-          <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
-          <div class="education-meta">
-            <span>2021 - 2024</span>
-            <span>86%</span>
-          </div>
-        </div>
-
-        <hr class="education-separator" />
-
-        <div class="education-item">
-          <h3 class="education-degree">High School</h3>
-          <p class="education-school">Hutchings High School</p>
-          <div class="education-meta">
-            <span>2021</span>
-            <span>92%</span>
-          </div>
-        </div>
+        <table class="education-table">
+          <thead>
+            <tr>
+              <th>Degree</th>
+              <th>Institution</th>
+              <th>Duration</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h3 class="education-degree">
+                  B.Tech - Computer Science and Engineering
+                </h3>
+              </td>
+              <td>
+                <a href="https://despu.edu.in" class="education-school">
+                  DES Pune University
+                </a>
+              </td>
+              <td class="education-duration">2024 - Present</td>
+              <td class="education-grade">8.8 CGPA</td>
+            </tr>
+            <tr>
+              <td>
+                <h3 class="education-degree">
+                  Diploma in Computer Science and Engineering
+                </h3>
+              </td>
+              <td>
+                <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
+              </td>
+              <td class="education-duration">2021 - 2024</td>
+              <td class="education-grade">86%</td>
+            </tr>
+            <tr>
+              <td>
+                <h3 class="education-degree">High School</h3>
+              </td>
+              <td>
+                <p class="education-school">Hutchings High School</p>
+              </td>
+              <td class="education-duration">2021</td>
+              <td class="education-grade">92%</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
