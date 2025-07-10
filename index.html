@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://kit.fontawesome.com" />
     <link rel="preconnect" href="https://avatars.githubusercontent.com" />
 
     <title>Arya Maddel | CS Student</title>
@@ -41,12 +40,6 @@
     <meta name="theme-color" content="#1e293b" />
     <meta name="background-color" content="#1e293b" />
     <meta name="display" content="standalone" />
-
-    <script
-      src="https://kit.fontawesome.com/9569ff2ee1.js"
-      crossorigin="anonymous"
-      async
-    ></script>
 
     <style>
       :root {
@@ -193,6 +186,7 @@
       .project-icon {
         color: var(--text-secondary);
         width: 1.25rem;
+        height: 1.25rem;
         flex-shrink: 0;
       }
 
@@ -261,7 +255,8 @@
       }
 
       .social-icon {
-        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
       }
 
       footer {
@@ -318,30 +313,30 @@
     <section id="experience" class="section">
       <h2 class="section-title">Experience</h2>
       <div class="experience-list">
-        <div class="experience-item">
+        <article class="experience-item">
           <h3 class="experience-title">
             Project Lead at AERIAL MAPPERS & SURVEYORS LLP
           </h3>
 
-          <p class="experience-meta">Jan 2024 - March 2024</p>
+          <time class="experience-meta">Jan 2024 - March 2024</time>
           <p class="experience-description">
             Development of An Autonomous Drone System with variable Payload for
             versatile tasks using the open source Pixhawk flight Controller.
           </p>
-        </div>
+        </article>
         <hr class="experience-separator" />
-        <div class="experience-item">
+        <article class="experience-item">
           <h3 class="experience-title">
             Project Lead / Full stack developer at SUJALAM CHEMICALS
           </h3>
-          <p class="experience-meta">May 2023 - August 2023</p>
+          <time class="experience-meta">May 2023 - August 2023</time>
           <p class="experience-description">
             Development of an Inventory management software for Android and IOS
             A comprehensive tech stack incorporating React Native, Express,
             SQLite, Ngrok, and UI designing for mobile app development, backend,
             database, tunnelling.
           </p>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -350,10 +345,12 @@
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <a href="https://frshtech.vercel.app/" class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-bookmark project-icon"></i>
+          <header class="project-header">
+            <svg class="project-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+            </svg>
             <h3 class="project-title">frsh - Tech Blog</h3>
-          </div>
+          </header>
           <p class="project-description">
             Personal blog collaboratively maintained with friends. Built using
             Nuxt.js | Nuxt Content.
@@ -370,10 +367,14 @@
           href="https://github.com/aryamaddel/sujalam-chemicals"
           class="project-card"
         >
-          <div class="project-header">
-            <i class="fa-solid fa-box-archive project-icon"></i>
+          <header class="project-header">
+            <svg class="project-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
             <h3 class="project-title">Inventory Management System</h3>
-          </div>
+          </header>
           <p class="project-description">
             A comprehensive solution for managing inventory at Sujalam
             Chemicals. Features real-time tracking and automated alerts.
@@ -389,10 +390,14 @@
           href="https://github.com/aryamaddel/Tatsumaki-Bot"
           class="project-card"
         >
-          <div class="project-header">
-            <i class="fa-solid fa-robot project-icon"></i>
+          <header class="project-header">
+            <svg class="project-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              />
+            </svg>
             <h3 class="project-title">Tatsumaki Bot</h3>
-          </div>
+          </header>
           <p class="project-description">
             A feature-rich Discord bot for server management with customizable
             commands and moderation tools.
@@ -407,10 +412,14 @@
           href="https://github.com/aryamaddel/alexa-pc-control"
           class="project-card"
         >
-          <div class="project-header">
-            <i class="fa-solid fa-microchip project-icon"></i>
+          <header class="project-header">
+            <svg class="project-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
             <h3 class="project-title">IoT PC Control</h3>
-          </div>
+          </header>
           <p class="project-description">
             Smart home integration using ESP32 for remote PC control. Features
             voice commands and automation.
@@ -426,10 +435,14 @@
           href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
           class="project-card"
         >
-          <div class="project-header">
-            <i class="fa-solid fa-plane project-icon"></i>
+          <header class="project-header">
+            <svg class="project-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+              />
+            </svg>
             <h3 class="project-title">Autonomous Drone</h3>
-          </div>
+          </header>
           <p class="project-description">
             Award-winning drone project using Pixhawk controller for autonomous
             deliveries and navigation.
@@ -446,10 +459,9 @@
         Explore more projects on
         <a href="https://github.com/aryamaddel/" class="github-link">
           GitHub
-          <i
-            class="fa-solid fa-arrow-up-right-from-square"
-            style="font-size: 0.875rem"
-          ></i>
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+          </svg>
         </a>
       </p>
     </section>
@@ -459,13 +471,21 @@
       <h2 class="section-title">Skills</h2>
       <div class="skills-list">
         <div class="skill-item">
-          <i class="fa-solid fa-code skill-icon"></i>
+          <svg class="skill-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+            />
+          </svg>
           <span class="skill-title">Programming</span>
           <span class="skill-description">Python, JavaScript, C++</span>
         </div>
 
         <div class="skill-item">
-          <i class="fa-solid fa-robot skill-icon"></i>
+          <svg class="skill-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+            />
+          </svg>
           <span class="skill-title">Automation</span>
           <span class="skill-description"
             >Scripts, Bots, Process Optimization</span
@@ -473,13 +493,21 @@
         </div>
 
         <div class="skill-item">
-          <i class="fa-solid fa-globe skill-icon"></i>
+          <svg class="skill-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+            />
+          </svg>
           <span class="skill-title">Web Development</span>
           <span class="skill-description">Nuxt💚, React, React Native</span>
         </div>
 
         <div class="skill-item">
-          <i class="fa-solid fa-microchip skill-icon"></i>
+          <svg class="skill-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+            />
+          </svg>
           <span class="skill-title">Hardware</span>
           <span class="skill-description">ESP32, Pixhawk, IoT Integration</span>
         </div>
@@ -489,7 +517,7 @@
     <!-- Education Section -->
     <section id="education" class="section">
       <h2 class="section-title">Education</h2>
-      <div class="education-item">
+      <article class="education-item">
         <h3 class="education-degree">
           B.Tech - Computer Science and Engineering
         </h3>
@@ -497,34 +525,34 @@
           >DES Pune University</a
         >
         <div class="education-meta">
-          <span>2024 - Present</span>
+          <time>2024 - Present</time>
           <span>8.8 CGPA</span>
         </div>
-      </div>
+      </article>
 
       <hr class="education-separator" />
 
-      <div class="education-item">
+      <article class="education-item">
         <h3 class="education-degree">
           Diploma in Computer Science and Engineering
         </h3>
         <p class="education-school">Sou. Venutai Chavan Polytechnic</p>
         <div class="education-meta">
-          <span>2021 - 2024</span>
+          <time>2021 - 2024</time>
           <span>86%</span>
         </div>
-      </div>
+      </article>
 
       <hr class="education-separator" />
 
-      <div class="education-item">
+      <article class="education-item">
         <h3 class="education-degree">High School</h3>
         <p class="education-school">Hutchings High School</p>
         <div class="education-meta">
-          <span>2021</span>
+          <time>2021</time>
           <span>92%</span>
         </div>
-      </div>
+      </article>
     </section>
 
     <!-- Contact Section -->
@@ -534,44 +562,62 @@
         I'm always interested in new opportunities and collaborations. Feel free
         to reach out!
       </p>
-      <ul class="social-links">
-        <li>
-          <a
-            href="https://github.com/aryamaddel"
-            class="social-link"
-            title="GitHub"
-          >
-            <i class="fa-brands fa-github social-icon"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/aryamaddel/"
-            class="social-link"
-            title="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin social-icon"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/arya_maddel/"
-            class="social-link"
-            title="Instagram"
-          >
-            <i class="fa-brands fa-instagram social-icon"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="mailto:aryamaddel@gmail.com"
-            class="social-link"
-            title="Email"
-          >
-            <i class="fa-solid fa-envelope social-icon"></i>
-          </a>
-        </li>
-      </ul>
+      <nav aria-label="Social media links">
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://github.com/aryamaddel"
+              class="social-link"
+              title="GitHub"
+            >
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/aryamaddel/"
+              class="social-link"
+              title="LinkedIn"
+            >
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/arya_maddel/"
+              class="social-link"
+              title="Instagram"
+            >
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:aryamaddel@gmail.com"
+              class="social-link"
+              title="Email"
+            >
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </section>
 
     <footer>Made by Arya Maddel</footer>
