@@ -44,6 +44,25 @@
         --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
       }
 
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        margin: 0 auto;
+        padding: 0 1rem;
+        position: relative;
+        min-height: 100vh;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
       #particles-js {
         position: fixed;
         top: 0;
