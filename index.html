@@ -225,26 +225,6 @@
         margin-bottom: 1.5rem;
       }
 
-      .social-links {
-        display: flex;
-        gap: 1.5rem;
-        list-style: none;
-        justify-content: space-between;
-        padding: 0;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      .social-link,
-      .github-link {
-        color: var(--text-secondary);
-        text-decoration: none;
-        transition: all 0.2s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-      }
-
       .github-link {
         font-weight: 500;
       }
@@ -270,8 +250,34 @@
         flex-shrink: 0;
       }
 
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        justify-content: space-between;
+        padding: 0;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .social-links li {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-link,
+      .github-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 2.5rem;
+      }
+
       .resume-button {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
@@ -283,6 +289,8 @@
         transition: all 0.2s ease;
         font-size: 0.875rem;
         border: 1px solid var(--border-color);
+        height: 2.5rem;
+        box-sizing: border-box;
       }
 
       .resume-button:hover {
