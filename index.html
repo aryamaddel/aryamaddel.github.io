@@ -229,8 +229,10 @@
         display: flex;
         gap: 1.5rem;
         list-style: none;
-        justify-content: safe;
+        justify-content: space-between;
         padding: 0;
+        flex-wrap: wrap;
+        align-items: center;
       }
 
       .social-link,
@@ -268,6 +270,32 @@
         flex-shrink: 0;
       }
 
+      .resume-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--border-color);
+        color: var(--text-primary);
+        text-decoration: none;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        font-size: 0.875rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .resume-button:hover {
+        background-color: var(--text-secondary);
+        color: var(--bg-primary);
+        transform: translateY(-0.125rem);
+        box-shadow: var(--shadow);
+      }
+
+      .resume-icon {
+        width: 1rem;
+        height: 1rem;
+      }
       footer {
         margin: 4rem 0;
         color: var(--text-muted);
@@ -724,9 +752,30 @@
                 </svg>
               </a>
             </li>
+            <li>
+              <a
+                href="ARYA MADDEL Resume.pdf"
+                class="resume-button"
+                download
+                title="Download Resume"
+              >
+                <svg
+                  class="resume-icon"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
+                  />
+                </svg>
+                Resume
+              </a>
+            </li>
           </ul>
         </nav>
       </section>
+
+      <!-- ...existing code... -->
     </main>
     <footer>Made by Arya Maddel</footer>
 
