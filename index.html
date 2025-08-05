@@ -113,18 +113,8 @@
 
       .profile-image {
         width: 11rem;
-        clip-path: polygon(30% 0, 100% 0%, 75% 100%, 5% 100%);
-      }
-
-      .profile-border {
-        clip-path: polygon(30% 0, 100% 0%, 75% 100%, 5% 100%);
-        background-color: var(--text-muted);
-        padding: 0.1rem 0.2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        justify-items: center;
+        clip-path: polygon(30% 0, 99% 0%, 75% 100%, 6% 100%);
+        border: 0.13rem solid var(--text-secondary);
       }
 
       .experience-title {
@@ -229,6 +219,10 @@
         margin-bottom: 1.5rem;
       }
 
+      footer {
+        margin-bottom: 4rem;
+      }
+
       .social-links {
         display: flex;
         gap: 2rem;
@@ -287,13 +281,6 @@
       .resume-icon {
         width: 1rem;
         height: 1rem;
-      }
-
-      footer {
-        margin: 4rem 0;
-        color: var(--text-muted);
-        font-size: 0.875rem;
-        text-align: center;
       }
 
       .title-highlight {
@@ -360,13 +347,11 @@
     <main>
       <!-- About Me Section -->
       <section id="about" class="section">
-        <div class="profile-border">
-          <img
-            src="https://avatars.githubusercontent.com/u/84805906"
-            alt="Arya Maddel"
-            class="profile-image"
-          />
-        </div>
+        <img
+          src="https://avatars.githubusercontent.com/u/84805906"
+          alt="Arya Maddel"
+          class="profile-image"
+        />
 
         <h1 class="about-title">Arya Maddel</h1>
         <p class="about-subtitle">CS Student</p>
@@ -714,7 +699,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact">
+      <footer id="contact">
         <h2 class="section-title">Let's Connect</h2>
         <p class="contact-description secondary-text">
           I'm always interested in new opportunities and collaborations. Feel
@@ -811,9 +796,8 @@
             </li>
           </ul>
         </nav>
-      </section>
+      </footer>
     </main>
-    <footer>Made by Arya Maddel</footer>
 
     <script src="particles.js"></script>
     <script>
