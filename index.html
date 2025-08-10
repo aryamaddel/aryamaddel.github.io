@@ -13,7 +13,10 @@
     />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Arya Maddel | CS Student and ML Engineer" />
+    <meta
+      property="og:title"
+      content="Arya Maddel | CS Student and ML Engineer"
+    />
     <meta
       property="og:description"
       content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware"
@@ -27,6 +30,62 @@
       name="twitter:description"
       content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware"
     />
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T2PB1W9TSS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      } // GA4 helper
+      gtag("js", new Date());
+      gtag("config", "G-T2PB1W9TSS", { anonymize_ip: true });
+
+      // Track resume downloads & outbound link clicks
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        const href = a.getAttribute("href") || "";
+        if (/resume/i.test(href)) {
+          gtag("event", "resume_download", {
+            event_category: "engagement",
+            event_label: href,
+          });
+        }
+        try {
+          const url = new URL(a.href, location.href);
+          if (url.host !== location.host) {
+            gtag("event", "click_outbound", {
+              event_category: "engagement",
+              event_label: url.href,
+              transport_type: "beacon",
+            });
+          }
+        } catch (_) {}
+      });
+
+      // Simple scroll depth (50% & 90%)
+      const scrollMarks = { 50: false, 90: false };
+      window.addEventListener(
+        "scroll",
+        () => {
+          const pct =
+            ((window.scrollY + window.innerHeight) /
+              document.documentElement.scrollHeight) *
+            100;
+          for (const mark of [50, 90]) {
+            if (!scrollMarks[mark] && pct >= mark) {
+              scrollMarks[mark] = true;
+              gtag("event", "scroll_depth", { value: mark });
+            }
+          }
+        },
+        { passive: true }
+      );
+    </script>
+    <!-- End Google Analytics -->
 
     <style>
       :root {
