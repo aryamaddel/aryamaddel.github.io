@@ -74,6 +74,44 @@ tsParticles.load({
         },
       },
     },
+    responsive: [
+      {
+        maxWidth: 480,
+        options: {
+          particles: {
+            number: {
+              value: 15,
+              limit: { value: 25 },
+            },
+            links: { distance: 100 },
+          },
+          interactivity: {
+            modes: {
+              push: { quantity: 2 },
+              repulse: { distance: 100 },
+            },
+          },
+        },
+      },
+      {
+        maxWidth: 768,
+        options: {
+          particles: {
+            number: {
+              value: 25,
+              limit: { value: 40 },
+            },
+            links: { distance: 125 },
+          },
+          interactivity: {
+            modes: {
+              push: { quantity: 3 },
+              repulse: { distance: 150 },
+            },
+          },
+        },
+      },
+    ],
     detectRetina: true,
   },
 });
