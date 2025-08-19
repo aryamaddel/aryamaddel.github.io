@@ -1,6 +1,9 @@
 tsParticles.load({
   id: "tsparticles",
   options: {
+    fullScreen: {
+      zIndex: -1,
+    },
     particles: {
       color: {
         value: "#fff",
