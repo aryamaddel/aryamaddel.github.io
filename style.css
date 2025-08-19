@@ -58,7 +58,6 @@ body {
 
 .profile-image {
   width: 11rem;
-  clip-path: polygon(30% 0, 99% 0%, 75% 100%, 6% 100%);
   border: 0.13rem solid var(--text-secondary);
 }
 

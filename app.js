@@ -1,40 +1,12 @@
 tsParticles.load({
   id: "tsparticles",
   options: {
-    background: {
-      color: {
-        value: "transparent",
-      },
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: "push",
-        },
-        onHover: {
-          enable: true,
-          mode: "repulse",
-        },
-        resize: true,
-      },
-      modes: {
-        push: {
-          quantity: 4,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-      },
-    },
     particles: {
       color: {
-        value: "#ffffff",
+        value: "#fff",
       },
       links: {
-        color: "#ffffff",
+        color: "#fff",
         distance: 150,
         enable: true,
         opacity: 0.4,
@@ -51,11 +23,10 @@ tsParticles.load({
         straight: false,
       },
       number: {
-        density: {
-          enable: true,
-          area: 1000,
-        },
         value: 80,
+        limit: {
+          value: 100,
+        },
       },
       opacity: {
         value: 0.6,
@@ -77,6 +48,29 @@ tsParticles.load({
           speed: 40,
           minimumValue: 0.1,
           sync: false,
+        },
+      },
+      reduceDuplicates: true,
+    },
+    interactivity: {
+      events: {
+        onClick: {
+          enable: true,
+          mode: "push",
+        },
+        onHover: {
+          enable: true,
+          mode: "repulse",
+        },
+        resize: true,
+      },
+      modes: {
+        push: {
+          quantity: 4,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
         },
       },
     },
