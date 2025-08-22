@@ -38,6 +38,18 @@
         --text-primary: #fff;
         --text-secondary: #ccc;
         --text-muted: #888;
+        --particle-color: #fff;
+        color-scheme: dark;
+      }
+
+      [data-theme="light"] {
+        --bg-primary: #f7f7f7;
+        --border-color: #e5e7eb;
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-muted: #64748b;
+        --particle-color: #334155;
+        color-scheme: light;
       }
 
       body {
@@ -49,6 +61,7 @@
         padding: 0 1rem;
         position: relative;
         min-height: 100vh;
+        transition: background-color 0.2s ease, color 0.2s ease;
       }
 
       .section {
@@ -93,7 +106,7 @@
       .profile-image {
         width: 11rem;
         border: 0.13rem solid var(--text-secondary);
-        border-radius: 35% 65% 70% 30% / 48% 63% 37% 52%  ;
+        border-radius: 35% 65% 70% 30% / 48% 63% 37% 52%;
       }
 
       .experience-title {
@@ -595,126 +608,113 @@
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.2/tsparticles.bundle.min.js"></script>
     <script>
-      tsParticles.load({
-        id: "tsparticles",
-        options: {
-          fullScreen: {
-            zIndex: -1,
-          },
-          particles: {
-            color: {
-              value: "#fff",
-            },
-            links: {
-              color: "#fff",
-              distance: 150,
-              enable: true,
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              value: 80,
-              limit: {
-                value: 100,
-              },
-            },
-            opacity: {
-              value: 0.6,
-              random: true,
-              animation: {
+      (function () {
+        const applyTheme = (mode) => {
+          document.documentElement.setAttribute("data-theme", mode);
+
+          const styles = getComputedStyle(document.documentElement);
+          const bg = styles.getPropertyValue("--bg-primary").trim();
+          const particleColor =
+            styles.getPropertyValue("--particle-color").trim() || "#fff";
+
+          // Sync browser UI color
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", bg);
+
+          // Re-init particles with theme-aware colors
+          const options = {
+            fullScreen: { zIndex: -1 },
+            particles: {
+              color: { value: particleColor },
+              links: {
+                color: particleColor,
+                distance: 150,
                 enable: true,
-                speed: 1,
-                minimumValue: 0.1,
-                sync: false,
+                opacity: 0.3,
+                width: 1,
               },
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 3 },
-              animation: {
-                enable: false,
-                speed: 40,
-                minimumValue: 0.1,
-                sync: false,
-              },
-            },
-            reduceDuplicates: true,
-          },
-          interactivity: {
-            events: {
-              onClick: {
+              move: {
+                direction: "none",
                 enable: true,
-                mode: "push",
+                outModes: { default: "bounce" },
+                speed: 2,
+                straight: false,
               },
-              onHover: {
-                enable: true,
-                mode: "repulse",
+              number: {
+                value: mode === "light" ? 50 : 80,
+                limit: { value: 100 },
               },
-              resize: true,
-            },
-            modes: {
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
-          responsive: [
-            {
-              maxWidth: 480,
-              options: {
-                particles: {
-                  number: {
-                    value: 15,
-                    limit: { value: 25 },
-                  },
-                  links: { distance: 100 },
-                },
-                interactivity: {
-                  modes: {
-                    push: { quantity: 2 },
-                    repulse: { distance: 100 },
-                  },
+              opacity: {
+                value: 0.4,
+                random: true,
+                animation: {
+                  enable: true,
+                  speed: 1,
+                  minimumValue: 0.1,
+                  sync: false,
                 },
               },
+              shape: { type: "circle" },
+              size: { value: { min: 1, max: 3 }, animation: { enable: false } },
+              reduceDuplicates: true,
             },
-            {
-              maxWidth: 768,
-              options: {
-                particles: {
-                  number: {
-                    value: 25,
-                    limit: { value: 40 },
+            interactivity: {
+              events: {
+                onClick: { enable: true, mode: "push" },
+                onHover: { enable: true, mode: "repulse" },
+                resize: true,
+              },
+              modes: {
+                push: { quantity: 3 },
+                repulse: { distance: 200, duration: 0.4 },
+              },
+            },
+            responsive: [
+              {
+                maxWidth: 480,
+                options: {
+                  particles: {
+                    number: { value: 15, limit: { value: 25 } },
+                    links: { distance: 100 },
                   },
-                  links: { distance: 125 },
-                },
-                interactivity: {
-                  modes: {
-                    push: { quantity: 3 },
-                    repulse: { distance: 150 },
+                  interactivity: {
+                    modes: {
+                      push: { quantity: 2 },
+                      repulse: { distance: 100 },
+                    },
                   },
                 },
               },
-            },
-          ],
-          detectRetina: true,
-        },
-      });
+              {
+                maxWidth: 768,
+                options: {
+                  particles: {
+                    number: { value: 25, limit: { value: 40 } },
+                    links: { distance: 125 },
+                  },
+                  interactivity: {
+                    modes: {
+                      push: { quantity: 3 },
+                      repulse: { distance: 150 },
+                    },
+                  },
+                },
+              },
+            ],
+            detectRetina: true,
+          };
+
+          try {
+            tsParticles.dom().forEach((c) => c.destroy());
+          } catch (e) {}
+          tsParticles.load({ id: "tsparticles", options });
+        };
+
+        // Dark by default; switch to light between 7am–5pm
+        const hour = new Date().getHours();
+        const mode = hour >= 7 && hour < 21 ? "light" : "dark";
+        applyTheme(mode);
+      })();
     </script>
   </body>
 </html>
