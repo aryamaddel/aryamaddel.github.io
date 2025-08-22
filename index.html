@@ -592,52 +592,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.2/tsparticles.bundle.min.js"></script>
     <script>
-      (function () {
-        // Check current time to determine theme (light mode 9 AM to 4 PM)
-        const currentHour = new Date().getHours();
-        const isLightTime = currentHour >= 9 && currentHour < 16; // 9 AM to 4 PM
-        const prefersDark = !isLightTime;
-        const particleColor = prefersDark ? "#fff" : "#334155";
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const themeColor = prefersDark ? "#fff" : "#334155";
 
-        // Sync browser UI color with current theme
-        const bgColor = prefersDark ? "#1a1a1a" : "#f7f7f7";
-        const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", bgColor);
-
-        const options = {
+      tsParticles.load({
+        id: "tsparticles",
+        options: {
           fullScreen: { zIndex: -1 },
           particles: {
-            color: { value: particleColor },
+            color: { value: themeColor },
             links: {
-              color: particleColor,
+              themeColor,
               distance: 150,
               enable: true,
               opacity: 0.3,
               width: 1,
             },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: { default: "bounce" },
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              value: prefersDark ? 80 : 50,
-              limit: { value: 100 },
-            },
+            move: { enable: true, outModes: { default: "bounce" }, speed: 2 },
+            number: { value: 80, limit: { value: 100 } },
             opacity: {
               value: 0.4,
               random: true,
-              animation: {
-                enable: true,
-                speed: 1,
-                minimumValue: 0.1,
-                sync: false,
-              },
+              animation: { enable: true, speed: 1, minimumValue: 0.1 },
             },
             shape: { type: "circle" },
-            size: { value: { min: 1, max: 3 }, animation: { enable: false } },
+            size: { value: { min: 1, max: 3 } },
             reduceDuplicates: true,
           },
           interactivity: {
@@ -660,10 +641,7 @@
                   links: { distance: 100 },
                 },
                 interactivity: {
-                  modes: {
-                    push: { quantity: 2 },
-                    repulse: { distance: 100 },
-                  },
+                  modes: { push: { quantity: 2 }, repulse: { distance: 100 } },
                 },
               },
             },
@@ -675,19 +653,14 @@
                   links: { distance: 125 },
                 },
                 interactivity: {
-                  modes: {
-                    push: { quantity: 3 },
-                    repulse: { distance: 150 },
-                  },
+                  modes: { push: { quantity: 3 }, repulse: { distance: 150 } },
                 },
               },
             },
           ],
           detectRetina: true,
-        };
-
-        tsParticles.load({ id: "tsparticles", options });
-      })();
+        },
+      });
     </script>
   </body>
 </html>
