@@ -63,6 +63,16 @@
         text-align: center;
       }
 
+      .img-sign {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .img-sign svg {
+        width: 100%;
+        height: auto;
+      }
+
       .about-title {
         font-size: 2.25rem;
         font-weight: bold;
@@ -266,11 +276,28 @@
     <main>
       <!-- About Me Section -->
       <section id="about" class="section">
-        <img
-          src="https://avatars.githubusercontent.com/u/84805906"
-          alt="Portrait of Arya Maddel"
-          class="profile-image"
-        />
+        <div class="img-sign">
+          <img
+            src="https://avatars.githubusercontent.com/u/84805906"
+            alt="Portrait of Arya Maddel"
+            class="profile-image"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 650 200"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path
+              d="M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100"
+              stroke="light-dark(#777, #ccc)"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
         <div class="profile-intro">
           <h1 class="about-title">Arya Maddel</h1>
           <p class="about-subtitle">CS Student</p>
