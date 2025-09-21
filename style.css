@@ -14,13 +14,15 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.section {
+.section,
+.experience-description {
   margin-bottom: 4rem;
 }
 
-.section-title {
-  margin-bottom: 2rem;
+.section-title,
+.experience-title {
   font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .separator {
@@ -58,7 +60,8 @@ body {
   font-weight: 600;
 }
 
-.about-description {
+.about-description,
+.secondary-text {
   color: light-dark(#4a4a4a, #ccc);
   text-align: justify;
 }
@@ -69,17 +72,11 @@ body {
   border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
 }
 
-.experience-title {
-  font-size: 1.125rem;
-}
-
-.experience-description {
-  margin-top: 0.75rem;
-}
-
-.meta-info {
+.meta-info,
+.project-tags {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 0.5rem;
   font-size: 0.875rem;
   color: light-dark(#777, #888);
@@ -91,7 +88,7 @@ body {
 }
 
 .project-card {
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 0;
   transition: all 0.2s ease;
   text-decoration: none;
   color: inherit;
@@ -109,21 +106,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .project-tag {
   background-color: light-dark(#e6e1dc, #333);
   color: light-dark(#3a3a3a, #fff);
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
-}
-
-.education-degree {
-  font-size: 1.125rem;
 }
 
 .social-links {
@@ -148,11 +135,13 @@ body {
   height: 2.5rem;
 }
 
-.social-link:hover {
+.social-link:hover,
+.github-link:hover {
   color: light-dark(#2a2a2a, #fff);
 }
 
-.social-icon {
+.social-icon,
+.resume-icon {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -172,21 +161,13 @@ body {
   color: light-dark(#f0ede8, #1a1a1a);
 }
 
-.resume-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
 .title-highlight {
   color: light-dark(#2a2a2a, #fff);
   font-weight: 600;
 }
 
-.secondary-text {
-  color: light-dark(#4a4a4a, #ccc);
-}
-
-.icon {
+.icon,
+.github-link-icon {
   color: light-dark(#777, #ccc);
   width: 1.25rem;
   height: 1.25rem;
@@ -199,15 +180,6 @@ body {
   text-decoration: none;
   transition: all 0.2s ease;
   gap: 0.25rem;
-}
-
-.github-link:hover {
-  color: light-dark(#2a2a2a, #fff);
-}
-
-.github-link-icon {
-  width: 14px;
-  height: 14px;
 }
 
 .github-explore {
