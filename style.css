@@ -8,7 +8,7 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 calc(0.5rem + 1vw);
   position: relative;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -81,7 +81,7 @@ body {
   gap: 2rem;
 }
 .project-card {
-  padding: 1.5rem 0;
+  padding: calc(1rem + 0.5vw) 0;
   transition: all 0.2s ease;
   text-decoration: none;
   color: inherit;
@@ -100,7 +100,7 @@ body {
   background-color: light-dark(#e6e1dc, #333);
   color: light-dark(#3a3a3a, #fff);
   font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
+  padding: calc(0.15rem + 0.1vw) calc(0.3rem + 0.2vw);
 }
 
 .social-links {
@@ -137,7 +137,7 @@ body {
 
 .resume-button {
   gap: 0.5rem;
-  padding: 0.25rem 1rem;
+  padding: calc(0.15rem + 0.1vw) calc(0.7rem + 0.3vw);
   color: light-dark(#2a2a2a, #fff);
   font-weight: 500;
   font-size: 0.875rem;
@@ -175,7 +175,7 @@ body {
 
 @media (min-width: 768px) {
   body {
-    padding: 0 22.5%;
+    padding: 0 calc(10% + 2vw);
   }
   .img-sign svg {
     display: block;
