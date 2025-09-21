@@ -207,7 +207,6 @@ body {
   }
   .profile-intro {
     max-width: 50%;
-    text-align: left;
   }
   .social-links {
     justify-content: flex-start;
@@ -220,10 +219,6 @@ body {
 @media (min-width: 1440px) {
   .profile-intro {
     max-width: 40%;
-    text-align: left;
-  }
-  .social-links {
-    justify-content: flex-start;
   }
   .experience-list {
     gap: 3rem;
