@@ -17,13 +17,11 @@ body {
 .experience-description {
   margin-bottom: 4rem;
 }
-
 .section-title,
 .experience-title {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
-
 .separator {
   border: 0.5px solid light-dark(#ccc7c0, #333);
   margin: 1.5rem 0;
@@ -53,18 +51,15 @@ body {
   font-size: 2.25rem;
   font-weight: bold;
 }
-
 .about-subtitle {
   font-size: 1.25rem;
   font-weight: 600;
 }
-
 .about-description,
 .secondary-text {
   color: light-dark(#4a4a4a, #ccc);
   text-align: justify;
 }
-
 .profile-image {
   width: 11rem;
   border: 0.13rem solid light-dark(#777, #ccc);
@@ -85,7 +80,6 @@ body {
   display: grid;
   gap: 2rem;
 }
-
 .project-card {
   padding: 1.5rem 0;
   transition: all 0.2s ease;
@@ -93,18 +87,15 @@ body {
   color: inherit;
   display: block;
 }
-
 .project-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
-
 .project-description {
   margin-bottom: 1rem;
 }
-
 .project-tag {
   background-color: light-dark(#e6e1dc, #333);
   color: light-dark(#3a3a3a, #fff);
@@ -138,7 +129,6 @@ body {
 .github-link:hover {
   color: light-dark(#2a2a2a, #fff);
 }
-
 .social-icon,
 .resume-icon {
   width: 1.5rem;
@@ -154,7 +144,6 @@ body {
   border: 1px solid light-dark(#ccc7c0, #333);
   box-sizing: border-box;
 }
-
 .resume-button:hover {
   background-color: light-dark(#2a2a2a, #fff);
   color: light-dark(#f0ede8, #1a1a1a);
@@ -164,7 +153,6 @@ body {
   color: light-dark(#2a2a2a, #fff);
   font-weight: 600;
 }
-
 .icon,
 .github-link-icon {
   color: light-dark(#777, #ccc);
@@ -180,7 +168,6 @@ body {
   transition: all 0.2s ease;
   gap: 0.25rem;
 }
-
 .github-explore {
   margin-top: 2rem;
   color: #94a3b8;
@@ -193,7 +180,6 @@ body {
   .img-sign svg {
     display: block;
   }
-
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
