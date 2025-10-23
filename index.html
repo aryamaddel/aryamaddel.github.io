@@ -9,10 +9,31 @@
     <title>Arya Maddel | CS Student and ML Engineer</title>
     <meta
       name="description"
-      content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware"
+      content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware."
     />
 
+    <meta
+      property="og:title"
+      content="Arya Maddel | CS Student and ML Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Passionate about machine learning, automation, and exploring the intersection of CS with other fields."
+    />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/84805906"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Arya Maddel | CS Student" />
+    <meta
+      name="twitter:description"
+      content="Passionate about machine learning, automation, and exploring the intersection of CS with other fields."
+    />
+    <meta
+      name="twitter:image"
+      content="https://avatars.githubusercontent.com/u/84805906"
+    />
 
     <link
       rel="stylesheet"
@@ -22,6 +43,7 @@
     />
 
     <style>
+      /* --- Root and General Body Styles --- */
       :root {
         color-scheme: light dark;
       }
@@ -37,20 +59,45 @@
         transition: background-color 0.2s ease, color 0.2s ease;
       }
 
+      /* --- Layout & Reusable Components --- */
       .section,
       .experience-description {
         margin-bottom: 4rem;
       }
+
       .section-title,
       .experience-title {
         font-size: 1.5rem;
         margin-bottom: 2rem;
       }
+
       .separator {
         border: 0.5px solid light-dark(#ccc7c0, #333);
         margin: 1.5rem 0;
       }
 
+      /* --- Typography --- */
+      .about-description,
+      .secondary-text {
+        color: light-dark(#4a4a4a, #ccc);
+        text-align: justify;
+      }
+
+      .title-highlight {
+        color: light-dark(#2a2a2a, #fff);
+        font-weight: 600;
+      }
+
+      .meta-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: light-dark(#777, #888);
+      }
+
+      /* --- About Section --- */
       #about {
         display: flex;
         flex-direction: column;
@@ -68,7 +115,17 @@
       .img-sign svg {
         width: 100%;
         height: auto;
-        display: none;
+        display: none; /* Hidden on mobile by default */
+      }
+      .img-sign svg path {
+        /* Stroke color moved from HTML to CSS for cleanliness */
+        stroke: light-dark(#777, #ccc);
+      }
+
+      .profile-image {
+        width: 11rem;
+        border: 0.13rem solid light-dark(#777, #ccc);
+        border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
       }
 
       .about-title {
@@ -79,54 +136,8 @@
         font-size: 1.25rem;
         font-weight: 600;
       }
-      .about-description,
-      .secondary-text {
-        color: light-dark(#4a4a4a, #ccc);
-        text-align: justify;
-      }
-      .profile-image {
-        width: 11rem;
-        border: 0.13rem solid light-dark(#777, #ccc);
-        border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
-      }
 
-      .meta-info,
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-        color: light-dark(#777, #888);
-      }
-
-      .projects-grid {
-        display: grid;
-        gap: 2rem;
-      }
-      .project-card {
-        padding: calc(1rem + 0.5vw) 0;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-      .project-header {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
-      .project-description {
-        margin-bottom: 1rem;
-      }
-      .project-tag {
-        background-color: light-dark(#e6e1dc, #333);
-        color: light-dark(#3a3a3a, #fff);
-        font-size: 0.75rem;
-        padding: calc(0.15rem + 0.1vw) calc(0.3rem + 0.2vw);
-      }
-
+      /* --- Social Links & Resume Button --- */
       .social-links {
         display: flex;
         gap: 2rem;
@@ -168,15 +179,41 @@
         color: light-dark(#f0ede8, #1a1a1a);
       }
 
-      .title-highlight {
-        color: light-dark(#2a2a2a, #fff);
-        font-weight: 600;
+      /* --- Projects Section --- */
+      .projects-grid {
+        display: grid;
+        gap: 2rem;
       }
-      .github-link-icon {
-        color: light-dark(#777, #ccc);
-        width: 1.25rem;
-        height: 1.25rem;
-        flex-shrink: 0;
+      .project-card {
+        padding: calc(1rem + 0.5vw) 0;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+      .project-description {
+        margin-bottom: 1rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: light-dark(#777, #888);
+      }
+      .project-tag {
+        background-color: light-dark(#e6e1dc, #333);
+        color: light-dark(#3a3a3a, #fff);
+        font-size: 0.75rem;
+        padding: calc(0.15rem + 0.1vw) calc(0.3rem + 0.2vw);
       }
 
       .github-link {
@@ -191,12 +228,13 @@
         color: #94a3b8;
       }
 
+      /* --- Media Queries for Responsive Design --- */
       @media (min-width: 768px) {
         body {
           padding: 0 calc(10% + 2vw);
         }
         .img-sign svg {
-          display: block;
+          display: block; /* Show signature on tablets and up */
         }
         .projects-grid {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -226,8 +264,8 @@
 
   <body>
     <div id="tsparticles"></div>
+
     <main>
-      <!-- About Me Section -->
       <section id="about" class="section">
         <div class="img-sign">
           <img
@@ -238,11 +276,10 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 650 200"
-            preserveAspectRatio="xMidYMid meet"
+            preserveAspectRatio="xMidYMid"
           >
             <path
               d="M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100"
-              stroke="light-dark(#777, #ccc)"
               stroke-width="3"
               fill="none"
               stroke-linecap="round"
@@ -267,6 +304,7 @@
                 <a
                   href="https://github.com/aryamaddel"
                   class="social-link fa fa-github fa-lg"
+                  aria-label="Visit my GitHub profile"
                   title="GitHub"
                 ></a>
               </li>
@@ -274,6 +312,7 @@
                 <a
                   href="https://www.linkedin.com/in/aryamaddel/"
                   class="social-link fa fa-linkedin fa-lg"
+                  aria-label="Visit my LinkedIn profile"
                   title="LinkedIn"
                 ></a>
               </li>
@@ -281,6 +320,7 @@
                 <a
                   href="mailto:aryamaddel@gmail.com"
                   class="social-link fa fa-envelope fa-lg"
+                  aria-label="Send me an email"
                   title="Email"
                 ></a>
               </li>
@@ -299,7 +339,6 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
       <section id="experience" class="section">
         <h2 class="section-title">Experience</h2>
         <div class="experience-list">
@@ -330,9 +369,8 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects" class="section">
-        <h2 class="section-title">Project Links</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
           <a href="https://frshtech.vercel.app/" class="project-card">
             <header class="project-header">
@@ -452,7 +490,6 @@
         </p>
       </section>
 
-      <!-- Education Section -->
       <section id="education" class="section">
         <h2 class="section-title">Education</h2>
         <article class="education-item">
