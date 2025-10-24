@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work | Arya Maddel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        color-scheme: light dark;
+        --bg: light-dark(#fafafa, #0a0a0a);
+        --fg: light-dark(#1a1a1a, #e8e8e8);
+        --dim: light-dark(#666, #888);
+        --border: light-dark(#ddd, #222);
+        --accent: light-dark(#000, #fff);
+      }
+
+      body {
+        font-family: "Georgia", "Times New Roman", serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
+        z-index: 100;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dim);
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--accent);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 5rem 5% 3rem;
+      }
+
+      .section {
+        margin-bottom: 4rem;
+      }
+
+      .section h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 400;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        transition: border-color 0.2s;
+      }
+
+      .card:hover {
+        border-color: var(--accent);
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      .card .meta {
+        color: var(--dim);
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .card p {
+        color: var(--dim);
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        color: var(--dim);
+        border: 1px solid var(--border);
+        padding: 0.25rem 0.6rem;
+      }
+
+      .card a {
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 0.9rem;
+        border-bottom: 1px solid var(--border);
+        transition: border-color 0.2s;
+      }
+
+      .card a:hover {
+        border-color: var(--accent);
+      }
+
+      @media (min-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          padding: 5rem 8% 3rem;
+        }
+
+        nav ul {
+          padding: 0 8%;
+        }
+
+        .section {
+          margin-bottom: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="research.html">Research</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section class="section">
+        <h1>Experience</h1>
+        <div class="grid">
+          <div class="card">
+            <h3>Project Lead</h3>
+            <p class="meta">AERIAL MAPPERS & SURVEYORS LLP · Jan - Mar 2024</p>
+            <p>
+              Led development of an autonomous drone system with variable
+              payload capabilities for versatile tasks using the Pixhawk flight
+              controller. Integrated computer vision for navigation and payload
+              management.
+            </p>
+            <div class="tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">C/C++</span>
+              <span class="tag">Control Systems</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Project Lead & Full Stack Developer</h3>
+            <p class="meta">SUJALAM CHEMICALS · May - Aug 2023</p>
+            <p>
+              Architected and deployed a cross-platform inventory management
+              system for Android and iOS. Built complete tech stack with React
+              Native, Express, SQLite, and real-time synchronization
+              capabilities.
+            </p>
+            <div class="tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Express</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h1>Projects</h1>
+        <div class="grid">
+          <div class="card">
+            <h3>AutoManim</h3>
+            <p>
+              AI-powered web application converting natural language
+              descriptions into mathematical animations using Manim and LLM.
+              Demonstrates practical NLP application for educational
+              visualization.
+            </p>
+            <a href="https://github.com/aryamaddel/AutoManim">View Project →</a>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Groq API</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Autonomous Drone System</h3>
+            <p>
+              Award-winning autonomous navigation system using Pixhawk
+              controller. Implemented custom algorithms for path planning and
+              obstacle avoidance in delivery scenarios.
+            </p>
+            <a
+              href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
+              >Learn More →</a
+            >
+            <div class="tags">
+              <span class="tag">C/C++</span>
+              <span class="tag">Pixhawk</span>
+              <span class="tag">Computer Vision</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>frsh - Tech Blog</h3>
+            <p>
+              Collaborative technical writing platform maintained with peers.
+              Documentation of learning journey, project insights, and
+              explorations in machine learning, automation, and software
+              development.
+            </p>
+            <a href="https://frshtech.vercel.app/">Visit Blog →</a>
+            <div class="tags">
+              <span class="tag">Nuxt.js</span>
+              <span class="tag">Tech Writing</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>IoT PC Control System</h3>
+            <p>
+              Smart home integration using ESP32 for remote PC control with
+              voice commands. Explored edge computing and efficient protocol
+              design for IoT applications.
+            </p>
+            <a href="https://github.com/aryamaddel/alexa-pc-control"
+              >View Project →</a
+            >
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">ESP32</span>
+              <span class="tag">IoT</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Tatsumaki Discord Bot</h3>
+            <p>
+              Feature-rich Discord bot for server management with natural
+              language processing for command interpretation and automated
+              moderation workflows.
+            </p>
+            <a href="https://github.com/aryamaddel/Tatsumaki-Bot"
+              >View Project →</a
+            >
+            <div class="tags">
+              <span class="tag">Discord.js</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Inventory Management System</h3>
+            <p>
+              Full-stack mobile application with real-time tracking and
+              automated alerts. Implemented efficient database indexing and
+              optimized query performance for large datasets.
+            </p>
+            <a href="https://github.com/aryamaddel/sujalam-chemicals"
+              >View Project →</a
+            >
+            <div class="tags">
+              <span class="tag">React Native</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

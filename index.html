@@ -3,661 +3,240 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Arya Maddel" />
-    <meta name="theme-color" content="#1a1a1a" />
-
-    <title>Arya Maddel | CS Student and ML Engineer</title>
-    <meta
-      name="description"
-      content="CS Student passionate about machine learning, automation, and exploring CS's intersection with fields like physics and hardware."
-    />
-
-    <meta
-      property="og:title"
-      content="Arya Maddel | CS Student and ML Engineer"
-    />
-    <meta
-      property="og:description"
-      content="Passionate about machine learning, automation, and exploring the intersection of CS with other fields."
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/84805906"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Arya Maddel | CS Student" />
-    <meta
-      name="twitter:description"
-      content="Passionate about machine learning, automation, and exploring the intersection of CS with other fields."
-    />
-    <meta
-      name="twitter:image"
-      content="https://avatars.githubusercontent.com/u/84805906"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 200' preserveAspectRatio='xMidYMid'%3E%3Cpath d='M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100' stroke='%23777' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-      type="image/svg+xml"
-    />
-
+    <title>Arya Maddel | ML Engineer & Researcher</title>
     <style>
-      /* --- Root and General Body Styles --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       :root {
         color-scheme: light dark;
+        --bg: light-dark(#fafafa, #0a0a0a);
+        --fg: light-dark(#1a1a1a, #e8e8e8);
+        --dim: light-dark(#666, #888);
+        --border: light-dark(#ddd, #222);
+        --accent: light-dark(#000, #fff);
       }
 
       body {
-        background-color: light-dark(#f0ede8, #1a1a1a);
-        color: light-dark(#2a2a2a, #fff);
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: "Georgia", "Times New Roman", serif;
+        background: var(--bg);
+        color: var(--fg);
         line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
+        z-index: 100;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 2rem calc(0.5rem + 1vw);
-        position: relative;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        max-width: 1200px;
+        padding: 0 5%;
       }
 
-      /* --- Layout & Reusable Components --- */
-      .section {
-        margin-bottom: 4rem;
+      nav a {
+        text-decoration: none;
+        color: var(--dim);
+        font-size: 0.9rem;
+        transition: color 0.2s;
       }
 
-      .section-title {
-        font-size: 1.5rem;
+      nav a:hover,
+      nav a.active {
+        color: var(--accent);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 5%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero {
+        width: 100%;
+        padding-top: 4rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-content .tagline {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        color: var(--dim);
         margin-bottom: 2rem;
+        font-style: italic;
       }
 
-      .separator {
-        border: 0.5px solid light-dark(#ccc7c0, #333);
-        margin: 1.5rem 0;
-      }
-
-      /* --- Typography --- */
-      .about-description,
-      .secondary-text {
-        color: light-dark(#4a4a4a, #ccc);
+      .hero-content p {
+        color: var(--dim);
+        max-width: 600px;
+        margin-bottom: 2rem;
         text-align: justify;
       }
 
-      .title-highlight {
-        color: light-dark(#2a2a2a, #fff);
-        font-weight: 600;
-      }
-
-      .meta-info {
+      .links {
         display: flex;
+        gap: 1.5rem;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-        color: light-dark(#777, #888);
       }
 
-      /* --- About Section --- */
-      #about {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+      .links a {
+        color: var(--fg);
+        text-decoration: none;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.9rem;
+        transition: border-color 0.2s;
       }
 
-      .img-sign {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .links a:hover {
+        border-color: var(--accent);
       }
 
-      .profile-image {
-        width: 11rem;
-        border: 0.13rem solid light-dark(#777, #ccc);
-        border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
+      .profile-img {
+        display: none;
       }
 
-      .about-title {
-        font-size: 2.25rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-      .about-subtitle {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-top: 0;
+      .interests {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
       }
 
-      /* --- Social Links & Resume Button --- */
-      .social-links {
-        display: flex;
-        gap: 2rem;
+      .interests h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .interests ul {
         list-style: none;
-        justify-content: center;
-        padding: 0;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-top: 1rem;
-      }
-
-      .social-link,
-      .resume-button {
-        text-decoration: none;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        height: 2.5rem;
-        color: light-dark(#777, #ccc);
-      }
-
-      .social-link:hover,
-      .resume-button:hover {
-        color: light-dark(#2a2a2a, #fff);
-      }
-
-      .resume-button {
-        gap: 0.5rem;
-        padding: calc(0.15rem + 0.1vw) calc(0.7rem + 0.3vw);
-        color: light-dark(#2a2a2a, #fff);
-        font-weight: 500;
-        font-size: 0.875rem;
-        border: 1px solid light-dark(#ccc7c0, #333);
-        box-sizing: border-box;
-      }
-      .resume-button:hover {
-        background-color: light-dark(#2a2a2a, #fff);
-        color: light-dark(#f0ede8, #1a1a1a);
-      }
-
-      /* --- Experience Section --- */
-      .experience-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .experience-item {
-        margin-bottom: 1rem;
-      }
-
-      .experience-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .experience-description {
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-      }
-
-      /* --- Projects Section --- */
-      .projects-grid {
         display: grid;
-        gap: 2rem;
-      }
-      .project-card {
-        padding: calc(1rem + 0.5vw) 0;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        border-bottom: 1px solid light-dark(#e6e1dc, #2a2a2a);
-      }
-      .project-card:last-child {
-        border-bottom: none;
-      }
-      .project-card:hover {
-        opacity: 0.8;
-      }
-      .project-header {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
-      .project-title {
-        margin: 0;
-        font-size: 1.1rem;
-      }
-      .project-description {
-        margin: 0 0 1rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
       }
 
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-      }
-      .project-tag {
-        background-color: light-dark(#e6e1dc, #333);
-        color: light-dark(#3a3a3a, #fff);
-        font-size: 0.75rem;
-        padding: calc(0.15rem + 0.1vw) calc(0.3rem + 0.2vw);
-        border-radius: 3px;
+      .interests li {
+        color: var(--dim);
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
       }
 
-      .github-link {
-        font-weight: 500;
-        color: light-dark(#777, #ccc);
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-      .github-link:hover {
-        color: light-dark(#2a2a2a, #fff);
-      }
-      .github-explore {
-        margin-top: 2rem;
-        color: light-dark(#777, #888);
+      .interests li::before {
+        content: "→ ";
+        margin-right: 0.5rem;
       }
 
-      /* --- Education Section --- */
-      .education-item {
-        margin-bottom: 1rem;
-      }
-
-      .education-degree {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .education-item p,
-      .education-item a {
-        margin: 0.25rem 0;
-        text-decoration: none;
-        color: light-dark(#4a4a4a, #ccc);
-      }
-
-      .education-item a:hover {
-        color: light-dark(#2a2a2a, #fff);
-      }
-
-      /* --- Media Queries for Responsive Design --- */
       @media (min-width: 768px) {
-        body {
-          padding: 0 calc(10% + 2vw);
+        .hero {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr;
+          gap: 5rem;
+          align-items: center;
         }
-        .projects-grid {
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        .hero-img {
+          display: flex;
+          justify-content: center;
         }
-        .project-card {
-          border-bottom: none;
-          border: 1px solid light-dark(#e6e1dc, #2a2a2a);
-          padding: 1.5rem;
-          border-radius: 8px;
+
+        .profile-img {
+          display: block;
+          width: 280px;
+          height: 280px;
+          border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
+          border: 1px solid var(--border);
+          object-fit: cover;
         }
       }
 
-      @media (min-width: 1024px) {
-        .profile-intro {
-          text-align: left;
-          max-width: 40%;
+      @media (min-width: 1200px) {
+        .container {
+          padding: 0 8%;
         }
-        .social-links {
-          justify-content: flex-start;
+
+        nav ul {
+          padding: 0 8%;
         }
-        .experience-list {
-          flex-direction: row;
-          gap: 3rem;
-        }
-        #about {
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 4rem;
+
+        .interests ul {
+          grid-template-columns: repeat(3, 1fr);
         }
       }
     </style>
   </head>
-
   <body>
-    <div id="tsparticles"></div>
+    <nav>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="research.html">Research</a></li>
+      </ul>
+    </nav>
 
-    <main>
-      <section id="about" class="section">
-        <div class="img-sign">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Arya Maddel</h1>
+          <p class="tagline">Machine Learning Engineer & Aspiring Researcher</p>
+
+          <p>
+            Currently pursuing B.Tech in Computer Science at DES Pune
+            University. My work explores machine learning, automation, and
+            computational systems—with interests spanning from theoretical
+            foundations in mathematics and physics to practical implementations
+            in software and hardware.
+          </p>
+
+          <div class="links">
+            <a href="mailto:aryamaddel@gmail.com">Email</a>
+            <a href="https://github.com/aryamaddel">GitHub</a>
+            <a href="https://linkedin.com/in/aryamaddel">LinkedIn</a>
+            <a href="https://frshtech.vercel.app/">Blog</a>
+            <a href="ARYA MADDEL Resume.pdf" download>CV</a>
+          </div>
+
+          <div class="interests">
+            <h2>Research Interests</h2>
+            <ul>
+              <li>Machine Learning Systems</li>
+              <li>Computer Vision & Image Quality</li>
+              <li>Autonomous Systems</li>
+              <li>Automation & Optimization</li>
+              <li>Computational Physics</li>
+              <li>Hardware-Software Integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hero-img">
           <img
             src="https://avatars.githubusercontent.com/u/84805906"
-            alt="Portrait of Arya Maddel"
-            class="profile-image"
+            alt="Arya Maddel"
+            class="profile-img"
           />
         </div>
-
-        <div class="profile-intro">
-          <h1 class="about-title">Arya Maddel</h1>
-          <p class="about-subtitle">CS Student</p>
-
-          <p class="about-description">
-            Passionate about machine learning, automation, and exploring CS's
-            intersection with fields like physics and hardware. Currently
-            focused on building innovative solutions and learning new
-            technologies. Open to new opportunities—reach out.
-          </p>
-          <nav aria-label="Social and resume links">
-            <ul class="social-links">
-              <li>
-                <a
-                  href="https://github.com/aryamaddel"
-                  class="social-link fa fa-github fa-lg"
-                  aria-label="Visit my GitHub profile"
-                  title="GitHub"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/aryamaddel/"
-                  class="social-link fa fa-linkedin fa-lg"
-                  aria-label="Visit my LinkedIn profile"
-                  title="LinkedIn"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="mailto:aryamaddel@gmail.com"
-                  class="social-link fa fa-envelope fa-lg"
-                  aria-label="Send me an email"
-                  title="Email"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="ARYA MADDEL Resume.pdf"
-                  class="resume-button fa fa-download fa-lg"
-                  download
-                  title="Download Resume"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-list">
-          <article class="experience-item">
-            <h3 class="experience-title title-highlight">
-              Project Lead at AERIAL MAPPERS & SURVEYORS LLP
-            </h3>
-            <time class="meta-info">Jan 2024 - March 2024</time>
-            <p class="experience-description secondary-text">
-              Development of An Autonomous Drone System with variable Payload
-              for versatile tasks using the open source Pixhawk flight
-              Controller.
-            </p>
-          </article>
-          <hr class="separator" />
-          <article class="experience-item">
-            <h3 class="experience-title title-highlight">
-              Project Lead / Full stack developer at SUJALAM CHEMICALS
-            </h3>
-            <time class="meta-info">May 2023 - August 2023</time>
-            <p class="experience-description secondary-text">
-              Development of an Inventory management software for Android and
-              IOS A comprehensive tech stack incorporating React Native,
-              Express, SQLite, Ngrok, and UI designing for mobile app
-              development, backend, database, tunnelling.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <a href="https://frshtech.vercel.app/" class="project-card">
-            <header class="project-header">
-              <h3 class="project-title title-highlight">frsh - Tech Blog</h3>
-            </header>
-            <p class="project-description secondary-text">
-              Personal blog collaboratively maintained with friends. Built using
-              Nuxt.js | Nuxt Content.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Tech Writing</span>
-              <span class="project-tag">Web Development</span>
-              <span class="project-tag">Nuxt.js</span>
-              <span class="project-tag">Vercel</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/AutoManim"
-            class="project-card"
-          >
-            <header class="project-header">
-              <h3 class="project-title title-highlight">AutoManim</h3>
-            </header>
-            <p class="project-description secondary-text">
-              AI-powered web application that converts natural language
-              descriptions into beautiful mathematical animations using Manim
-              and LLM.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">Manim</span>
-              <span class="project-tag">Groq API</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/sujalam-chemicals"
-            class="project-card"
-          >
-            <header class="project-header">
-              <h3 class="project-title title-highlight">
-                Inventory Management System
-              </h3>
-            </header>
-            <p class="project-description secondary-text">
-              A comprehensive solution for managing inventory at Sujalam
-              Chemicals. Features real-time tracking and automated alerts.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">React Native</span>
-              <span class="project-tag">Express.js</span>
-              <span class="project-tag">SQL</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/Tatsumaki-Bot"
-            class="project-card"
-          >
-            <header class="project-header">
-              <h3 class="project-title title-highlight">Tatsumaki Bot</h3>
-            </header>
-            <p class="project-description secondary-text">
-              A feature-rich Discord bot for server management with customizable
-              commands and moderation tools.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Discord.js</span>
-              <span class="project-tag">Keep Alive Mechanism</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/aryamaddel/alexa-pc-control"
-            class="project-card"
-          >
-            <header class="project-header">
-              <h3 class="project-title title-highlight">IoT PC Control</h3>
-            </header>
-            <p class="project-description secondary-text">
-              Smart home integration using ESP32 for remote PC control. Features
-              voice commands and automation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">C++</span>
-              <span class="project-tag">ESP32</span>
-              <span class="project-tag">IoT</span>
-            </div>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/posts/aryamaddel_winner-of-the-nirmitee-project-presentation-activity-7184899397644677120-87zc"
-            class="project-card"
-          >
-            <header class="project-header">
-              <h3 class="project-title title-highlight">Autonomous Drone</h3>
-            </header>
-            <p class="project-description secondary-text">
-              Award-winning drone project using Pixhawk controller for
-              autonomous deliveries and navigation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">C/C++</span>
-              <span class="project-tag">Pixhawk</span>
-              <span class="project-tag">Robotics</span>
-            </div>
-          </a>
-        </div>
-
-        <p class="github-explore">
-          Explore more projects on
-          <a href="https://github.com/aryamaddel/" class="github-link">
-            GitHub
-          </a>
-        </p>
-      </section>
-
-      <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-        <article class="education-item">
-          <h3 class="education-degree title-highlight">
-            B.Tech - Computer Science and Engineering
-          </h3>
-          <a href="https://despu.edu.in" class="secondary-text"
-            >DES Pune University</a
-          >
-          <div class="meta-info">
-            <time>2024 - Present</time>
-            <span>8.8 CGPA</span>
-          </div>
-        </article>
-
-        <hr class="separator" />
-
-        <article class="education-item">
-          <h3 class="education-degree title-highlight">
-            Diploma in Computer Science and Engineering
-          </h3>
-          <p class="secondary-text">Sou. Venutai Chavan Polytechnic</p>
-          <div class="meta-info">
-            <time>2021 - 2024</time>
-            <span>86%</span>
-          </div>
-        </article>
-
-        <hr class="separator" />
-
-        <article class="education-item">
-          <h3 class="education-degree title-highlight">High School</h3>
-          <p class="secondary-text">Hutchings High School</p>
-          <div class="meta-info">
-            <time>2021</time>
-            <span>92%</span>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.2/tsparticles.bundle.min.js"></script>
-    <script>
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      const themeColor = prefersDark ? "#fff" : "#333";
-
-      tsParticles.load({
-        id: "tsparticles",
-        options: {
-          fullScreen: { zIndex: -1 },
-          particles: {
-            color: { value: themeColor },
-            links: {
-              color: themeColor,
-              distance: 150,
-              enable: true,
-              opacity: 0.3,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              outModes: { default: "bounce" },
-              speed: 2,
-            },
-            number: { value: 80, limit: { value: 100 } },
-            opacity: {
-              value: 0.4,
-              random: true,
-              animation: {
-                enable: true,
-                speed: 1,
-                minimumValue: 0.1,
-              },
-            },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 3 } },
-            reduceDuplicates: true,
-          },
-          interactivity: {
-            events: {
-              onClick: { enable: true, mode: "push" },
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              push: { quantity: 3 },
-              repulse: { distance: 200, duration: 0.4 },
-            },
-          },
-          responsive: [
-            {
-              maxWidth: 480,
-              options: {
-                particles: {
-                  number: { value: 15, limit: { value: 25 } },
-                  links: { distance: 100 },
-                },
-                interactivity: {
-                  modes: {
-                    push: { quantity: 2 },
-                    repulse: { distance: 100 },
-                  },
-                },
-              },
-            },
-            {
-              maxWidth: 768,
-              options: {
-                particles: {
-                  number: { value: 25, limit: { value: 40 } },
-                  links: { distance: 125 },
-                },
-                interactivity: {
-                  modes: {
-                    push: { quantity: 3 },
-                    repulse: { distance: 150 },
-                  },
-                },
-              },
-            },
-          ],
-          detectRetina: true,
-        },
-      });
-    </script>
+      </div>
+    </div>
   </body>
 </html>
