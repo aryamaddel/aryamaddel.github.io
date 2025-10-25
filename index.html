@@ -10,20 +10,6 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <style>
-      .profile-img {
-        width: 240px;
-        border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
-      }
-
-      @media (prefers-color-scheme: light) {
-        html:not([data-bs-theme="dark"]) {
-          --bs-body-bg: #fafafa;
-          --bs-body-color: #1a1a1a;
-          --bs-border-color: #ddd;
-        }
-      }
-    </style>
   </head>
   <body class="overflow-y-scroll">
     <nav class="navbar navbar-expand bg-body fixed-top">
@@ -116,7 +102,8 @@
           <img
             src="https://avatars.githubusercontent.com/u/84805906"
             alt="Arya Maddel"
-            class="profile-img border"
+            class="border w-50"
+            style="border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%"
           />
         </div>
       </div>
