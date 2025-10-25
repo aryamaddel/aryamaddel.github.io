@@ -1,206 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arya Maddel | ML Engineer & Researcher</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        color-scheme: light dark;
-        --bg: light-dark(#fafafa, #0a0a0a);
-        --fg: light-dark(#1a1a1a, #e8e8e8);
-        --dim: light-dark(#666, #888);
-        --border: light-dark(#ddd, #222);
-        --accent: light-dark(#000, #fff);
-      }
-
-      body {
-        font-family: "Georgia", "Times New Roman", serif;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.6;
-        transition: background 0.3s, color 0.3s;
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 1rem 0;
-        z-index: 100;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 5%;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--dim);
-        font-size: 0.9rem;
-        transition: color 0.2s;
-      }
-
-      nav a:hover,
-      nav a.active {
-        color: var(--accent);
-      }
-
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 5%;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .hero {
-        width: 100%;
-        padding-top: 4rem;
-      }
-
-      .hero-content h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 400;
-        margin-bottom: 0.5rem;
-      }
-
-      .hero-content .tagline {
-        font-size: clamp(1rem, 2vw, 1.3rem);
-        color: var(--dim);
-        margin-bottom: 2rem;
-        font-style: italic;
-      }
-
-      .hero-content p {
-        color: var(--dim);
-        max-width: 600px;
-        margin-bottom: 2rem;
-        text-align: justify;
-      }
-
-      .links {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-      }
-
-      .links a {
-        color: var(--fg);
-        text-decoration: none;
-        padding: 0.6rem 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 0.9rem;
-        transition: border-color 0.2s;
-      }
-
-      .links a:hover {
-        border-color: var(--accent);
-      }
-
       .profile-img {
-        display: none;
+        width: 240px;
+        border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
       }
 
-      .interests {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--border);
-      }
-
-      .interests h2 {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
-      }
-
-      .interests ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-      }
-
-      .interests li {
-        color: var(--dim);
-        font-size: 0.95rem;
-        padding: 0.5rem 0;
-      }
-
-      .interests li::before {
-        content: "→ ";
-        margin-right: 0.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .hero {
-          display: grid;
-          grid-template-columns: 1.5fr 1fr;
-          gap: 5rem;
-          align-items: center;
-        }
-
-        .hero-img {
-          display: flex;
-          justify-content: center;
-        }
-
-        .profile-img {
-          display: block;
-          width: 280px;
-          height: 280px;
-          border-radius: 58% 42% 27% 73% / 73% 46% 54% 27%;
-          border: 1px solid var(--border);
-          object-fit: cover;
-        }
-      }
-
-      @media (min-width: 1200px) {
-        .container {
-          padding: 0 8%;
-        }
-
-        nav ul {
-          padding: 0 8%;
-        }
-
-        .interests ul {
-          grid-template-columns: repeat(3, 1fr);
+      @media (prefers-color-scheme: light) {
+        html:not([data-bs-theme="dark"]) {
+          --bs-body-bg: #fafafa;
+          --bs-body-color: #1a1a1a;
+          --bs-border-color: #ddd;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="research.html">Research</a></li>
-      </ul>
+    <nav class="navbar navbar-expand bg-body fixed-top">
+      <div class="container-xxl">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="work.html">Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="research.html">Research</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="container">
-      <div class="hero">
-        <div class="hero-content">
-          <h1>Arya Maddel</h1>
-          <p class="tagline">Machine Learning Engineer & Aspiring Researcher</p>
+    <div class="container-xxl py-5 mt-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-4 fw-normal mb-2">Arya Maddel</h1>
+          <p class="lead text-muted fst-italic mb-4">
+            Machine Learning Engineer & Aspiring Researcher
+          </p>
 
-          <p>
+          <p class="text-muted mb-4" style="text-align: justify">
             Currently pursuing B.Tech in Computer Science at DES Pune
             University. My work explores machine learning, automation, and
             computational systems—with interests spanning from theoretical
@@ -208,35 +58,74 @@
             in software and hardware.
           </p>
 
-          <div class="links">
-            <a href="mailto:aryamaddel@gmail.com">Email</a>
-            <a href="https://github.com/aryamaddel">GitHub</a>
-            <a href="https://linkedin.com/in/aryamaddel">LinkedIn</a>
-            <a href="https://frshtech.vercel.app/">Blog</a>
-            <a href="ARYA MADDEL Resume.pdf" download>CV</a>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a
+              href="mailto:aryamaddel@gmail.com"
+              class="link-body-emphasis text-decoration-none border-bottom pb-1"
+              >Email</a
+            >
+            <a
+              href="https://github.com/aryamaddel"
+              class="link-body-emphasis text-decoration-none border-bottom pb-1"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/aryamaddel"
+              class="link-body-emphasis text-decoration-none border-bottom pb-1"
+              >LinkedIn</a
+            >
+            <a
+              href="https://frshtech.vercel.app/"
+              class="link-body-emphasis text-decoration-none border-bottom pb-1"
+              >Blog</a
+            >
+            <a
+              href="ARYA MADDEL Resume.pdf"
+              download
+              class="link-body-emphasis text-decoration-none border-bottom pb-1"
+              >CV</a
+            >
           </div>
 
-          <div class="interests">
-            <h2>Research Interests</h2>
-            <ul>
-              <li>Machine Learning Systems</li>
-              <li>Computer Vision & Image Quality</li>
-              <li>Autonomous Systems</li>
-              <li>Automation & Optimization</li>
-              <li>Computational Physics</li>
-              <li>Hardware-Software Integration</li>
-            </ul>
+          <div class="border-top pt-4">
+            <h2 class="h5 fw-normal mb-3">Research Interests</h2>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Machine Learning Systems</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Computer Vision & Image Quality</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Autonomous Systems</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Automation & Optimization</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Computational Physics</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-muted mb-2">→ Hardware-Software Integration</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-img">
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
           <img
             src="https://avatars.githubusercontent.com/u/84805906"
             alt="Arya Maddel"
-            class="profile-img"
+            class="profile-img border"
           />
         </div>
       </div>
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
