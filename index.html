@@ -30,15 +30,9 @@
     <style>
       body {
         font-family: "Rubik", sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
         color: #eaeaea;
         background: linear-gradient(to bottom right, #0e1626, #0a1b1b);
         min-height: 100vh;
-      }
-
-      p {
-        line-height: 1.7;
       }
 
       h1,
@@ -48,23 +42,7 @@
       h5,
       h6 {
         font-family: "Playfair Display", serif;
-        font-weight: 700;
-        letter-spacing: -0.5px;
         color: #f5f7fa;
-      }
-
-      .display-4 {
-        font-size: 3rem;
-        font-weight: 700;
-      }
-
-      .lead {
-        font-weight: 300;
-        font-size: 1.15rem;
-      }
-
-      .subtitle-text {
-        letter-spacing: 0.08rem;
       }
 
       .text-muted {
@@ -73,9 +51,7 @@
 
       a {
         color: #64ffda;
-        text-decoration: none;
       }
-
       a:hover {
         color: #88fff5;
       }
@@ -83,24 +59,17 @@
       .nav-link {
         color: #b0b3c0 !important;
       }
-
       .nav-link:hover,
       .nav-link.active {
         color: #64ffda !important;
       }
-
-      .navbar {
-        background-color: #0e1626 !important;
-        border-bottom: 1px solid #1e2537;
-      }
-
-      .border-top {
-        border-color: #1e2537 !important;
-      }
     </style>
   </head>
   <body class="overflow-y-scroll">
-    <nav class="navbar navbar-expand bg-body">
+    <nav
+      class="navbar navbar-expand border-bottom"
+      style="background-color: #0e1626; border-color: #1e2537 !important"
+    >
       <div class="container-xxl py-2">
         <ul class="navbar-nav gap-4">
           <li class="nav-item">
@@ -161,7 +130,7 @@
             >
           </div>
 
-          <div class="border-top pt-4">
+          <div class="border-top pt-4" style="border-color: #1e2537 !important">
             <h2 class="h5 fw-normal mb-3">Research Interests</h2>
             <ul class="list-unstyled">
               <li class="text-muted mb-2">Machine Learning Systems</li>
