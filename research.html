@@ -1,290 +1,151 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Research interests and academic work in machine learning, computer vision, and autonomous systems."
-    />
-    <title>Research | Arya Maddel</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' height='200' style='background-color:white'%3E%3Cpath d='M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100' stroke='black' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-    />
-    <style>
-      body {
-        font-family: "Rubik", sans-serif;
-        color: #eaeaea;
-        background: linear-gradient(to bottom right, #0e1626, #071818);
-        min-height: 100vh;
-      }
+<!doctype html>
+<html lang="en">
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Playfair Display", serif;
-        color: #f5f7fa;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Research interests and academic work in machine learning, computer vision, and autonomous systems." />
+  <title>Research | Arya Maddel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' height='200' style='background-color:white'%3E%3Cpath d='M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100' stroke='black' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      .text-muted {
-        color: #b0b3c0 !important;
-      }
-
-      a {
-        color: #64ffda;
-      }
-      a:hover {
-        color: #88fff5;
-      }
-
-      .nav-link {
-        color: #b0b3c0 !important;
-      }
-      .nav-link:hover,
-      .nav-link.active {
-        color: #64ffda !important;
-      }
-
-      .card {
-        background-color: #111a2b;
-        border-color: #1c2333;
-      }
-
-      .timeline-item {
-        border-left: 2px solid #1e2537;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: -5px;
-        top: 0;
-        width: 8px;
-        height: 8px;
-        background: #64ffda;
-        border-radius: 50%;
-      }
-    </style>
-  </head>
-  <body class="overflow-y-scroll">
-    <nav
-      class="navbar navbar-expand border-bottom"
-      style="background-color: #0e1626; border-color: #1e2537 !important"
-    >
-      <div class="container-xxl py-2">
-        <ul class="navbar-nav gap-4">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="work.html">Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="research.html">Research</a>
-          </li>
-        </ul>
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="work.html">Work</a>
+        <a href="research.html" class="active">Research</a>
       </div>
     </nav>
 
-    <div class="container-xxl py-4">
-      <div class="row">
-        <div class="col-lg-10 col-xl-9">
-          <div class="mb-5">
-            <h1 class="display-5 fw-normal mb-3">Research & Academia</h1>
-            <p class="text-muted mb-3" style="text-align: justify">
-              As an undergraduate researcher, I'm building foundational
-              expertise in machine learning and its applications. My current
-              focus lies in computer vision, particularly exploring novel
-              approaches to image quality assessment without reference images.
-            </p>
-            <p class="text-muted" style="text-align: justify">
-              My broader interests span automation, computational methods, and
-              the integration of machine learning with physics and hardware
-              systems.
-            </p>
-          </div>
+    <section>
+      <h1>Research & Academia</h1>
+      <p>
+        As an undergraduate researcher, I'm building foundational
+        expertise in machine learning and its applications. My current
+        focus lies in computer vision, particularly exploring novel
+        approaches to image quality assessment without reference images.
+      </p>
+      <p>
+        My broader interests span automation, computational methods, and
+        the integration of machine learning with physics and hardware
+        systems.
+      </p>
+    </section>
 
-          <section class="mb-5">
-            <h2 class="h4 fw-normal mb-4 pb-3 border-bottom">
-              Current Research
-            </h2>
-            <div class="card">
-              <div class="card-body">
-                <h3 class="h5 fw-normal mb-2">
-                  No-Reference Image Quality Assessment
-                </h3>
-                <p class="text-muted fst-italic small mb-3">In Progress</p>
-                <p class="text-muted mb-0" style="text-align: justify">
-                  Developing methods for assessing image quality without
-                  reference images, exploring deep learning approaches for
-                  perceptual quality metrics. Investigating how models can learn
-                  quality features from diverse datasets and generalize across
-                  different image distortions and domains.
-                </p>
-              </div>
-            </div>
-          </section>
+    <section>
+      <h2>Current Research</h2>
+      <div class="project-item">
+        <h3>No-Reference Image Quality Assessment</h3>
+        <div class="project-meta">In Progress</div>
+        <p>
+          Developing methods for assessing image quality without
+          reference images, exploring deep learning approaches for
+          perceptual quality metrics. Investigating how models can learn
+          quality features from diverse datasets and generalize across
+          different image distortions and domains.
+        </p>
+      </div>
+    </section>
 
-          <section class="mb-5">
-            <h2 class="h4 fw-normal mb-4 pb-3 border-bottom">Education</h2>
-            <div class="d-flex flex-column gap-4">
-              <div class="timeline-item">
-                <h3 class="h6 fw-normal mb-2">
-                  B.Tech in Computer Science and Engineering
-                </h3>
-                <p class="text-muted fst-italic small mb-2">
-                  DES Pune University · 2024 - Present · CGPA: 8.8
-                </p>
-              </div>
+    <section>
+      <h2>Education</h2>
 
-              <div class="timeline-item">
-                <h3 class="h6 fw-normal mb-2">
-                  Diploma in Computer Science and Engineering
-                </h3>
-                <p class="text-muted fst-italic small mb-2">
-                  Sou. Venutai Chavan Polytechnic · 2021 - 2024 · 86%
-                </p>
-              </div>
+      <div class="project-item">
+        <h3>B.Tech in Computer Science and Engineering</h3>
+        <div class="project-meta">DES Pune University · 2024 - Present · CGPA: 8.8</div>
+      </div>
 
-              <div class="timeline-item">
-                <h3 class="h6 fw-normal mb-2">High School</h3>
-                <p class="text-muted fst-italic small mb-2">
-                  Hutchings High School · 2021 · 92%
-                </p>
-              </div>
-            </div>
-          </section>
+      <div class="project-item">
+        <h3>Diploma in Computer Science and Engineering</h3>
+        <div class="project-meta">Sou. Venutai Chavan Polytechnic · 2021 - 2024 · 86%</div>
+      </div>
 
-          <section class="mb-5">
-            <h2 class="h4 fw-normal mb-4 pb-3 border-bottom">
-              Technical Skills
-            </h2>
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Machine Learning</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· Deep Learning</li>
-                  <li class="mb-1">· Computer Vision</li>
-                  <li class="mb-1">· NLP</li>
-                  <li class="mb-1">· Model Optimization</li>
-                </ul>
-              </div>
+      <div class="project-item">
+        <h3>High School</h3>
+        <div class="project-meta">Hutchings High School · 2021 · 92%</div>
+      </div>
+    </section>
 
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Programming</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· Python</li>
-                  <li class="mb-1">· C/C++</li>
-                  <li class="mb-1">· JavaScript</li>
-                  <li class="mb-1">· SQL</li>
-                </ul>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Frameworks & Tools</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· PyTorch / TensorFlow</li>
-                  <li class="mb-1">· Flask / Express</li>
-                  <li class="mb-1">· React Native</li>
-                  <li class="mb-1">· Git</li>
-                </ul>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Hardware & Systems</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· Embedded Systems</li>
-                  <li class="mb-1">· ESP32 / Arduino</li>
-                  <li class="mb-1">· Pixhawk</li>
-                  <li class="mb-1">· IoT Protocols</li>
-                </ul>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Domains</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· Computer Vision</li>
-                  <li class="mb-1">· Autonomous Systems</li>
-                  <li class="mb-1">· Robotics</li>
-                  <li class="mb-1">· Automation</li>
-                </ul>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <h3 class="h6 fw-normal mb-3">Development</h3>
-                <ul class="list-unstyled text-muted small">
-                  <li class="mb-1">· Full Stack Development</li>
-                  <li class="mb-1">· Database Design</li>
-                  <li class="mb-1">· API Development</li>
-                  <li class="mb-1">· Cloud Deployment</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section class="mb-5">
-            <h2 class="h4 fw-normal mb-4 pb-3 border-bottom">
-              Awards & Recognition
-            </h2>
-            <div class="timeline-item">
-              <h3 class="h6 fw-normal mb-2">
-                Winner - Nirmitee Project Presentation
-              </h3>
-              <p class="text-muted fst-italic small mb-2">2024</p>
-              <p class="text-muted small mb-0">
-                Recognized for autonomous drone system demonstrating innovative
-                applications of computer vision and control systems in delivery
-                scenarios.
-              </p>
-            </div>
-          </section>
-
-          <section class="mb-5">
-            <h2 class="h4 fw-normal mb-4 pb-3 border-bottom">
-              Writing & Communication
-            </h2>
-            <div class="timeline-item">
-              <h3 class="h6 fw-normal mb-2">frsh - Technical Blog</h3>
-              <p class="text-muted fst-italic small mb-2">
-                Collaborative platform ·
-                <a
-                  href="https://frshtech.vercel.app/"
-                  class="link-secondary text-decoration-none border-bottom"
-                >
-                  frshtech.vercel.app
-                </a>
-              </p>
-              <p class="text-muted small mb-0">
-                Co-maintain technical blog documenting learning experiences,
-                project insights, and explorations in machine learning,
-                automation, and software development. Focus on clear
-                communication of complex technical concepts.
-              </p>
-            </div>
-          </section>
+    <section>
+      <h2>Technical Skills</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <h3>Machine Learning</h3>
+          <ul>
+            <li>Deep Learning</li>
+            <li>Computer Vision</li>
+            <li>NLP</li>
+            <li>Model Optimization</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>C/C++</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frameworks & Tools</h3>
+          <ul>
+            <li>PyTorch / TensorFlow</li>
+            <li>Flask / Express</li>
+            <li>React Native</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Hardware & Systems</h3>
+          <ul>
+            <li>Embedded Systems</li>
+            <li>ESP32 / Arduino</li>
+            <li>Pixhawk</li>
+            <li>IoT Protocols</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </body>
+    </section>
+
+    <section>
+      <h2>Awards & Recognition</h2>
+      <div class="project-item">
+        <h3>Winner - Nirmitee Project Presentation</h3>
+        <div class="project-meta">2024</div>
+        <p>
+          Recognized for autonomous drone system demonstrating innovative
+          applications of computer vision and control systems in delivery
+          scenarios.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p id="last-updated">Last updated: Fetching...</p>
+    </footer>
+  </div>
+
+  <script>
+    fetch('https://api.github.com/repos/aryamaddel/aryamaddel.github.io/commits?per_page=1')
+      .then(response => response.json())
+      .then(data => {
+        const date = new Date(data[0].commit.committer.date);
+        document.getElementById('last-updated').innerText = 'Last updated: ' + date.toLocaleDateString();
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  </script>
+</body>
+
 </html>
