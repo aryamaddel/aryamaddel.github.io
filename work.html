@@ -1,149 +1,142 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Professional experience and projects in machine learning, robotics, and software development."
-    />
-    <title>Work | Arya Maddel</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' height='200' style='background-color:white'%3E%3Cpath d='M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100' stroke='black' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <nav>
-        <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="work.html" class="active">Work</a>
-          <a href="research.html">Research</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Professional experience and projects in machine learning, robotics, and software development." />
+  <title>Work | Arya Maddel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' height='200' style='background-color:white'%3E%3Cpath d='M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100' stroke='black' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="research.html">Research</a>
+      </div>
+    </nav>
+
+    <section>
+      <h1>Experience</h1>
+
+      <div class="project-item">
+        <h3>Project Lead</h3>
+        <div class="project-meta">
+          AERIAL MAPPERS & SURVEYORS LLP · Jan - Mar 2024
         </div>
-      </nav>
+        <p>
+          Lead development of an autonomous drone system with variable payload
+          capabilities for versatile tasks using the Pixhawk flight
+          controller. Integrated computer vision for navigation and payload
+          management.
+        </p>
+      </div>
 
-      <section>
-        <h1>Experience</h1>
+      <div class="project-item">
+        <h3>Project Lead & Full Stack Developer</h3>
+        <div class="project-meta">SUJALAM CHEMICALS · May - Aug 2023</div>
+        <p>
+          Architected and deployed a cross-platform inventory management
+          system for Android and iOS. Built complete tech stack with React
+          Native, Express, SQLite, and real-time synchronization capabilities.
+        </p>
+      </div>
+    </section>
 
-        <div class="project-item">
-          <h3>Project Lead</h3>
-          <div class="project-meta">
-            AERIAL MAPPERS & SURVEYORS LLP · Jan - Mar 2024
-          </div>
-          <p>
-            Lead development of an autonomous drone system with variable payload
-            capabilities for versatile tasks using the Pixhawk flight
-            controller. Integrated computer vision for navigation and payload
-            management.
-          </p>
-        </div>
+    <section>
+      <h2>Projects</h2>
+      <div id="projects-container">
+        <p>Loading projects...</p>
+      </div>
+    </section>
 
-        <div class="project-item">
-          <h3>Project Lead & Full Stack Developer</h3>
-          <div class="project-meta">SUJALAM CHEMICALS · May - Aug 2023</div>
-          <p>
-            Architected and deployed a cross-platform inventory management
-            system for Android and iOS. Built complete tech stack with React
-            Native, Express, SQLite, and real-time synchronization capabilities.
-          </p>
-        </div>
-      </section>
+    <footer>
+      <p id="last-updated">Last updated: Fetching...</p>
+    </footer>
+  </div>
 
-      <section>
-        <h2>Projects</h2>
-        <div id="projects-container">
-          <p>Loading projects...</p>
-        </div>
-      </section>
+  <script>
+    // Hardcoded Project List
+    const projects = [
+      {
+        name: "frsh - Tech Blog",
+        description:
+          "Collaborative technical writing platform maintained with peers. Documentation of learning journey and project insights.",
+        html_url: "https://frshtech.vercel.app/",
+        language: "Technical Writing",
+      },
+      {
+        name: "DIQA",
+        description:
+          "A lightweight, production-ready Python library for No-Reference Image Quality Assessment (NR-IQA).",
+        html_url: "https://pypi.org/project/diqa/",
+        language: "Python Package",
+      },
+      {
+        name: "AutoManim",
+        description:
+          "AI-powered web application converting natural language descriptions into mathematical animations using Manim and LLM.",
+        html_url: "https://github.com/aryamaddel/AutoManim",
+        language: "AI & Web",
+      },
+      {
+        name: "Alexa PC Control",
+        description:
+          "Smart home integration using ESP32 for remote PC control with voice commands. Explored edge computing and IoT protocols.",
+        html_url: "https://github.com/aryamaddel/alexa-pc-control",
+        language: "IoT & Embedded",
+      },
+      {
+        name: "Sujalam Chemicals",
+        description:
+          "Full-stack mobile application with real-time tracking and automated alerts. Built with React Native and Express.",
+        html_url: "https://github.com/aryamaddel/sujalam-chemicals",
+        language: "Full Stack",
+      },
+    ];
 
-      <footer>
-        <p id="last-updated">Last updated: Fetching...</p>
-      </footer>
-    </div>
+    function loadProjects() {
+      const container = document.getElementById("projects-container");
+      container.innerHTML = "";
 
-    <script>
-      // Hardcoded Project List
-      const projects = [
-        {
-          name: "frsh - Tech Blog",
-          description:
-            "Collaborative technical writing platform maintained with peers. Documentation of learning journey and project insights.",
-          html_url: "https://frshtech.vercel.app/",
-          language: "Technical Writing",
-        },
-        {
-          name: "DIQA",
-          description:
-            "A lightweight, production-ready Python library for No-Reference Image Quality Assessment (NR-IQA).",
-          html_url: "https://pypi.org/project/diqa/",
-          language: "Python Package",
-        },
-        {
-          name: "AutoManim",
-          description:
-            "AI-powered web application converting natural language descriptions into mathematical animations using Manim and LLM.",
-          html_url: "https://github.com/aryamaddel/AutoManim",
-          language: "AI & Web",
-        },
-        {
-          name: "Alexa PC Control",
-          description:
-            "Smart home integration using ESP32 for remote PC control with voice commands. Explored edge computing and IoT protocols.",
-          html_url: "https://github.com/aryamaddel/alexa-pc-control",
-          language: "IoT & Embedded",
-        },
-        {
-          name: "Sujalam Chemicals",
-          description:
-            "Full-stack mobile application with real-time tracking and automated alerts. Built with React Native and Express.",
-          html_url: "https://github.com/aryamaddel/sujalam-chemicals",
-          language: "Full Stack",
-        },
-      ];
+      projects.forEach((project) => {
+        const projectEl = document.createElement("div");
+        projectEl.className = "project-item";
 
-      function loadProjects() {
-        const container = document.getElementById("projects-container");
-        container.innerHTML = "";
-
-        projects.forEach((project) => {
-          const projectEl = document.createElement("div");
-          projectEl.className = "project-item";
-
-          projectEl.innerHTML = `
+        projectEl.innerHTML = `
           <h3><a href="${project.html_url}" target="_blank">${project.name}</a></h3>
           <div class="project-meta">${project.language}</div>
           <p>${project.description}</p>
         `;
-          container.appendChild(projectEl);
-        });
-      }
+        container.appendChild(projectEl);
+      });
+    }
 
-      loadProjects();
+    loadProjects();
 
-      fetch(
-        "https://api.github.com/repos/aryamaddel/aryamaddel.github.io/commits?per_page=1",
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const date = new Date(data[0].commit.committer.date);
-          document.getElementById("last-updated").innerText =
-            "Last updated: " + date.toLocaleDateString();
-        })
-        .catch((e) => {
-          console.error(e);
-        });
-    </script>
-  </body>
+    fetch(
+      "https://api.github.com/repos/aryamaddel/aryamaddel.github.io/commits?per_page=1",
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const date = new Date(data[0].commit.committer.date);
+        document.getElementById("last-updated").innerText =
+          "Last updated: " + date.toLocaleDateString();
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  </script>
+</body>
+
 </html>
