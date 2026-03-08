@@ -176,6 +176,12 @@ li {
   margin-top: 0.5rem;
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 /* Footer */
 footer {
   margin-top: 4rem;
