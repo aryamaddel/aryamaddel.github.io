@@ -28,7 +28,6 @@ body {
   margin: 0 auto;
 }
 
-/* Navigation */
 nav {
   margin-bottom: 3rem;
   display: flex;
@@ -207,5 +206,41 @@ footer {
   .nav-links {
     justify-content: center;
     width: 100%;
+  }
+}
+
+/* Desktop Sidebar Layout */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0 4rem;
+    align-items: start;
+    margin: 4rem auto;
+  }
+
+  nav {
+    position: sticky;
+    top: 4rem;
+    grid-column: 1;
+    grid-row: 1 / span 20;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .container > *:not(nav) {
+    grid-column: 2;
+  }
+
+  h2 {
+    margin-top: 3rem;
   }
 }
