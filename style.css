@@ -202,31 +202,20 @@ footer {
     display: grid;
     grid-template-columns: 180px 1fr;
     gap: 0 4rem;
-    align-items: start;
     margin: 4rem auto;
   }
 
   nav {
-    position: sticky;
-    top: 4rem;
-    grid-column: 1;
-    grid-row: 1 / span 20;
+    position: fixed;
     margin-bottom: 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 1.5rem;
   }
 
   .container > *:not(nav) {
     grid-column: 2;
-  }
-
-  h2 {
-    margin-top: 3rem;
   }
 }
