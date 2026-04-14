@@ -7,7 +7,7 @@
   --border-color: #d1d1d1;
   --font-sans: "Rubik", sans-serif;
   --font-serif: "Playfair Display", serif;
-  --max-width: 700px;
+  --max-width: 800px;
 }
 
 * {
@@ -53,14 +53,21 @@ nav {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-serif);
   font-weight: 400;
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  margin-top: -0.2rem;
+}
 
 h2 {
   font-size: 1.5rem;
@@ -93,7 +100,7 @@ a:hover {
 /* Profile Section */
 .profile-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -196,24 +203,46 @@ footer {
 /* Desktop Sidebar Layout */
 @media (min-width: 1024px) {
   .container {
-    max-width: 1000px;
+    max-width: 1100px;
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 0 4rem;
-    margin: 4rem auto;
+    /* 3-column grid: left balanced column, fixed 650px center column, right balanced column */
+    grid-template-columns: 1fr 650px 1fr;
+    gap: 0;
+    margin: 6rem auto;
+    align-items: start;
   }
 
   nav {
-    position: fixed;
+    grid-column: 1;
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
     margin-bottom: 0;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
   }
 
   .nav-links {
     flex-direction: column;
-    align-items: flex-end
+    align-items: flex-end;
+    gap: 1.25rem;
   }
 
-  .container>*:not(nav) {
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .container > *:not(nav) {
     grid-column: 2;
+    padding-left: 2rem;
+  }
+
+  /* Typography alignment for desktop */
+  h1 {
+    margin-top: -0.4rem;
+    line-height: 1.1;
   }
 }
