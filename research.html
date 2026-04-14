@@ -96,20 +96,7 @@
     </footer>
   </div>
 
-  <script>
-    fetch(
-      "https://api.github.com/repos/aryamaddel/aryamaddel.github.io/commits?per_page=1",
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const date = new Date(data[0].commit.committer.date);
-        document.getElementById("last-updated").innerText =
-          "Last updated: " + date.toLocaleDateString();
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>
