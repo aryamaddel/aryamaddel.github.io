@@ -1,6 +1,5 @@
 :root {
   --bg-color: #F6F4F0;
-  --surface-color: #FAF3E0;
   --text-color: #1a1a1a;
   --accent-color: #002366;
   --muted-color: #57606f;
@@ -28,6 +27,7 @@ body {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+  transition: opacity 0.8s ease, transform 0.4s ease;
 }
 
 nav {
@@ -113,6 +113,9 @@ a:hover {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .subtitle {
@@ -290,7 +293,7 @@ footer {
   fill: none;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: draw 2.5s ease-in-out forwards;
+  animation: draw 1.2s ease-in-out forwards;
 }
 
 @keyframes draw {
@@ -306,7 +309,7 @@ footer {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+  animation: fadeIn 0.4s ease-in-out 0.2s forwards;
 }
 
 @keyframes fadeIn {

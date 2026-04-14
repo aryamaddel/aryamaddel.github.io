@@ -3,7 +3,7 @@
  */
 
 const CACHE = {};
-const PAGES = ['/', '/work.html', '/research.html'];
+const PAGES = ['/index.html', '/work.html', '/research.html'];
 /**
  * Initializes the page by preloading all content and setting up listeners
  */
