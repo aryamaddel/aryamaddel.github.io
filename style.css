@@ -186,6 +186,7 @@ footer {
 @media (max-width: 600px) {
   .profile-header {
     flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
   }
 
@@ -194,9 +195,18 @@ footer {
     height: 120px;
   }
 
+  .social-links {
+    justify-content: center;
+  }
+
   .nav-links {
     justify-content: center;
     width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -235,7 +245,7 @@ footer {
     font-weight: 500;
   }
 
-  .container > *:not(nav) {
+  .container>*:not(nav) {
     grid-column: 2;
     padding-left: 2rem;
   }
