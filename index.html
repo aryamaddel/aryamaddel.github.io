@@ -16,8 +16,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <div class="container">
+<body style="overflow: hidden;">
+  <div id="loading-screen">
+    <svg class="loader-logo" viewBox="0 0 650 200">
+      <path d="M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100" />
+    </svg>
+    <div class="loading-text">Initializing Experience</div>
+  </div>
+  <div class="container" style="opacity: 0; transition: opacity 0.8s ease;">
     <nav>
       <div class="nav-links">
         <a href="/" class="active">Home</a>

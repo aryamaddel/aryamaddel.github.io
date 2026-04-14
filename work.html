@@ -16,8 +16,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <div class="container">
+<body style="overflow: hidden;">
+  <div id="loading-screen">
+    <svg class="loader-logo" viewBox="0 0 650 200">
+      <path d="M 73 100 L 238 40 L 358 40 L 73 100 L 463 160 L 73 100 L 193 100 L 193 100 L 178 40 L 553 100" />
+    </svg>
+    <div class="loading-text">Initializing Experience</div>
+  </div>
+  <div class="container" style="opacity: 0; transition: opacity 0.8s ease;">
     <nav>
       <div class="nav-links">
         <a href="/">Home</a>
@@ -118,65 +124,6 @@
     </footer>
   </div>
 
-  <script>
-    // Hardcoded Project List
-    const projects = [
-      {
-        name: "frsh - Tech Blog",
-        description:
-          "Collaborative technical writing platform maintained with peers. Documentation of learning journey and project insights.",
-        html_url: "https://frshtech.vercel.app/",
-        language: "Technical Writing",
-      },
-      {
-        name: "DIQA",
-        description:
-          "A lightweight, production-ready Python library for No-Reference Image Quality Assessment (NR-IQA).",
-        html_url: "https://pypi.org/project/diqa/",
-        language: "Python Package",
-      },
-      {
-        name: "AutoManim",
-        description:
-          "AI-powered web application converting natural language descriptions into mathematical animations using Manim and LLM.",
-        html_url: "https://github.com/aryamaddel/AutoManim",
-        language: "AI & Web",
-      },
-      {
-        name: "Alexa PC Control",
-        description:
-          "Smart home integration using ESP32 for remote PC control with voice commands. Explored edge computing and IoT protocols.",
-        html_url: "https://github.com/aryamaddel/alexa-pc-control",
-        language: "IoT & Embedded",
-      },
-      {
-        name: "Sujalam Chemicals",
-        description:
-          "Full-stack mobile application with real-time tracking and automated alerts. Built with React Native and Express.",
-        html_url: "https://github.com/aryamaddel/sujalam-chemicals",
-        language: "Full Stack",
-      },
-    ];
-
-    function loadProjects() {
-      const container = document.getElementById("projects-container");
-      container.innerHTML = "";
-
-      projects.forEach((project) => {
-        const projectEl = document.createElement("div");
-        projectEl.className = "project-item";
-
-        projectEl.innerHTML = `
-          <h3><a href="${project.html_url}" target="_blank">${project.name}</a></h3>
-          <div class="project-meta">${project.language}</div>
-          <p>${project.description}</p>
-        `;
-        container.appendChild(projectEl);
-      });
-    }
-
-    loadProjects();
-  </script>
   <script src="scripts.js"></script>
 </body>
 
