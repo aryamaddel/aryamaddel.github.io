@@ -190,15 +190,40 @@ function updateLastUpdated(repo) {
     const element = document.getElementById("last-updated");
     if (!element) return;
 
+    const CACHE_KEY = `last-updated-${repo}`;
+    const cached = localStorage.getItem(CACHE_KEY);
+    const now = Date.now();
+
+    if (cached) {
+        const { date, timestamp } = JSON.parse(cached);
+        // Use cache if it's less than 1 hour old
+        if (now - timestamp < 3600000) {
+            element.innerText = "Last updated: " + date;
+            return;
+        }
+    }
+
     fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) throw new Error("Rate limit");
+            return response.json();
+        })
         .then((data) => {
             if (data && data[0] && data[0].commit) {
-                const date = new Date(data[0].commit.committer.date);
-                element.innerText = "Last updated: " + date.toLocaleDateString();
+                const dateStr = new Date(data[0].commit.committer.date).toLocaleDateString();
+                element.innerText = "Last updated: " + dateStr;
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    date: dateStr,
+                    timestamp: now
+                }));
             }
         })
-        .catch((e) => console.error("Error fetching last commit:", e));
+        .catch(() => {
+            // Quietly fall back to "recently" or existing cache if fetch fails
+            if (!element.innerText || element.innerText.includes("recently") || element.innerText.includes("Fetching")) {
+                element.innerText = "Last updated: recently";
+            }
+        });
 }
 
 // Start initialization
