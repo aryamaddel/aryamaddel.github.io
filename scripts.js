@@ -1,52 +1,68 @@
 /**
- * SPA-like navigation and preloading for Arya Maddel's Portfolio
+ * Portfolio scripts — single page with smooth scroll & scroll-spy
  */
 
-const CACHE = {};
-const PAGES = ["/index.html", "/work.html", "/research.html"];
 /**
- * Initializes the page by preloading all content and setting up listeners
+ * Smoothly scrolls to a target Y position with an ease-in-out curve.
  */
-async function initialize() {
-  // 1. Mark current page as cached
-  const currentPath = normalizePath(window.location.pathname);
-  CACHE[currentPath] = document.documentElement.outerHTML;
+function smoothScrollTo(targetY, duration = 700) {
+  const startY = window.scrollY;
+  const diff = targetY - startY;
+  let startTime = null;
 
-  // 2. Preload other pages
-  const preloadPromises = PAGES.map(normalizePath)
-    .filter((p) => p !== currentPath)
-    .map(async (path) => {
-      try {
-        const response = await fetch(path);
-        if (!response.ok)
-          throw new Error(`HTTP error! status: ${response.status}`);
-        const html = await response.text();
-        CACHE[path] = html;
-        console.log(`Preloaded: ${path}`);
-      } catch (err) {
-        console.error(`Failed to preload ${path}:`, err);
-      }
-    });
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
 
-  await Promise.all(preloadPromises);
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + diff * easeInOutCubic(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  }
 
-  // 3. Hide loading screen immediately after content is ready
-  hideLoadingScreen();
-
-  // 4. Set up navigation interception
-  setupNavigation();
-
-  // 5. Initial scripts for current page
-  runPageScripts();
+  requestAnimationFrame(step);
 }
 
-function normalizePath(path) {
-  if (!path || path === "/" || path === "/index") return "/index.html";
-  if (!path.endsWith(".html")) {
-    // Handle paths like /work or /research
-    return (path.startsWith("/") ? path : "/" + path) + ".html";
-  }
-  return path.startsWith("/") ? path : "/" + path;
+/**
+ * Wire up nav links to use the custom smooth scroll.
+ */
+function setupSmoothScroll() {
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Close mobile menu if open
+      const nav = document.querySelector("nav");
+      nav.classList.remove("open");
+      document.querySelector(".nav-toggle")?.setAttribute("aria-expanded", "false");
+
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      const offset = parseInt(
+        getComputedStyle(target).scrollMarginTop || "0",
+        10,
+      );
+      const targetY =
+        target.getBoundingClientRect().top + window.scrollY - offset;
+      smoothScrollTo(targetY, 700);
+    });
+  });
+}
+
+/**
+ * Hamburger toggle for mobile nav.
+ */
+function setupHamburger() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("nav");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", isOpen);
+  });
 }
 
 function hideLoadingScreen() {
@@ -61,128 +77,32 @@ function hideLoadingScreen() {
   }
 }
 
-function setupNavigation() {
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest("a");
-    if (!link) return;
-
-    const url = new URL(link.href);
-    const path = normalizePath(url.pathname);
-
-    // Check if it's an internal link
-    if (
-      url.origin === window.location.origin &&
-      PAGES.map(normalizePath).includes(path)
-    ) {
-      e.preventDefault();
-      navigateTo(url.pathname);
-    }
-  });
-
-  window.addEventListener("popstate", () => {
-    renderPage(window.location.pathname);
-  });
-}
-
-async function navigateTo(path) {
-  if (window.location.pathname === path) return;
-
-  // Add transition out
-  const container = document.querySelector(".container");
-  container.style.opacity = "0";
-  container.style.transform = "translateY(10px)";
-
-  setTimeout(async () => {
-    history.pushState(null, "", path);
-    await renderPage(path);
-
-    // Transition in
-    container.style.opacity = "1";
-    container.style.transform = "translateY(0)";
-  }, 300);
-}
-
-async function renderPage(path) {
-  const normalized = normalizePath(path);
-  let html = CACHE[normalized];
-
-  if (!html) {
-    // Fallback fetch if not in cache
-    const response = await fetch(normalized);
-    html = await response.text();
-    CACHE[normalized] = html;
-  }
-
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, "text/html");
-
-  // Update title
-  document.title = doc.title;
-
-  // Update body content (specifically the .container)
-  const newContent = doc.querySelector(".container").innerHTML;
-  document.querySelector(".container").innerHTML = newContent;
-
-  // Scroll to top
-  window.scrollTo(0, 0);
-
-  // Re-run scripts
-  runPageScripts();
-}
-
-const PROJECTS = [
-  {
-    name: "DIQA",
-    description:
-      "A lightweight, production-ready Python library for No-Reference Image Quality Assessment (NR-IQA).",
-    html_url: "https://pypi.org/project/diqa/",
-    language: "Python Package",
-  },
-  {
-    name: "OpenAnim",
-    description:
-      "CLI that generates Manim animation code from natural-language prompts using OpenRouter, then renders it immediately.",
-    html_url: "https://github.com/openanim/openanim",
-    language: "Python / CLI",
-  },
-  {
-    name: "Alexa PC Control",
-    description:
-      "Smart home integration using ESP32 for remote PC control with voice commands. Explored edge computing and IoT protocols.",
-    html_url: "https://github.com/aryamaddel/alexa-pc-control",
-    language: "IoT & Embedded",
-  },
-  {
-    name: "Sujalam Chemicals",
-    description:
-      "Full-stack mobile application with real-time tracking and automated alerts. Built with React Native and Express.",
-    html_url: "https://github.com/aryamaddel/sujalam-chemicals",
-    language: "Full Stack",
-  },
-];
-
 /**
- * Re-runs scripts that are specific to certain pages (like project loading)
+ * Scroll-spy: highlight the nav link whose section is currently in view.
  */
-function runPageScripts() {
-  // Check if we are on the work page
-  const container = document.getElementById("projects-container");
-  if (container) {
-    container.innerHTML = "";
-    PROJECTS.forEach((project) => {
-      const projectEl = document.createElement("div");
-      projectEl.className = "project-item";
-      projectEl.innerHTML = `
-                <h3><a href="${project.html_url}" target="_blank">${project.name}</a></h3>
-                <div class="project-meta">${project.language}</div>
-                <p>${project.description}</p>
-            `;
-      container.appendChild(projectEl);
-    });
-  }
+function setupScrollSpy() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-  // Update last updated timestamp
-  updateLastUpdated("aryamaddel/aryamaddel.github.io");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id,
+            );
+          });
+        }
+      });
+    },
+    {
+      rootMargin: "-30% 0px -60% 0px",
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
 }
 
 /**
@@ -198,7 +118,6 @@ function updateLastUpdated(repo) {
 
   if (cached) {
     const { date, timestamp } = JSON.parse(cached);
-    // Use cache if it's less than 1 hour old
     if (now - timestamp < 3600000) {
       element.innerText = "Last updated: " + date;
       return;
@@ -218,15 +137,11 @@ function updateLastUpdated(repo) {
         element.innerText = "Last updated: " + dateStr;
         localStorage.setItem(
           CACHE_KEY,
-          JSON.stringify({
-            date: dateStr,
-            timestamp: now,
-          }),
+          JSON.stringify({ date: dateStr, timestamp: now }),
         );
       }
     })
     .catch(() => {
-      // Quietly fall back to "recently" or existing cache if fetch fails
       if (
         !element.innerText ||
         element.innerText.includes("recently") ||
@@ -237,5 +152,10 @@ function updateLastUpdated(repo) {
     });
 }
 
-// Start initialization
-document.addEventListener("DOMContentLoaded", initialize);
+document.addEventListener("DOMContentLoaded", () => {
+  hideLoadingScreen();
+  setupHamburger();
+  setupSmoothScroll();
+  setupScrollSpy();
+  updateLastUpdated("aryamaddel/aryamaddel.github.io");
+});

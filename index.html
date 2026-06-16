@@ -33,62 +33,81 @@
             </svg>
             <div class="loading-text">Loading Page</div>
         </div>
+
         <div class="container" style="opacity: 0">
             <nav aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="nav-links">
-                    <a href="/" class="active">Home</a>
-                    <a href="work.html">Work</a>
-                    <a href="research.html">Research</a>
+                    <a href="#about" class="active">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#research">Research</a>
+                    <a href="#education">Education</a>
+                    <a href="#awards">Awards</a>
+                    <a href="#skills">Skills</a>
                 </div>
             </nav>
-            <div class="profile-header">
-                <div class="profile-info">
-                    <h1>Arya Maddel</h1>
-                    <p class="subtitle">
-                        Machine Learning Engineer & Researcher
-                    </p>
-                    <p>
-                        B.Tech Computer Science student at DES Pune University,
-                        exploring machine learning, automation, and
-                        computational systems, with interests spanning
-                        mathematical and physical theory to practical software
-                        and hardware implementations.
-                    </p>
-                    <div class="social-links">
-                        <a
-                            href="mailto:aryamaddel@gmail.com"
-                            title="Email"
-                            aria-label="Email"
-                            ><i class="bi bi-envelope-fill"></i
-                        ></a>
-                        <a
-                            href="https://github.com/aryamaddel"
-                            title="GitHub"
-                            aria-label="GitHub"
-                            ><i class="bi bi-github"></i
-                        ></a>
-                        <a
-                            href="https://linkedin.com/in/aryamaddel"
-                            title="LinkedIn"
-                            aria-label="LinkedIn"
-                            ><i class="bi bi-linkedin"></i
-                        ></a>
-                        <a
-                            href="ARYA MADDEL Resume.pdf"
-                            download
-                            style="font-size: 1rem; margin-top: 2px"
-                            aria-label="Download CV"
-                            >CV</a
-                        >
+
+            <!-- About -->
+            <section id="about">
+                <div class="profile-header">
+                    <div class="profile-info">
+                        <h1>Arya Maddel</h1>
+                        <p class="subtitle">
+                            Machine Learning Engineer &amp; Researcher
+                        </p>
+                        <p>
+                            B.Tech Computer Science student at DES Pune
+                            University, exploring machine learning, automation,
+                            and computational systems, with interests spanning
+                            mathematical and physical theory to practical
+                            software and hardware implementations.
+                            IEEE-published researcher with hands-on industry
+                            experience.
+                        </p>
+                        <div class="social-links">
+                            <a
+                                href="mailto:aryamaddel@gmail.com"
+                                title="Email"
+                                aria-label="Email"
+                                ><i class="bi bi-envelope-fill"></i
+                            ></a>
+                            <a
+                                href="https://github.com/aryamaddel"
+                                title="GitHub"
+                                aria-label="GitHub"
+                                target="_blank"
+                                rel="noopener"
+                                ><i class="bi bi-github"></i
+                            ></a>
+                            <a
+                                href="https://linkedin.com/in/aryamaddel"
+                                title="LinkedIn"
+                                aria-label="LinkedIn"
+                                target="_blank"
+                                rel="noopener"
+                                ><i class="bi bi-linkedin"></i
+                            ></a>
+                            <a
+                                href="ARYA MADDEL Resume.pdf"
+                                download
+                                aria-label="Download CV"
+                                title="Download CV"
+                                ><i class="bi bi-download"></i
+                            ></a>
+                        </div>
                     </div>
+                    <img
+                        src="https://avatars.githubusercontent.com/u/84805906"
+                        alt="Arya Maddel"
+                        class="profile-img"
+                    />
                 </div>
-                <img
-                    src="https://avatars.githubusercontent.com/u/84805906"
-                    alt="Arya Maddel"
-                    class="profile-img"
-                />
-            </div>
-            <section>
+
                 <h2>Research Interests</h2>
                 <ul>
                     <li>Autonomous Systems and Robotics</li>
@@ -97,10 +116,317 @@
                     <li>Sensor-Driven Machine Learning</li>
                 </ul>
             </section>
+
+            <!-- Experience -->
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <div class="project-item">
+                    <h3>Machine Learning Intern</h3>
+                    <div class="project-meta">
+                        In2Peta Services Private Limited · Feb 2026 – Present
+                    </div>
+                    <p>
+                        Working on applied Machine Learning and MLOps pipelines.
+                        Developing and deploying scalable ML solutions in a
+                        virtual environment — gaining hands-on experience across
+                        the full model lifecycle.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Project Lead</h3>
+                    <div class="project-meta">
+                        Aerial Mappers &amp; Surveyors LLP · Jan – Mar 2024
+                    </div>
+                    <p>
+                        Led development of an autonomous drone system with
+                        variable payload capabilities using the Pixhawk flight
+                        controller. Integrated computer vision for navigation
+                        and payload management across versatile field tasks.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Project Lead &amp; Full Stack Developer</h3>
+                    <div class="project-meta">
+                        Sujalam Chemicals · May – Aug 2023
+                    </div>
+                    <p>
+                        Architected and deployed a cross-platform inventory
+                        management system for Android and iOS. Built the
+                        complete tech stack with React Native, Express, SQLite,
+                        and real-time synchronization capabilities.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <div class="project-item">
+                    <h3>
+                        <a
+                            href="https://pypi.org/project/diqa/"
+                            target="_blank"
+                            rel="noopener"
+                            >DIQA</a
+                        >
+                    </h3>
+                    <div class="project-meta">Python Package</div>
+                    <p>
+                        A lightweight, production-ready Python library for
+                        No-Reference Image Quality Assessment (NR-IQA).
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>
+                        <a
+                            href="https://github.com/openanim/openanim"
+                            target="_blank"
+                            rel="noopener"
+                            >OpenAnim</a
+                        >
+                    </h3>
+                    <div class="project-meta">Python · CLI</div>
+                    <p>
+                        CLI that generates Manim animation code from
+                        natural-language prompts via OpenRouter, then renders it
+                        immediately.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>
+                        <a
+                            href="https://github.com/aryamaddel/alexa-pc-control"
+                            target="_blank"
+                            rel="noopener"
+                            >Alexa PC Control</a
+                        >
+                    </h3>
+                    <div class="project-meta">IoT · Embedded</div>
+                    <p>
+                        Smart home integration using ESP32 for remote PC control
+                        with Alexa voice commands. Explores edge computing and
+                        IoT protocols.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>
+                        <a
+                            href="https://github.com/aryamaddel/sujalam-chemicals"
+                            target="_blank"
+                            rel="noopener"
+                            >Sujalam Chemicals</a
+                        >
+                    </h3>
+                    <div class="project-meta">Full Stack</div>
+                    <p>
+                        Cross-platform mobile app with real-time inventory
+                        tracking and automated alerts. Built with React Native
+                        and Express.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Research -->
+            <section id="research">
+                <h2>Research &amp; Publications</h2>
+                <p>
+                    As an undergraduate researcher, I focus on building
+                    computationally efficient ML systems. My current work
+                    explores model selection, ensemble routing, and
+                    sensor-integrated learning.
+                </p>
+
+                <div class="project-item">
+                    <h3>
+                        <a
+                            href="https://ieeexplore.ieee.org/document/11484766"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Adaptive Hybrid Architecture for NRIQA
+                        </a>
+                    </h3>
+                    <div class="project-meta">
+                        Maddel, A., Patil, R., Bhavsar, T., Gajbahar, A.,
+                        Jaiswal, S., Joshi, P.
+                    </div>
+                    <div class="project-meta">
+                        IEEE · ETFI 2026 · Pune, India · 12–14 February 2026
+                    </div>
+                    <p>
+                        Proposes a dynamic routing pipeline for No-Reference
+                        Image Quality Assessment that avoids full-ensemble
+                        execution. A lightweight gradient-boosted classifier
+                        selects the optimal IQA model from a diverse pool of
+                        traditional (BRISQUE, NIQE) and deep-learning (MANIQA,
+                        HyperIQA) algorithms based on low-cost perceptual
+                        features — achieving performance competitive with the
+                        best individual model at a fraction of the computational
+                        cost.
+                    </p>
+                    <p style="font-size: 0.85rem">
+                        DOI:
+                        <a
+                            href="https://doi.org/10.1109/ETFI68128.2026.11484766"
+                            target="_blank"
+                            rel="noopener"
+                            >10.1109/ETFI68128.2026.11484766</a
+                        >
+                        &nbsp;·&nbsp; ORCID:
+                        <a
+                            href="https://orcid.org/0009-0009-2696-2519"
+                            target="_blank"
+                            rel="noopener"
+                            >0009-0009-2696-2519</a
+                        >
+                    </p>
+                    <details style="margin-top: 0.5rem; font-size: 0.8rem">
+                        <summary
+                            style="cursor: pointer; color: var(--accent-color)"
+                        >
+                            Cite (BibTeX)
+                        </summary>
+                        <pre
+                            style="
+                                background: #fff;
+                                border: 1px solid var(--border-color);
+                                border-radius: 6px;
+                                padding: 0.75rem;
+                                overflow-x: auto;
+                                font-size: 0.75rem;
+                                line-height: 1.5;
+                                margin-top: 0.5rem;
+                            "
+                        >
+@INPROCEEDINGS{11484766,
+  author={Maddel, Arya and Patil, Ratnajeet and Bhavsar, Tiya
+          and Gajbahar, Anisha and Jaiswal, Swati and Joshi, Prachi},
+  booktitle={2026 International Conference on Emerging Technologies
+             and Future Innovations (ETFI)},
+  title={Adaptive Hybrid Architecture for NRIQA},
+  year={2026},
+  pages={1-7},
+  doi={10.1109/ETFI68128.2026.11484766},
+  month={Feb},
+}</pre
+                        >
+                    </details>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education">
+                <h2>Education</h2>
+
+                <div class="project-item">
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <div class="project-meta">
+                        DES Pune University · 2024 – Present · CGPA 8.7
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3>Diploma in Computer Science and Engineering</h3>
+                    <div class="project-meta">
+                        Sou. Venutai Chavan Polytechnic · 2021 – 2024 · 86%
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3>High School (SSC)</h3>
+                    <div class="project-meta">
+                        Hutchings High School · 2021 · 92%
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards -->
+            <section id="awards">
+                <h2>Awards &amp; Recognition</h2>
+
+                <div class="project-item">
+                    <h3>1st Place · AI For Humanity (A4H)</h3>
+                    <div class="project-meta">
+                        Resonance 2026 · DES Pune University &amp; IEEE Pune
+                        Section · March 2026
+                    </div>
+                    <p>
+                        Awarded first place in the "AI For Humanity" competition
+                        organized by DES Pune University in collaboration with
+                        IEEE Pune Section and its Computer Society, I&amp;M
+                        Society, and Student Branch chapters.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>1st Prize · Alumni NIRMITEE</h3>
+                    <div class="project-meta">
+                        Project Competition 2024 · Sinhagad Technical Education
+                        Society · SVCP Pune
+                    </div>
+                    <p>
+                        Secured the first prize in the Inter Department Project
+                        Competition (NIRMITEE) at Sou. Venutai Chavan
+                        Polytechnic, Sinhagad Institutes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div>
+                        <h3>Machine Learning</h3>
+                        <ul>
+                            <li>Deep Learning</li>
+                            <li>Computer Vision</li>
+                            <li>NLP</li>
+                            <li>Model Optimization</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C / C++</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Frameworks &amp; Tools</h3>
+                        <ul>
+                            <li>PyTorch / TensorFlow</li>
+                            <li>Flask / Express</li>
+                            <li>React Native</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Hardware &amp; Systems</h3>
+                        <ul>
+                            <li>Embedded Systems</li>
+                            <li>ESP32 / Arduino</li>
+                            <li>Pixhawk</li>
+                            <li>IoT Protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <footer>
-                <p id="last-updated">Last updated: April 16, 2026</p>
+                <p id="last-updated">Last updated: recently</p>
             </footer>
         </div>
+
         <script src="scripts.js"></script>
     </body>
 </html>
