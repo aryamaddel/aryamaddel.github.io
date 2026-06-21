@@ -4,13 +4,25 @@
     --accent-color: #002366;
     --muted-color: #57606f;
     --border-color: #d1d1d1;
+    --surface-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --transition-track: #d90429;
+    --transition-glow: rgba(217, 4, 41, 0.28);
     --font-sans: "Rubik", sans-serif;
     --font-serif: "Playfair Display", serif;
     --max-width: 800px;
 }
 
-html {
-    /* JS handles smooth scroll — no CSS scroll-behavior needed */
+:root[data-theme="dark"] {
+    --bg-color: #0d1117;
+    --text-color: #f2f5f8;
+    --accent-color: #8fd3ff;
+    --muted-color: #a7b1bd;
+    --border-color: #2b3542;
+    --surface-color: #151b23;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+    --transition-track: #00d1ff;
+    --transition-glow: rgba(0, 209, 255, 0.32);
 }
 
 * {
@@ -26,6 +38,9 @@ body {
     line-height: 1.6;
     padding: 2rem 1rem;
     min-height: 100vh;
+    transition:
+        background-color 0.45s ease,
+        color 0.45s ease;
 }
 
 .container {
@@ -49,9 +64,43 @@ nav {
   align-items: center;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 /* Hidden on desktop, shown via mobile media query */
 .nav-toggle {
   display: none;
+}
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--surface-color);
+    color: var(--accent-color);
+    cursor: pointer;
+    display: inline-grid;
+    place-items: center;
+    font-size: 1rem;
+    box-shadow: 0 10px 24px var(--shadow-color);
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) rotate(-8deg);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
 }
 
 .nav-links {
@@ -134,7 +183,7 @@ a:hover {
     object-fit: cover;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .subtitle {
@@ -204,6 +253,44 @@ footer {
     color: var(--muted-color);
 }
 
+/* F1 circuit theme transition */
+.circuit-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    /* Blend the whole fixed overlay against the page with `difference`, so the
+       white circuit line renders the exact inverse of the pixels beneath it (a
+       black letter -> white, the background -> its complement). This top-level
+       fixed element is the reliable spot for the blend; on a nested SVG it only
+       blends within the SVG's own canvas and just shows up solid white. */
+    mix-blend-mode: difference;
+}
+
+.circuit-transition.is-running {
+    opacity: 1;
+    visibility: visible;
+}
+
+.circuit-transition__svg {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: min(440px, 66vw);
+    transform: translate(-50%, -50%) rotate(-6deg);
+    overflow: visible;
+}
+
+.circuit-transition__path {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 14;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     /* Hamburger button — only visible on mobile */
@@ -253,6 +340,13 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        transition:
+            background-color 0.45s ease,
+            border-color 0.45s ease;
+    }
+
+    .nav-controls {
+        justify-content: space-between;
     }
 
     /* Nav links hidden by default, drop down when open */
@@ -324,7 +418,13 @@ footer {
         padding-right: 1.25rem;
         border-right: 1px solid var(--border-color);
         display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         justify-content: flex-end;
+    }
+
+    .nav-controls {
+        margin-bottom: 1.25rem;
     }
 
     section[id] {
