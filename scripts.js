@@ -180,13 +180,10 @@ function setupThemeCircuitTransition() {
   function applyTheme(theme) {
     root.dataset.theme = theme;
     localStorage.setItem(THEME_KEY, theme);
-    const icon = toggle.querySelector("i");
     const isDark = theme === "dark";
 
     toggle.setAttribute("aria-pressed", String(isDark));
     toggle.setAttribute("aria-label", themes[theme].nextLabel);
-    icon?.classList.remove(themes.light.icon, themes.dark.icon);
-    icon?.classList.add(themes[theme].icon);
   }
 
   applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
