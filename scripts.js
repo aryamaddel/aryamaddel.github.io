@@ -72,6 +72,7 @@ function setupThemeCircuitTransition() {
   const toggle = document.querySelector(".theme-toggle");
   const overlay = document.querySelector(".circuit-transition");
   const track = overlay?.querySelector(".circuit-transition__path");
+  const circuits = window.F1_CIRCUITS || [];
   const THEME_KEY = "theme";
   const themes = {
     light: {
@@ -89,7 +90,22 @@ function setupThemeCircuitTransition() {
   if (!toggle || !overlay) return;
 
   let circuitLength = 2200;
-  if (track) {
+  let lastCircuitIndex = -1;
+
+  function pickRandomCircuit() {
+    if (circuits.length === 0) return null;
+    if (circuits.length === 1) return circuits[0];
+    let index;
+    do {
+      index = Math.floor(Math.random() * circuits.length);
+    } while (index === lastCircuitIndex);
+    lastCircuitIndex = index;
+    return circuits[index];
+  }
+
+  function setCircuit(circuit) {
+    if (!track || !circuit) return;
+    track.setAttribute("d", circuit.path);
     circuitLength = Math.ceil(track.getTotalLength());
     // One dash as long as the path, gap just as long. Sweeping the offset from
     // +L (hidden) through 0 (fully drawn) to -L erases the line in the SAME
@@ -97,6 +113,8 @@ function setupThemeCircuitTransition() {
     track.style.strokeDasharray = `${circuitLength} ${circuitLength}`;
     track.style.strokeDashoffset = String(circuitLength);
   }
+
+  setCircuit(pickRandomCircuit());
 
   // A smooth, always-forward pace whose speed drifts up and down across the
   // draw. It's the integral of a velocity built from a few random sine waves,
@@ -197,6 +215,8 @@ function setupThemeCircuitTransition() {
       applyTheme(nextTheme);
       return;
     }
+
+    setCircuit(pickRandomCircuit());
 
     overlay.classList.remove("is-running");
     void overlay.offsetWidth;
