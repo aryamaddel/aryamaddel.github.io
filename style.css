@@ -16,13 +16,13 @@
 :root[data-theme="dark"] {
     --bg-color: #0d1117;
     --text-color: #f2f5f8;
-    --accent-color: #8fd3ff;
+    --accent-color: #d8dee9;
     --muted-color: #a7b1bd;
     --border-color: #2b3542;
     --surface-color: #151b23;
     --shadow-color: rgba(0, 0, 0, 0.35);
-    --transition-track: #00d1ff;
-    --transition-glow: rgba(0, 209, 255, 0.32);
+    --transition-track: #d8dee9;
+    --transition-glow: rgba(216, 222, 233, 0.32);
 }
 
 * {
