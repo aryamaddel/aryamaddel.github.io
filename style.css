@@ -224,6 +224,49 @@ a:hover {
         border-color 0.25s ease,
         color 0.25s ease;
     border: 1px solid var(--border-color);
+    cursor: pointer;
+    list-style: none;
+}
+
+.resume-btn-square::-webkit-details-marker {
+    display: none;
+}
+
+.resume-options {
+    position: relative;
+}
+
+.resume-links {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    z-index: 10;
+    width: max-content;
+    padding: 0.35rem;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.resume-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.resume-links a:hover,
+.resume-links a:focus-visible {
+    background: var(--bg-color);
+    color: var(--accent-color);
+}
+
+.resume-link-hint {
+    color: var(--muted-color);
+    font-size: 0.75rem;
 }
 
 .resume-btn-square:hover {
